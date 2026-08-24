@@ -1,0 +1,306 @@
+/* ==========================================================================
+   Design Tokens & Global CSS Foundation
+   Extraído diretamente do Figma via Dev Mode MCP
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* --------------------------------------------------------------------------
+     1. Escala de Cinzas, Superfícies e Fundos (Colors & Backgrounds)
+     -------------------------------------------------------------------------- */
+  /* Fundos / Backgrounds */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f5;
+  --bg-tertiary: #ebebeb;
+  --bg-dark-secondary: #1e1e1e;
+  --surface-dark: #2c2c2c;
+
+  /* Primitivos & Overlays */
+  --gray-150: #ebebeb;
+  --dark-50: rgba(0, 0, 0, 0.05);   /* #0000000d */
+  --dark-200: rgba(0, 0, 0, 0.20);  /* #00000033 */
+  --overlay-default: transparent;   /* #00000000 */
+  --overlay-hover: rgba(0, 0, 0, 0.12); /* #0000001f */
+
+  /* Textos */
+  --text-title: #1e1e1e;
+  --text-body: #303030;
+  --text-muted: #757575;
+  --text-on-dark: #f5f5f5;
+
+  /* Bordas */
+  --border-default: #d9d9d9;
+  --border-strong: #2c2c2c;
+
+  /* Ícones */
+  --icon-primary: #1e1e1e;
+  --icon-body: #303030;
+  --icon-on-dark: #f5f5f5;
+
+  /* Cores de Destaque / Brand & Accents */
+  --brand-segsocial: #006633;
+  --brand-segsocial-hero: #fbbd3d;
+  --accent-green: #14ae5c;
+  --accent-yellow: #e8b931;
+  --accent-red: #ec221f;
+  --accent-teal: #005172;
+
+  /* Highlights / Badges */
+  --highlight-positive: #cff7d3;
+  --highlight-negative: #fdd3d0;
+  --highlight-confused: #fff1c2;
+  --highlight-info: #e6f4fa;
+
+  /* --------------------------------------------------------------------------
+     2. Espaçamentos (Spacing Tokens: space-{valor} & aliases)
+     -------------------------------------------------------------------------- */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-14: 14px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-28: 28px;
+  --space-32: 32px;
+  --space-48: 48px;
+  --space-64: 64px;
+  --space-80: 80px;
+  --space-120: 120px;
+
+  /* Aliases semânticos de espaçamento do Figma */
+  --spacing-2xs: var(--space-4);
+  --spacing-xs: var(--space-8);
+  --spacing-sm: var(--space-12);
+  --spacing-footer-internal: var(--space-14);
+  --spacing-md: var(--space-16);
+  --spacing-space-inline-padding: var(--space-16);
+  --spacing-lg: var(--space-24);
+  --spacing-xl: var(--space-32);
+  --spacing-3xl: var(--space-48);
+  --spacing-6xl: var(--space-80);
+
+  /* Layout Spacing */
+  --layout-gutter: 24px;
+  --layout-margin: 120px;
+  --layout-container-width: 1200px;
+  --layout-viewport-width: 1440px;
+
+  /* --------------------------------------------------------------------------
+     3. Raios de Borda (Border Radius)
+     -------------------------------------------------------------------------- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-base: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 200px;
+
+  /* --------------------------------------------------------------------------
+     4. Tipografia - Tokens de Fonte, Tamanho e Altura de Linha
+     -------------------------------------------------------------------------- */
+  --font-family-default: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+  /* Font Weights */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Font Sizes */
+  --font-size-s: 14px;
+  --font-size-m: 16px;
+  --font-size-base: 18px;
+  --font-size-l: 20px;
+  --font-size-h5: 20px;
+  --font-size-h4: 24px;
+  --font-size-h3: 32px;
+  --font-size-h2: 48px;
+  --font-size-h1: 72px;
+  --font-size-stat-lg: 32px;
+
+  /* Line Heights */
+  --line-height-s: 21px;
+  --line-height-m: 24px;
+  --line-height-base: 27px;
+  --line-height-l: 30px;
+  --line-height-h5: 24px;
+  --line-height-h4: 29px;
+  --line-height-h3: 38px;
+  --line-height-h2: 58px;
+  --line-height-h1: 86px;
+  --line-height-stat-lg: 38px;
+}
+
+/* ==========================================================================
+   CSS Reset Base
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-family-default);
+  background-color: var(--bg-primary);
+  color: var(--text-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================================================
+   5. Tipografia - Tags Base e Classes Utilitárias (Text Styles do Figma)
+   ========================================================================== */
+
+/* H1: 72px / 86px / Bold (700) */
+h1, .heading-h1, .h1 {
+  font-family: var(--font-family-default);
+  font-size: var(--font-size-h1);
+  line-height: var(--line-height-h1);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-title);
+  letter-spacing: 0;
+}
+
+/* H2: 48px / 58px / Bold (700) */
+h2, .heading-h2, .h2 {
+  font-family: var(--font-family-default);
+  font-size: var(--font-size-h2);
+  line-height: var(--line-height-h2);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-title);
+  letter-spacing: 0;
+}
+
+/* H3: 32px / 38px / Regular (400) */
+h3, .heading-h3, .h3 {
+  font-family: var(--font-family-default);
+  font-size: var(--font-size-h3);
+  line-height: var(--line-height-h3);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-title);
+  letter-spacing: 0;
+}
+
+/* H3-Bold: 32px / 38px / Bold (700) */
+.heading-h3-bold, .h3-bold {
+  font-family: var(--font-family-default);
+  font-size: var(--font-size-h3);
+  line-height: var(--line-height-h3);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-title);
+  letter-spacing: 0;
+}
+
+/* H3-SemiBold: 32px / 38px / SemiBold (600) */
+.heading-h3-semibold, .h3-semibold {
+  font-family: var(--font-family-default);
+  font-size: var(--font-size-h3);
+  line-height: var(--line-height-h3);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-title);
+  letter-spacing: 0;
+}
+
+/* H4: 24px / 29px / SemiBold (600) */
+h4, .heading-h4, .h4 {
+  font-family: var(--font-family-default);
+  font-size: var(--font-size-h4);
+  line-height: var(--line-height-h4);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-title);
+  letter-spacing: 0;
+}
+
+/* H4-Bold: 24px / 29px / Bold (700) */
+.heading-h4-bold, .h4-bold {
+  font-family: var(--font-family-default);
+  font-size: var(--font-size-h4);
+  line-height: var(--line-height-h4);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-title);
+  letter-spacing: 0;
+}
+
+/* H5: 20px / 24px / SemiBold (600) */
+h5, .heading-h5, .h5 {
+  font-family: var(--font-family-default);
+  font-size: var(--font-size-h5);
+  line-height: var(--line-height-h5);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-title);
+  letter-spacing: 0;
+}
+
+/* H5-Bold: 20px / 24px / Bold (700) */
+.heading-h5-bold, .h5-bold {
+  font-family: var(--font-family-default);
+  font-size: var(--font-size-h5);
+  line-height: var(--line-height-h5);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-title);
+  letter-spacing: 0;
+}
+
+/* Stat/LG: 32px / 38px / Destaque de métricas e números */
+.stat-lg {
+  font-family: var(--font-family-default);
+  font-size: var(--font-size-stat-lg);
+  line-height: var(--line-height-stat-lg);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Estilos de Apoio: Body e Labels (Conforme Figma Tokens)
+   -------------------------------------------------------------------------- */
+.body-lg {
+  font-family: var(--font-family-default);
+  font-size: var(--font-size-l);
+  line-height: var(--line-height-l);
+  font-weight: var(--font-weight-regular);
+}
+
+.body-base {
+  font-family: var(--font-family-default);
+  font-size: var(--font-size-m);
+  line-height: var(--line-height-m);
+  font-weight: var(--font-weight-regular);
+}
+
+.body-sm {
+  font-family: var(--font-family-default);
+  font-size: var(--font-size-s);
+  line-height: var(--line-height-s);
+  font-weight: var(--font-weight-regular);
+}
+
+.label-lg-semibold {
+  font-family: var(--font-family-default);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  font-weight: var(--font-weight-semibold);
+}
+
+.label-base {
+  font-family: var(--font-family-default);
+  font-size: var(--font-size-m);
+  line-height: var(--line-height-m);
+  font-weight: var(--font-weight-medium);
+}
+
+.label-sm {
+  font-family: var(--font-family-default);
+  font-size: var(--font-size-s);
+  line-height: var(--line-height-s);
+  font-weight: var(--font-weight-medium);
+}
+
+.label-sm-semibold {
+  font-family: var(--font-family-default);
+  font-size: var(--font-size-s);
+  line-height: var(--line-height-s);
+  font-weight: var(--font-weight-semibold);
+}
