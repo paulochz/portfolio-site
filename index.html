@@ -1,30 +1,562 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-PT">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Paulo Chiozzini — Product Designer</title>
-  <meta name="description" content="Portfolio de Paulo Chiozzini, Product Designer. Formando experiências digitais com foco em produto, usabilidade e design systems.">
+  <meta name="description"
+    content="Portfolio de Paulo Chiozzini, Product Designer. Formando experiências digitais com foco em produto, usabilidade e design systems.">
 
-  <!-- Phosphor Icons (CDN via CSS) -->
-  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.css">
+  <!-- Phosphor Icons (Regular & Duotone CDN) -->
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css">
 
-  <!-- Global Stylesheet -->
+  <!-- Global Unified Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <!-- Header / Navigation -->
   <header id="main-header">
+    <portfolio-header></portfolio-header>
   </header>
 
   <!-- Main Content -->
   <main id="main-content">
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="about" aria-label="Apresentação">
+      <div class="hero__avatar-wrapper">
+        <div class="hero__avatar">
+          <img src="assets/photo-professional-portrait.png" alt="Foto profissional de Paulo Chiozzini"
+            class="hero__avatar-img" width="420" height="420" />
+        </div>
+      </div>
+
+      <div class="hero__content">
+        <div class="hero__profile-info">
+          <div class="hero__name-role">
+            <h1 class="hero__name heading-h1">Paulo Chiozzini</h1>
+            <p class="hero__role heading-h3">Product Designer</p>
+          </div>
+
+          <div class="hero__bio body-base">
+            <p>I'm Paulo, a Product Designer who loves shaping digital experiences that feel simple, human, and honest.
+              I move between UX Research, Interaction, and Visual Design, always looking for clarity and meaning in
+              every detail.</p>
+            <p>Years in UX/UI showed me that good design is more about empathy than aesthetics, while my background in
+              graphic design taught me the value of visual harmony.</p>
+            <p>I'm driven by curiosity, music, and the small moments when something just works.</p>
+          </div>
+        </div>
+
+        <div class="hero__actions">
+          <a href="#projects" class="btn btn--primary btn--md hero__btn">Check my work</a>
+          <a href="#contact" class="btn btn--neutral btn--md hero__btn">Get in touch</a>
+        </div>
+
+        <div class="hero__stats">
+          <div class="hero__stat-item">
+            <span class="hero__stat-number">14+</span>
+            <span class="hero__stat-label body-sm">Years experience</span>
+          </div>
+          <div class="hero__stat-item">
+            <span class="hero__stat-number">15+</span>
+            <span class="hero__stat-label body-sm">Projects</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section class="featured-projects" id="projects" aria-label="Projetos em destaque">
+      <div class="featured-projects__header">
+        <h2 class="featured-projects__title heading-h2">Featured projects</h2>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Card 1 (Grande / Featured) -->
+        <article class="project-card project-card--featured">
+          <a href="#" class="project-card__link-wrapper"
+            aria-label="Ver case study: Domestic Employer Contributions Payment via MB WAY">
+            <div class="project-card__banner">
+              <picture class="project-card__picture">
+                <source media="(min-width: 1024px)" srcset="assets/banner-ss-domestic-employer-desktop.png">
+                <source media="(min-width: 768px)" srcset="assets/banner-ss-domestic-employer-tablet.png">
+                <img src="assets/banner-ss-domestic-employer-mobile.png"
+                  alt="Banner do projeto Domestic Employer Contributions Payment via MB WAY" class="project-card__img"
+                  loading="lazy" />
+              </picture>
+              <div class="project-card__overlay" aria-hidden="true"></div>
+            </div>
+
+            <div class="project-card__body">
+              <div class="project-card__meta">
+                <span>Gov Tech</span>
+                <span>2024-Present</span>
+              </div>
+
+              <div class="project-card__content">
+                <h3 class="project-card__title">Domestic Employer Contributions Payment via MB WAY</h3>
+                <p class="project-card__desc body-base">
+                  The first MB WAY payment flow on Portugal's Social Security app, designed end-to-end from research to
+                  delivery.
+                </p>
+              </div>
+
+              <div class="project-card__tags">
+                <span class="project-tag">Public Sector</span>
+                <span class="project-tag">Revenue and Contributions (Financial)</span>
+                <span class="project-tag">UI Design</span>
+                <span class="project-tag">UX Research</span>
+                <span class="project-tag">Design System</span>
+                <span class="project-tag">Accessibility</span>
+                <span class="project-tag">Gov Tech</span>
+                <span class="project-tag">Mobile App</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Card 2 (Grande / Featured) -->
+        <article class="project-card project-card--featured">
+          <a href="#" class="project-card__link-wrapper"
+            aria-label="Ver case study: Portugal Social Security - Notifications of Late Payments">
+            <div class="project-card__banner">
+              <picture class="project-card__picture">
+                <source media="(min-width: 1024px)" srcset="assets/banner-ss-notifications-desktop.png">
+                <source media="(min-width: 768px)" srcset="assets/banner-ss-notifications-tablet.png">
+                <img src="assets/banner-ss-notifications-mobile.png"
+                  alt="Banner do projeto Portugal Social Security - Notifications of Late Payments"
+                  class="project-card__img" loading="lazy" />
+              </picture>
+              <div class="project-card__overlay" aria-hidden="true"></div>
+            </div>
+
+            <div class="project-card__body">
+              <div class="project-card__meta">
+                <span>Gov Tech</span>
+                <span>2024-Present</span>
+              </div>
+
+              <div class="project-card__content">
+                <h3 class="project-card__title">Portugal Social Security - Notifications of Late Payments</h3>
+                <p class="project-card__desc body-base">
+                  700k+ citizens reached and task times cut from days to 5 minutes.
+                </p>
+              </div>
+
+              <div class="project-card__tags">
+                <span class="project-tag">Public Sector</span>
+                <span class="project-tag">Revenue and Contributions (Financial)</span>
+                <span class="project-tag">UI Design</span>
+                <span class="project-tag">UX Research</span>
+                <span class="project-tag">Design System</span>
+                <span class="project-tag">Accessibility</span>
+                <span class="project-tag">Gov Tech</span>
+                <span class="project-tag">Web Portal</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Card 3 (Compacto / Pequeno) -->
+        <article class="project-card project-card--compact">
+          <a href="#" class="project-card__link-wrapper" aria-label="Ver case study: Yamaha Liberacred">
+            <div class="project-card__banner">
+              <picture class="project-card__picture">
+                <source media="(min-width: 1024px)" srcset="assets/banner-yamaha-liberacred-desktop.png">
+                <source media="(min-width: 768px)" srcset="assets/banner-yamaha-liberacred-tablet.png">
+                <img src="assets/banner-yamaha-liberacred-mobile.png" alt="Banner do projeto Yamaha Liberacred"
+                  class="project-card__img" loading="lazy" />
+              </picture>
+              <div class="project-card__overlay" aria-hidden="true"></div>
+            </div>
+
+            <div class="project-card__body">
+              <div class="project-card__meta">
+                <span>Web Application</span>
+                <span>2023</span>
+              </div>
+
+              <div class="project-card__content">
+                <h3 class="project-card__title">Yamaha Liberacred</h3>
+                <p class="project-card__desc body-base">
+                  Modernizing Yamaha Liberacred: A responsive, component-driven UI redesign focused on accessibility.
+                </p>
+              </div>
+
+              <div class="project-card__tags">
+                <span class="project-tag">Financial Services</span>
+                <span class="project-tag">UI Design</span>
+                <span class="project-tag">Design System</span>
+                <span class="project-tag">B2C</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Card 4 (Compacto / Pequeno) -->
+        <article class="project-card project-card--compact">
+          <a href="#" class="project-card__link-wrapper" aria-label="Ver case study: PagBank Financial Products">
+            <div class="project-card__banner">
+              <picture class="project-card__picture">
+                <source media="(min-width: 1024px)" srcset="assets/banner-pagbank-desktop.png">
+                <source media="(min-width: 768px)" srcset="assets/banner-pagbank-tablet.png">
+                <img src="assets/banner-pagbank-mobile.png" alt="Banner do projeto PagBank Financial Products"
+                  class="project-card__img" loading="lazy" />
+              </picture>
+              <div class="project-card__overlay" aria-hidden="true"></div>
+            </div>
+
+            <div class="project-card__body">
+              <div class="project-card__meta">
+                <span>Multi-platform</span>
+                <span>2021-2023</span>
+              </div>
+
+              <div class="project-card__content">
+                <h3 class="project-card__title">PagBank Financial Products</h3>
+                <p class="project-card__desc body-base">
+                  PagBank: Optimizing KYC onboarding by resolving 50+ operational friction points across the document
+                  journey.
+                </p>
+              </div>
+
+              <div class="project-card__tags">
+                <span class="project-tag">Financial Services</span>
+                <span class="project-tag">UX Research</span>
+                <span class="project-tag">UI Design</span>
+                <span class="project-tag">B2C</span>
+                <span class="project-tag">Mobile</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Professional Experience Section -->
+    <section class="experience-section" id="experience" aria-label="Experiência profissional">
+      <div class="experience-section__header">
+        <h2 class="experience-section__title heading-h2">Professional experience</h2>
+      </div>
+
+      <div class="experience-list">
+
+        <!-- Item 1: 2024 (Atual) -->
+        <div class="experience-item experience-item--current">
+          <div class="experience-item__timeline">
+            <div class="experience-item__year-pill">2024</div>
+            <div class="experience-item__line" aria-hidden="true"></div>
+          </div>
+          <div class="experience-item__content-wrap">
+            <div class="experience-card">
+              <div class="experience-card__header">
+                <span class="experience-card__period">May 2024 - Present</span>
+                <h3 class="experience-card__role">Senior UX/UI Designer</h3>
+                <span class="experience-card__company">Capgemini / Instituto Informática da Segurança Social de
+                  Portugal</span>
+                <span class="experience-card__location">Lisbon, Portugal - Remote</span>
+              </div>
+              <div class="experience-card__details">
+                <p class="experience-card__summary">
+                  Working on strategic projects in the Revenue and Contributions area of Portuguese Social Security.
+                </p>
+                <ul class="experience-card__list">
+                  <li>Designed the first Social Security mobile payment flow to support MB WAY, from research to
+                    delivery; adoption reached close to 6,500 payments in its first month, with no prior usage to build
+                    on</li>
+                  <li>Contributing member of the Research Ops team, supporting discovery workflows and usability
+                    research</li>
+                  <li>Led in-person usability testing and card sorting to validate payment confirmation behaviour,
+                    directly shaping a technical requirement delivered together with the development team</li>
+                  <li>Close collaboration with project managers, analysts, and developers to align business objectives
+                    with design solutions</li>
+                  <li>Designed and delivered consistent and accessible interfaces, compliant with public sector digital
+                    guidelines</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2: 2023 -->
+        <div class="experience-item">
+          <div class="experience-item__timeline">
+            <div class="experience-item__year-pill">2023</div>
+            <div class="experience-item__line" aria-hidden="true"></div>
+          </div>
+          <div class="experience-item__content-wrap">
+            <div class="experience-card">
+              <div class="experience-card__header">
+                <span class="experience-card__period">September 2023 - April 2024</span>
+                <h3 class="experience-card__role">UX/UI Designer</h3>
+                <span class="experience-card__company">Integer Consulting</span>
+                <span class="experience-card__location">Lisbon, Portugal - Remote</span>
+              </div>
+              <div class="experience-card__details">
+                <p class="experience-card__summary">
+                  Design of tailored products. Creation of wireframes and high-fidelity prototypes.
+                </p>
+                <ul class="experience-card__list">
+                  <li>Collaborating closely with the development team ensures seamless integration of design and
+                    functionality</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3: 2023 -->
+        <div class="experience-item">
+          <div class="experience-item__timeline">
+            <div class="experience-item__year-pill">2023</div>
+            <div class="experience-item__line" aria-hidden="true"></div>
+          </div>
+          <div class="experience-item__content-wrap">
+            <div class="experience-card">
+              <div class="experience-card__header">
+                <span class="experience-card__period">March 2023 - September 2023</span>
+                <h3 class="experience-card__role">Product Designer</h3>
+                <span class="experience-card__company">Invillia / Banco Yamaha Motor do Brasil</span>
+                <span class="experience-card__location">São Paulo, Brasil - Remote</span>
+              </div>
+              <div class="experience-card__details">
+                <p class="experience-card__summary">
+                  Led the project from conception to final delivery of a B2C financial web application.
+                </p>
+                <ul class="experience-card__list">
+                  <li>Conducted user research</li>
+                  <li>Created style guides and structured a design system</li>
+                  <li>Ensured consistency and efficiency in development</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4: 2021 -->
+        <div class="experience-item">
+          <div class="experience-item__timeline">
+            <div class="experience-item__year-pill">2021</div>
+            <div class="experience-item__line" aria-hidden="true"></div>
+          </div>
+          <div class="experience-item__content-wrap">
+            <div class="experience-card">
+              <div class="experience-card__header">
+                <span class="experience-card__period">April 2021 - March 2023</span>
+                <h3 class="experience-card__role">Product Designer</h3>
+                <span class="experience-card__company">Invillia / PagBank PagSeguro</span>
+                <span class="experience-card__location">Lisbon, Portugal - Remote</span>
+              </div>
+              <div class="experience-card__details">
+                <p class="experience-card__summary">
+                  Design of digital products that solve user needs and ensure a good user experience across various
+                  platforms and systems, both on the web and on mobile devices (iOS and Android). Worked on both B2B and
+                  B2C products.
+                </p>
+                <ul class="experience-card__list">
+                  <li>Maintained strong partnership with both business and software engineering teams</li>
+                  <li>Comprehensive documentation of deliverables</li>
+                  <li>Projects involving Android, iOS, and web applications in B2C and B2B business models</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 5: 2019 -->
+        <div class="experience-item">
+          <div class="experience-item__timeline">
+            <div class="experience-item__year-pill">2019</div>
+            <div class="experience-item__line" aria-hidden="true"></div>
+          </div>
+          <div class="experience-item__content-wrap">
+            <div class="experience-card">
+              <div class="experience-card__header">
+                <span class="experience-card__period">September 2019 - April 2021</span>
+                <h3 class="experience-card__role">UX/UI Designer</h3>
+                <span class="experience-card__company">Luxfacta</span>
+                <span class="experience-card__location">Rio Claro, Brasil - Hybrid</span>
+              </div>
+              <div class="experience-card__details">
+                <p class="experience-card__summary">
+                  Designed user flows, wireframes, and interactive prototypes for web and mobile applications. Created
+                  style guides to ensure coherence between components and product use.
+                </p>
+                <ul class="experience-card__list">
+                  <li>Designed tailor-made B2B and B2C products for clients such as ABInbev, Ambev and Raizen</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 6: 2015 -->
+        <div class="experience-item">
+          <div class="experience-item__timeline">
+            <div class="experience-item__year-pill">2015</div>
+            <div class="experience-item__line" aria-hidden="true"></div>
+          </div>
+          <div class="experience-item__content-wrap">
+            <div class="experience-card">
+              <div class="experience-card__header">
+                <span class="experience-card__period">July 2015 - September 2019</span>
+                <h3 class="experience-card__role">Graphic Designer</h3>
+                <span class="experience-card__company">Fragnani Group</span>
+                <span class="experience-card__location">São Paulo / Salvador</span>
+              </div>
+              <div class="experience-card__details">
+                <p class="experience-card__summary">
+                  Coordination of projects involving all of the group's brands and development of materials related to
+                  the companies' visual communication.
+                </p>
+                <ul class="experience-card__list">
+                  <li>Created catalogs, packaging, branding, POS, and social media materials</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 7: 2014 -->
+        <div class="experience-item">
+          <div class="experience-item__timeline">
+            <div class="experience-item__year-pill">2014</div>
+            <div class="experience-item__line" aria-hidden="true"></div>
+          </div>
+          <div class="experience-item__content-wrap">
+            <div class="experience-card">
+              <div class="experience-card__header">
+                <span class="experience-card__period">January 2014 - December 2018</span>
+                <h3 class="experience-card__role">Graphic Designer</h3>
+                <span class="experience-card__company">Freelance</span>
+                <span class="experience-card__location">Brazil</span>
+              </div>
+              <div class="experience-card__details">
+                <p class="experience-card__summary">
+                  Brand design, editorial layout, and visual communication for various clients and creative studios.
+                </p>
+                <ul class="experience-card__list">
+                  <li>Developed visual identities, print collateral, and digital promotional assets</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Education & Certifications Section -->
+    <section class="education-section" id="education" aria-label="Formação acadêmica e certificações">
+      <div class="education-section__inner">
+
+        <!-- Bloco de Formação Acadêmica -->
+        <div class="education-block">
+          <h2 class="education-block__title heading-h2">Education</h2>
+
+          <div class="education-grid">
+
+            <!-- Card 1 -->
+            <div class="education-card">
+              <div class="education-card__header">
+                <h3 class="education-card__degree">Bachelor's degree in Graphic Design</h3>
+                <span class="education-card__institution">FAAL - Faculdade de Artes e Administração de Limeira</span>
+                <span class="education-card__period">2012 – 2016</span>
+              </div>
+              <div class="education-card__tags">
+                <span class="education-tag">Graphic Design</span>
+                <span class="education-tag">Visual Design</span>
+                <span class="education-tag">Typography</span>
+                <span class="education-tag">Branding</span>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="education-card">
+              <div class="education-card__header">
+                <h3 class="education-card__degree">UX/UI Design</h3>
+                <span class="education-card__institution">EBAC - Escola Britânica de Artes Criativas e Tecnologia</span>
+                <span class="education-card__period">2018</span>
+              </div>
+              <div class="education-card__tags">
+                <span class="education-tag">UX Design</span>
+                <span class="education-tag">UI Design</span>
+                <span class="education-tag">Design Thinking</span>
+                <span class="education-tag">UX Research</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Bloco de Licenças e Certificações -->
+        <div class="certifications-block">
+          <div class="certifications-header">
+            <i class="ph ph-medal" aria-hidden="true"></i>
+            <h3 class="certifications-header__title">Licenses &amp; Certifications</h3>
+          </div>
+
+          <div class="certifications-grid">
+
+            <!-- Cert 1 -->
+            <div class="certification-card">
+              <h4 class="certification-card__title">Design Sprint Professional Certification - DSPC™</h4>
+              <span class="certification-card__issuer">Certiprof</span>
+              <span class="certification-card__date">Issued Oct 2024</span>
+            </div>
+
+            <!-- Cert 2 -->
+            <div class="certification-card">
+              <h4 class="certification-card__title">Accessibility-First Design</h4>
+              <span class="certification-card__issuer">LinkedIn</span>
+              <span class="certification-card__date">Issued Apr 2024</span>
+            </div>
+
+            <!-- Cert 3 -->
+            <div class="certification-card">
+              <h4 class="certification-card__title">Auditores e Facilitadores em Acessibilidade Web - Selos Bronze e
+                Prata</h4>
+              <span class="certification-card__issuer">Plataforma NAU - Arte</span>
+              <span class="certification-card__date">Issued Jan 2024</span>
+            </div>
+
+            <!-- Cert 4 -->
+            <div class="certification-card">
+              <h4 class="certification-card__title">Workshop Métricas</h4>
+              <span class="certification-card__issuer">BTX Consultoria em Tecnologia</span>
+              <span class="certification-card__date">Issued Oct 2022</span>
+            </div>
+
+            <!-- Cert 5 -->
+            <div class="certification-card">
+              <h4 class="certification-card__title">UX &amp; UI</h4>
+              <span class="certification-card__issuer">EBAC - Escola Britânica de Artes Criativas e Tecnologia</span>
+              <span class="certification-card__date">Issued Dec 2018</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
   </main>
 
   <!-- Footer -->
   <footer id="main-footer">
+    <portfolio-footer></portfolio-footer>
   </footer>
 
+  <!-- Web Components -->
+  <script src="components.js"></script>
+
 </body>
+
 </html>
