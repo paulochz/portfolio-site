@@ -8,6 +8,15 @@
   <meta name="description"
     content="Portfolio de Paulo Chiozzini, Product Designer. Formando experiências digitais com foco em produto, usabilidade e design systems.">
 
+  <!-- Preconnect & Resource Hints for Performance Optimization -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <link rel="dns-prefetch" href="https://unpkg.com">
+
+  <!-- Google Font: Inter -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+
   <!-- Phosphor Icons (Regular & Duotone CDN) -->
   <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
   <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css">
@@ -31,7 +40,7 @@
       <div class="hero__avatar-wrapper">
         <div class="hero__avatar">
           <img src="assets/photo-professional-portrait.png" alt="Foto profissional de Paulo Chiozzini"
-            class="hero__avatar-img" width="420" height="420" />
+            class="hero__avatar-img" width="420" height="420" loading="eager" fetchpriority="high" />
         </div>
       </div>
 
@@ -89,7 +98,7 @@
                 <source media="(min-width: 768px)" srcset="assets/banner-ss-domestic-employer-tablet.png">
                 <img src="assets/banner-ss-domestic-employer-mobile.png"
                   alt="Banner do projeto Domestic Employer Contributions Payment via MB WAY" class="project-card__img"
-                  loading="lazy" />
+                  loading="lazy" width="1200" height="444" />
               </picture>
               <div class="project-card__overlay" aria-hidden="true"></div>
             </div>
@@ -133,7 +142,7 @@
                 <source media="(min-width: 768px)" srcset="assets/banner-ss-notifications-tablet.png">
                 <img src="assets/banner-ss-notifications-mobile.png"
                   alt="Banner do projeto Portugal Social Security - Notifications of Late Payments"
-                  class="project-card__img" loading="lazy" />
+                  class="project-card__img" loading="lazy" width="1200" height="444" />
               </picture>
               <div class="project-card__overlay" aria-hidden="true"></div>
             </div>
@@ -174,7 +183,7 @@
                   srcset="assets/banner-yamaha-liberacred-desktop.png 1x, assets/banner-yamaha-liberacred-desktop@2x.png 2x">
                 <source media="(min-width: 768px)" srcset="assets/banner-yamaha-liberacred-tablet.png">
                 <img src="assets/banner-yamaha-liberacred-mobile.png" alt="Banner do projeto Yamaha Liberacred"
-                  class="project-card__img" loading="lazy" />
+                  class="project-card__img" loading="lazy" width="588" height="399" />
               </picture>
               <div class="project-card__overlay" aria-hidden="true"></div>
             </div>
@@ -211,7 +220,7 @@
                   srcset="assets/banner-pagbank-desktop.png 1x, assets/banner-pagbank-desktop@2x.png 2x">
                 <source media="(min-width: 768px)" srcset="assets/banner-pagbank-tablet.png">
                 <img src="assets/banner-pagbank-mobile.png" alt="Banner do projeto PagBank Financial Products"
-                  class="project-card__img" loading="lazy" />
+                  class="project-card__img" loading="lazy" width="588" height="399" />
               </picture>
               <div class="project-card__overlay" aria-hidden="true"></div>
             </div>
