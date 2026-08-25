@@ -18,13 +18,19 @@ class PortfolioHeader extends HTMLElement {
     this._bindEvents();
   }
 
-  // Links de navegação (Home page)
+  get _isProjectPage() {
+    const path = window.location.pathname;
+    return !path.endsWith('index.html') && !path.endsWith('/') && path !== '';
+  }
+
+  // Links de navegação (Home page ou Sub-página)
   get _navLinks() {
+    const prefix = this._isProjectPage ? 'index.html' : '';
     return [
-      { label: 'About', href: '#about' },
-      { label: 'Projects', href: '#projects' },
-      { label: 'Experience', href: '#experience' },
-      { label: 'Contact', href: '#contact' },
+      { label: 'About', href: `${prefix}#about` },
+      { label: 'Projects', href: `${prefix}#projects` },
+      { label: 'Experience', href: `${prefix}#experience` },
+      { label: 'Contact', href: `${prefix}#contact` },
     ];
   }
 
@@ -194,22 +200,6 @@ class PortfolioFooter extends HTMLElement {
           </a>
 
           <a
-            href="https://www.instagram.com/paulochz/"
-            class="footer__card"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Visitar Instagram @paulochz"
-          >
-            <div class="footer__card-icon-wrap">
-              <i class="ph-duotone ph-instagram-logo" aria-hidden="true"></i>
-            </div>
-            <div class="footer__card-info">
-              <span class="footer__card-label label-sm">Instagram</span>
-              <span class="footer__card-value body-base">@paulochz</span>
-            </div>
-          </a>
-
-          <a
             href="https://www.linkedin.com/in/paulochiozzini/"
             class="footer__card"
             target="_blank"
@@ -222,6 +212,22 @@ class PortfolioFooter extends HTMLElement {
             <div class="footer__card-info">
               <span class="footer__card-label label-sm">LinkedIn</span>
               <span class="footer__card-value body-base">Let's connect</span>
+            </div>
+          </a>
+
+          <a
+            href="https://www.instagram.com/paulochz/"
+            class="footer__card"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visitar Instagram @paulochz"
+          >
+            <div class="footer__card-icon-wrap">
+              <i class="ph-duotone ph-instagram-logo" aria-hidden="true"></i>
+            </div>
+            <div class="footer__card-info">
+              <span class="footer__card-label label-sm">Instagram</span>
+              <span class="footer__card-value body-base">@paulochz</span>
             </div>
           </a>
 
@@ -271,6 +277,94 @@ class PortfolioFooter extends HTMLElement {
 }
 
 customElements.define('portfolio-footer', PortfolioFooter);
+
+/**
+ * other-projects — Web Component para exibir cards de outros projetos
+ * Filtra automaticamente o projeto atual passado pelo atributo current="..."
+ */
+const ALL_PORTFOLIO_PROJECTS = [
+  {
+    id: 'segsocial-domestic-employer',
+    title: 'Domestic Employer Contributions Payment via MB WAY',
+    url: 'project-segsocial-domestic-employer.html',
+    thumbnailDesktop: 'assets/thumbnail-ss-domestic-employer-desktop.png',
+    thumbnailTablet: 'assets/thumbnail-ss-domestic-employer-tablet.png',
+    thumbnailMobile: 'assets/thumbnail-ss-domestic-employer-mobile.png',
+  },
+  {
+    id: 'segsocial-notifications',
+    title: 'Portugal Social Security - Notifications of Late Payments',
+    url: '#',
+    thumbnailDesktop: 'assets/thumbnail-ss-notifications-desktop.png',
+    thumbnailTablet: 'assets/thumbnail-ss-notifications-tablet.png',
+    thumbnailMobile: 'assets/thumbnail-ss-notifications-mobile.png',
+  },
+  {
+    id: 'pagbank',
+    title: 'PagBank',
+    url: '#',
+    thumbnailDesktop: 'assets/thumbnail-pagbank-desktop.png',
+    thumbnailTablet: 'assets/thumbnail-pagbank-tablet.png',
+    thumbnailMobile: 'assets/thumbnail-pagbank-mobile.png',
+  },
+  {
+    id: 'yamaha-liberacred',
+    title: 'Yamaha Liberacred',
+    url: '#',
+    thumbnailDesktop: 'assets/thumbnail-yamaha-liberacred-desktop.png',
+    thumbnailTablet: 'assets/thumbnail-yamaha-liberacred-tablet.png',
+    thumbnailMobile: 'assets/thumbnail-yamaha-liberacred-mobile.png',
+  },
+];
+
+class OtherProjects extends HTMLElement {
+  connectedCallback() {
+    this.render();
+  }
+
+  get _currentProjectId() {
+    return this.getAttribute('current') || '';
+  }
+
+  render() {
+    const currentId = this._currentProjectId;
+    const related = ALL_PORTFOLIO_PROJECTS.filter(p => p.id !== currentId);
+
+    const cardsHTML = related.map(project => `
+      <article class="related-project-card">
+        <a href="${project.url}" class="related-project-card__link" aria-label="Ver projeto: ${project.title}">
+          <picture class="related-project-card__picture">
+            <source media="(min-width: 1024px)" srcset="${project.thumbnailDesktop}">
+            <source media="(min-width: 768px)" srcset="${project.thumbnailTablet}">
+            <img
+              src="${project.thumbnailMobile}"
+              alt="Thumbnail do projeto ${project.title}"
+              class="related-project-card__img"
+              loading="lazy"
+              width="384"
+              height="229"
+            />
+          </picture>
+          <div class="related-project-card__overlay" aria-hidden="true"></div>
+        </a>
+      </article>
+    `).join('');
+
+    this.innerHTML = `
+      <section class="other-projects" aria-labelledby="other-projects-heading">
+        <div class="other-projects__inner">
+          <h2 id="other-projects-heading" class="other-projects__title">Check my other projects</h2>
+          <div class="other-projects__grid">
+            ${cardsHTML}
+          </div>
+        </div>
+      </section>
+    `;
+  }
+}
+
+customElements.define('other-projects', OtherProjects);
+
 
 /* ==========================================================================
    Suavização de Scroll (300ms Ease-Out) para Ancoragens e Voltar ao Topo
@@ -334,4 +428,55 @@ document.addEventListener('click', (e) => {
     history.pushState(null, '', href);
   }
 });
+
+/* ==========================================================================
+   Image Lightbox Modal Controller
+   ========================================================================== */
+document.addEventListener('click', (e) => {
+  const trigger = e.target.closest('[data-modal-target]');
+  if (trigger) {
+    const modalId = trigger.getAttribute('data-modal-target');
+    const modal = document.getElementById(modalId);
+    if (modal) {
+      if (typeof modal.showModal === 'function') {
+        modal.showModal();
+      } else {
+        modal.setAttribute('open', '');
+      }
+      document.body.style.overflow = 'hidden';
+    }
+    return;
+  }
+
+  const closeBtn = e.target.closest('[data-modal-close]');
+  if (closeBtn) {
+    const modal = closeBtn.closest('dialog') || document.querySelector('dialog[open]');
+    if (modal) {
+      if (typeof modal.close === 'function') {
+        modal.close();
+      } else {
+        modal.removeAttribute('open');
+      }
+      document.body.style.overflow = '';
+    }
+  }
+});
+
+// Close modal on Escape key and restore scroll
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    const modal = document.querySelector('dialog[open]');
+    if (modal) {
+      document.body.style.overflow = '';
+    }
+  }
+});
+
+// Dialog native close event cleanup
+document.querySelectorAll('dialog').forEach(modal => {
+  modal.addEventListener('close', () => {
+    document.body.style.overflow = '';
+  });
+});
+
 

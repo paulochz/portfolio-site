@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Segurança Social de Portugal — Domestic Employer Contributions Payment via MB WAY | Paulo Chiozzini</title>
+  <meta name="description"
+    content="Case study: Domestic Employer Contributions Payment via MB WAY for Segurança Social de Portugal. Launching the first MB WAY integration on Portugal's Social Security mobile app.">
+
+  <!-- Phosphor Icons (Regular & Duotone CDN) -->
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css">
+
+  <!-- Global Unified Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Header / Navigation -->
+  <header id="main-header">
+    <portfolio-header></portfolio-header>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="project-hero" aria-label="Project Hero">
+
+    <!-- Top Area: Div/HeroContent (Brand background) -->
+    <div class="project-hero__banner">
+      <div class="project-hero__banner-inner">
+
+        <!-- Back button -->
+        <a href="index.html#projects" class="project-hero__back" aria-label="Back to home">
+          <i class="ph ph-arrow-left" aria-hidden="true"></i>
+          <span>Back to home</span>
+        </a>
+
+        <div class="project-hero__container">
+
+          <!-- Heading Block -->
+          <div class="project-hero__heading">
+            <div class="project-hero__title-sub">
+              <h1 class="project-hero__main-title">Segurança Social de Portugal</h1>
+              <p class="project-hero__subtitle-title">Domestic Employer Contributions Payment via MB WAY</p>
+            </div>
+            <p class="project-hero__tagline">Launching the first MB WAY integration on Portugal’s Social Security app
+            </p>
+          </div>
+
+          <!-- Meta info row (Timeline, Team, Role) -->
+          <div class="project-hero__meta">
+
+            <div class="project-hero__meta-item">
+              <div class="project-hero__meta-icon" aria-hidden="true">
+                <i class="ph-duotone ph-calendar-blank"></i>
+              </div>
+              <div class="project-hero__meta-texts">
+                <span class="project-hero__meta-label">Timeline</span>
+                <span class="project-hero__meta-value">2025-2026</span>
+              </div>
+            </div>
+
+            <div class="project-hero__meta-item">
+              <div class="project-hero__meta-icon" aria-hidden="true">
+                <i class="ph-duotone ph-users"></i>
+              </div>
+              <div class="project-hero__meta-texts">
+                <span class="project-hero__meta-label">Team</span>
+                <span class="project-hero__meta-value">Cross-functional</span>
+              </div>
+            </div>
+
+            <div class="project-hero__meta-item">
+              <div class="project-hero__meta-icon" aria-hidden="true">
+                <i class="ph-duotone ph-user-circle"></i>
+              </div>
+              <div class="project-hero__meta-texts">
+                <span class="project-hero__meta-label">Role</span>
+                <span class="project-hero__meta-value">Product Designer</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Tags row -->
+          <div class="project-hero__tags">
+            <span class="project-tag">Public Sector</span>
+            <span class="project-tag">Revenue and Contributions (Financial)</span>
+            <span class="project-tag">UI Design</span>
+            <span class="project-tag">UX Research</span>
+            <span class="project-tag">Design System</span>
+            <span class="project-tag">Accessibility</span>
+            <span class="project-tag">Gov Tech</span>
+            <span class="project-tag">Mobile App</span>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bottom Area: Div/HeroBackground (Jump CTA & App Mockup) -->
+    <div class="project-hero__background">
+      <div class="project-hero__background-inner">
+
+        <!-- Jump to solution button -->
+        <a href="#main-screens" class="btn btn--jump project-hero__jump-btn">
+          <i class="ph ph-arrow-down" aria-hidden="true"></i>
+          <span>Jump straight to the solution here</span>
+        </a>
+
+        <!-- App Mockup Picture -->
+        <div class="project-hero__mockup-wrapper">
+          <picture class="project-hero__mockup-picture">
+            <source media="(min-width: 1024px)"
+              srcset="assets/segsocial-contributions-app-mockup-desktop.png 1x, assets/segsocial-contributions-app-mockup-desktop@2x.png 2x">
+            <source media="(min-width: 768px)" srcset="assets/segsocial-contributions-app-mockup-tablet.png">
+            <img src="assets/segsocial-contributions-app-mockup-mobile.png"
+              alt="Mockup of the Social Security domestic employer contribution payment app"
+              class="project-hero__mockup-img" width="1004" height="499" />
+          </picture>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Main Content -->
+  <main id="main-content" class="project-content">
+
+    <!-- Section: Overview -->
+    <section class="case-section" id="overview" aria-labelledby="overview-heading">
+      <h2 id="overview-heading" class="case-section__heading">Overview</h2>
+      <p class="case-section__body">
+        This project brought the ability to generate and pay domestic service employer contributions directly through
+        the mobile app, introducing MB WAY as a payment method. It was the first Social Security functionality to
+        support MB WAY within the mobile app, extending a payment flow that previously required the desktop platform or
+        in-person visits.
+      </p>
+      <p class="case-section__body">
+        The project sits within a broader modernization initiative funded by Portugal's Recovery and Resilience Plan
+        (PRR), which aims to digitize and simplify citizen interactions with Social Security.
+      </p>
+
+      <h3 class="case-section__subheading">Context</h3>
+      <div class="content-card content-card--gray">
+        <p class="content-card__desc">
+          The decision to prioritize this flow came from two converging signals: a growing share of users accessing the
+          platform through the mobile app rather than the desktop site, and a broader shift in citizen behavior toward
+          smartphone-first usage, with a portion of users having limited or no access to a computer at all.
+        </p>
+        <p class="content-card__desc">
+          Domestic employers were a user group with limited payment options on mobile. Without a payment method suited
+          to how they already used their phones, they were forced back to desktop or in-person channels. MB WAY was the
+          natural choice: it is the most widely used mobile payment method in Portugal, and it matched the profile of
+          users the app was already attracting.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section: Results and impact -->
+    <section class="case-section" id="solution" aria-labelledby="results-heading">
+      <h2 id="results-heading" class="case-section__heading">Results and impact</h2>
+
+      <!-- Metrics Grid -->
+      <div class="metrics-grid">
+
+        <div class="metric-card">
+          <span class="metric-card__value">13,900+</span>
+          <span class="metric-card__label">Payments in 60 Days</span>
+          <p class="metric-card__desc">
+            Immediate adoption with 6,447 payments in Month 1, scaling to 7,473 in Month 2.
+          </p>
+        </div>
+
+        <div class="metric-card">
+          <span class="metric-card__value">+15.9%</span>
+          <span class="metric-card__label">Month-over-Month (MoM) Growth</span>
+          <p class="metric-card__desc">
+            Organic usage growth following the official feature release.
+          </p>
+        </div>
+
+        <div class="metric-card">
+          <span class="metric-card__value">1st</span>
+          <span class="metric-card__label">App MB WAY Payment Flow</span>
+          <p class="metric-card__desc">
+            First instant mobile payment service integrated into the Social Security ecosystem.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Launch Momentum & Institutional Impact -->
+      <h3 class="case-section__subheading">Launch Momentum &amp; Institutional Impact</h3>
+      <p class="case-section__body">
+        The introduction of MB WAY for domestic employer contributions resulted in immediate user uptake, proving that
+        removing payment friction directly drives compliance:
+      </p>
+
+      <!-- Month Cards -->
+      <div class="content-cards-grid">
+
+        <div class="content-card content-card--gray">
+          <span class="content-card__title">Month 1 (Aug 2025)</span>
+          <p class="content-card__desc">
+            6,447 payments processed immediately upon release.
+          </p>
+        </div>
+
+        <div class="content-card content-card--gray">
+          <span class="content-card__title">Month 2 (Sep 2025)</span>
+          <p class="content-card__desc">
+            7,473 payments (+15.9% MoM growth), confirming sustained habit adoption.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Social Proof & Official Endorsement -->
+      <article class="case-article">
+        <h3 class="case-section__subheading">Social Proof &amp; Official Endorsement</h3>
+        <p class="case-section__body">
+          The feature’s success was featured across official Instituto da Segurança Social channels (LinkedIn and
+          Instagram), highlighting the project as a benchmark for public sector digital transformation.
+        </p>
+        <div class="case-article__media">
+          <picture>
+            <source media="(min-width: 1024px)"
+              srcset="assets/segsocial-contributions-social-media-posts-desktop.png 1x, assets/segsocial-contributions-social-media-posts-desktop@2x.png 2x">
+            <source media="(min-width: 768px)" srcset="assets/segsocial-contributions-social-media-posts-tablet.png">
+            <img src="assets/segsocial-contributions-social-media-posts-mobile.png"
+              alt="Social media endorsement posts from Instituto da Segurança Social" class="case-article__img"
+              width="725" height="683" loading="lazy" />
+          </picture>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- Section: My Role -->
+    <section class="case-section" id="my-role" aria-labelledby="my-role-heading">
+      <h2 id="my-role-heading" class="case-section__heading">My Role</h2>
+      <p class="case-section__body">
+        I was responsible for the end-to-end UX/UI design of the flow, from interface design and information
+        architecture to usability research and content design. I worked within the app's existing design system (built
+        in Flutter) and partnered closely with the development team through delivery, given that MB WAY's real-time
+        confirmation behavior had direct technical implications.
+      </p>
+    </section>
+
+    <!-- Section: The Journey -->
+    <section class="case-section" id="the-journey" aria-labelledby="the-journey-heading">
+      <div class="case-section__intro">
+        <h2 id="the-journey-heading" class="case-section__heading">The Journey</h2>
+        <p class="case-section__body">The full journey covers two stages:</p>
+      </div>
+
+      <div class="content-cards-grid">
+        <div class="content-card content-card--gray">
+          <span class="content-card__title">1. Contribution generation</span>
+          <p class="content-card__desc">
+            The employer reviews and generates the payment document for their domestic employee's contributions.
+          </p>
+        </div>
+
+        <div class="content-card content-card--gray">
+          <span class="content-card__title">2. Payment via MB WAY</span>
+          <p class="content-card__desc">
+            The employer selects MB WAY as the payment method, confirms the payment on their phone, and receives
+            confirmation back on the platform.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: User Flow -->
+    <section class="case-section case-section--full" id="user-flow" aria-labelledby="user-flow-heading">
+      <div class="user-flow">
+        <h2 id="user-flow-heading" class="case-section__heading">User Flow - Domestic Employer Contributions</h2>
+
+        <!-- Legend (Process & Decision shapes) -->
+        <div class="user-flow__legend" aria-label="Diagram legend">
+          <div class="user-flow__legend-item">
+            <span class="user-flow__shape user-flow__shape--process" aria-hidden="true"></span>
+            <span class="user-flow__legend-label">Process</span>
+          </div>
+          <div class="user-flow__legend-item">
+            <span class="user-flow__shape user-flow__shape--decision" aria-hidden="true"></span>
+            <span class="user-flow__legend-label">Decision</span>
+          </div>
+        </div>
+
+        <!-- Diagram with Interactive Lightbox Trigger -->
+        <div class="user-flow__diagram-wrapper">
+          <button type="button" class="user-flow__trigger" aria-label="Open full resolution user flow diagram"
+            data-modal-target="flow-modal">
+            <img src="assets/segsocial-contributions-user-flow.svg"
+              alt="Complete user flow diagram for Domestic Employer Contributions, showing the process steps and decision points across contribution generation and MB WAY payment."
+              class="user-flow__img" width="1200" height="1861" loading="lazy" />
+            <span class="user-flow__zoom-badge" aria-hidden="true">
+              <i class="ph ph-magnifying-glass-plus"></i>
+              <span>Click to zoom</span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Research and Design Process -->
+    <section class="case-section" id="research-process" aria-labelledby="research-process-heading">
+
+      <!-- Intro -->
+      <div class="case-section__intro">
+        <h2 id="research-process-heading" class="case-section__heading">Research and Design Process</h2>
+        <p class="case-section__body">
+          Research effort was not distributed evenly across the flow, and this was an intentional trade-off worth being
+          transparent about.
+        </p>
+      </div>
+
+      <!-- Subsection 1: Contribution generation -->
+      <article class="case-article">
+        <h3 class="case-section__subheading">Contribution generation: research constraints</h3>
+        <p class="case-section__body">
+          Domestic employers are a small, dispersed user profile, which made recruitment for dedicated usability testing
+          impractical within the project's timeline. Design decisions in this stage were based on consistency with the
+          platform's existing design system, established business rules for how contributions are calculated and
+          displayed, and prior usability patterns already validated elsewhere in the platform. No informal user contact
+          was available for this stage either, which is a limitation I acknowledge directly rather than working around.
+        </p>
+      </article>
+
+      <!-- Subsection 2: MB WAY payment -->
+      <article class="case-article">
+        <h3 class="case-section__subheading">MB WAY payment: usability testing</h3>
+        <p class="case-section__body">
+          This stage received a dedicated research effort, run in two rounds at the Social Security office.
+        </p>
+        <div class="content-cards-grid">
+          <div class="content-card content-card--gray">
+            <span class="content-card__title">Method</span>
+            <p class="content-card__desc">
+              Moderated in-person usability testing on a navigable Figma prototype, followed by a card sorting exercise
+              to understand users' own mental model of the ideal flow sequence.
+            </p>
+          </div>
+          <div class="content-card content-card--gray">
+            <span class="content-card__title">Sample</span>
+            <p class="content-card__desc">
+              6 participants per session, recruited on-site among citizens who had already used the platform and had
+              prior experience with MB WAY on other services. Sessions were recorded and observed remotely by other team
+              members.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Subsection 3: Key test -->
+      <article class="case-article">
+        <h3 class="case-section__subheading">Key test: two competing solutions</h3>
+        <p class="case-section__body">
+          Two competing technical solutions were tested for the payment confirmation screen:
+        </p>
+        <div class="content-cards-grid content-cards-grid--two-col">
+          <div class="content-card content-card--gray">
+            <span class="content-card__title">Solution A</span>
+            <p class="content-card__desc">
+              Real-time feedback on the platform as soon as the user accepts or declines the payment on their phone.
+            </p>
+          </div>
+          <div class="content-card content-card--gray">
+            <span class="content-card__title">Solution B</span>
+            <p class="content-card__desc">
+              No real-time feedback; confirmation arrives later through a message.
+            </p>
+          </div>
+        </div>
+        <p class="case-section__body">
+          The results were clear. Solution B scored a 'high severity' usability issue: users struggled to understand
+          whether their payment had gone through and had to actively search for confirmation. Several participants
+          voiced a direct preference for real-time feedback, referencing their experience with other MB WAY-enabled
+          services as the expectation baseline. Solution A, by contrast, was well understood and positively received
+          across the sample.
+        </p>
+        <p class="case-section__body">
+          This finding shaped a technical decision, not just a visual one. Real-time feedback required working closely
+          with the development team to confirm it was achievable within the platform's current technical constraints,
+          and it became a requirement rather than a nice-to-have.
+        </p>
+      </article>
+
+      <!-- Subsection 4: Other findings -->
+      <article class="case-article">
+        <h3 class="case-section__subheading">Other findings</h3>
+        <p class="case-section__body">
+          The card sorting exercise also surfaced a secondary insight: when asked to build their own ideal sequence,
+          most participants left 'document issuance' out of the flow entirely, focusing instead on checking amounts,
+          paying, and confirming. This points to a longer-term simplification opportunity beyond the current scope,
+          which I flagged for future iterations rather than trying to solve within this delivery.
+        </p>
+        <p class="case-section__body">
+          A second round of usability testing, aimed at a narrower user profile (citizens who had already made payments
+          through the platform), did not yield usable results: only one participant could be recruited in six hours of
+          on-site recruitment, against a target of five. Rather than draw conclusions from an insufficient sample, this
+          was documented as a methodology limitation, with a recommendation to use a pre-recruited panel of
+          digital-savvy citizens for future studies instead of on-site guerrilla recruitment. I see this as good
+          practice, not a failure: knowing when data isn't strong enough to act on is part of the job.
+        </p>
+      </article>
+
+    </section>
+
+    <!-- Section: Main screens -->
+    <section class="case-section case-section--full" id="main-screens" aria-labelledby="main-screens-heading">
+      <div class="case-section__intro">
+        <h2 id="main-screens-heading" class="case-section__heading">Main screens</h2>
+      </div>
+
+      <!-- Showcase Bordered Container -->
+      <div class="main-screens-showcase">
+
+        <!-- Group 1: Contribution generation -->
+        <div class="main-screens-group">
+          <h3 class="main-screens-group__title">Contribution generation</h3>
+          <div class="main-screens-group__media">
+            <button type="button" class="user-flow__trigger"
+              aria-label="Open full resolution contribution generation mockup" data-modal-target="modal-worker-data">
+              <picture>
+                <source media="(min-width: 1024px)"
+                  srcset="assets/segsocial-contributions-worker-data-mockups-desktop.png 1x, assets/segsocial-contributions-worker-data-mockups-desktop@2x.png 2x">
+                <source media="(min-width: 768px)"
+                  srcset="assets/segsocial-contributions-worker-data-mockups-tablet.png">
+                <img src="assets/segsocial-contributions-worker-data-mockups-mobile.png"
+                  alt="Mobile screens showing domestic worker contribution generation flow"
+                  class="main-screens-group__img" loading="lazy" width="593" height="580" />
+              </picture>
+              <span class="user-flow__zoom-badge" aria-hidden="true">
+                <i class="ph ph-magnifying-glass-plus"></i>
+                <span>Click to zoom</span>
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Group 2: Payment via MB WAY -->
+        <div class="main-screens-group">
+          <h3 class="main-screens-group__title">Payment via MB WAY</h3>
+          <div class="main-screens-group__media">
+            <button type="button" class="user-flow__trigger" aria-label="Open full resolution payment via MB WAY mockup"
+              data-modal-target="modal-payment-flow">
+              <picture>
+                <source media="(min-width: 1024px)"
+                  srcset="assets/segsocial-contributions-payment-flow-mockups-desktop.png 1x, assets/segsocial-contributions-payment-flow-mockups-desktop@2x.png 2x">
+                <source media="(min-width: 768px)"
+                  srcset="assets/segsocial-contributions-payment-flow-mockups-tablet.png">
+                <img src="assets/segsocial-contributions-payment-flow-mockups-mobile.png"
+                  alt="Mobile screens showing instant payment flow via MB WAY" class="main-screens-group__img"
+                  loading="lazy" width="900" height="1192" />
+              </picture>
+              <span class="user-flow__zoom-badge" aria-hidden="true">
+                <i class="ph ph-magnifying-glass-plus"></i>
+                <span>Click to zoom</span>
+              </span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section: Key Design Decisions -->
+    <section class="case-section" id="key-design-decisions" aria-labelledby="key-decisions-heading">
+      <div class="case-section__intro">
+        <h2 id="key-decisions-heading" class="case-section__heading">Key Design Decisions</h2>
+      </div>
+
+      <div class="content-cards-grid">
+        <div class="content-card content-card--gray">
+          <span class="content-card__title">Real-time payment confirmation</span>
+          <p class="content-card__desc">
+            Validated directly against user expectations and industry patterns, and delivered in partnership with
+            development despite technical constraints.
+          </p>
+        </div>
+
+        <div class="content-card content-card--gray">
+          <span class="content-card__title">Clear separation of payment methods</span>
+          <p class="content-card__desc">
+            On the document issuance screen (bank transfer, Multibanco, MB WAY, in-person), which tested well with all
+            participants and required no rework.
+          </p>
+        </div>
+
+        <div class="content-card content-card--gray">
+          <span class="content-card__title">Number selection flexibility</span>
+          <p class="content-card__desc">
+            Allowing users to pay with either their registered phone number or another one, which addressed a real
+            behavior observed in testing, where users sometimes pay on behalf of a family member.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Collaboration -->
+    <section class="case-section" id="collaboration" aria-labelledby="collaboration-heading">
+      <h2 id="collaboration-heading" class="case-section__heading">Collaboration</h2>
+      <p class="case-section__body">
+        Given that MB WAY's confirmation behavior depended on backend and third-party integration constraints, this was
+        not a flow I could finalize in isolation. Usability findings were shared directly with the development team to
+        inform technical feasibility discussions, particularly around the real-time feedback requirement. Design
+        decisions for the contribution generation stage, where no dedicated research existed, were validated against
+        business requirements and design system consistency in collaboration with the product team.
+      </p>
+    </section>
+
+    <!-- Section: Reflection -->
+    <section class="case-section" id="reflection" aria-labelledby="reflection-heading">
+      <h2 id="reflection-heading" class="case-section__heading">Reflection</h2>
+      <p class="case-section__body">
+        This project is a useful example of prioritizing research effort under real constraints rather than treating
+        every screen equally. The MB WAY payment step carried the highest risk, since it was a new interaction pattern
+        with technical dependencies, and it received the deepest research investment as a result. The contribution
+        generation step relied on system consistency and business rules where dedicated research wasn't feasible given
+        recruitment constraints for a narrow user profile.
+      </p>
+      <p class="case-section__body">
+        I also see value in being transparent about the recruitment challenges faced during a second testing round.
+        Rather than stretching a single participant's feedback into a conclusion, the team documented the limitation and
+        proposed a better-suited methodology for future studies instead of on-site guerrilla recruitment. That kind of
+        judgment (knowing when a research effort didn't work and adjusting course rather than forcing a narrative) is
+        something I'd rather show directly than paper over.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- Full-Resolution Lightbox Modal: User Flow -->
+  <dialog id="flow-modal" class="image-modal" aria-label="Full size User Flow Diagram">
+    <div class="image-modal__backdrop" data-modal-close></div>
+    <div class="image-modal__container">
+      <div class="image-modal__header">
+        <span class="image-modal__title">User Flow - Domestic Employer Contributions</span>
+        <button type="button" class="image-modal__close-btn" aria-label="Close modal" data-modal-close>
+          <i class="ph ph-x" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="image-modal__scrollable">
+        <img src="assets/segsocial-contributions-user-flow.svg"
+          alt="Complete user flow diagram for Domestic Employer Contributions, showing the process steps and decision points across contribution generation and MB WAY payment."
+          class="image-modal__full-img" width="1200" height="1861" />
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Full-Resolution Lightbox Modal: Worker Data Mockup -->
+  <dialog id="modal-worker-data" class="image-modal" aria-label="Contribution generation full size mockup">
+    <div class="image-modal__backdrop" data-modal-close></div>
+    <div class="image-modal__container">
+      <div class="image-modal__header">
+        <span class="image-modal__title">Contribution generation</span>
+        <button type="button" class="image-modal__close-btn" aria-label="Close modal" data-modal-close>
+          <i class="ph ph-x" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="image-modal__scrollable">
+        <img src="assets/segsocial-contributions-worker-data-mockups-desktop.png"
+          srcset="assets/segsocial-contributions-worker-data-mockups-desktop.png 1x, assets/segsocial-contributions-worker-data-mockups-desktop@2x.png 2x"
+          alt="Mobile screens showing domestic worker contribution generation flow" class="image-modal__full-img"
+          width="593" height="580" />
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Full-Resolution Lightbox Modal: Payment Flow Mockup -->
+  <dialog id="modal-payment-flow" class="image-modal" aria-label="Payment via MB WAY full size mockup">
+    <div class="image-modal__backdrop" data-modal-close></div>
+    <div class="image-modal__container">
+      <div class="image-modal__header">
+        <span class="image-modal__title">Payment via MB WAY</span>
+        <button type="button" class="image-modal__close-btn" aria-label="Close modal" data-modal-close>
+          <i class="ph ph-x" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="image-modal__scrollable">
+        <img src="assets/segsocial-contributions-payment-flow-mockups-desktop.png"
+          srcset="assets/segsocial-contributions-payment-flow-mockups-desktop.png 1x, assets/segsocial-contributions-payment-flow-mockups-desktop@2x.png 2x"
+          alt="Mobile screens showing instant payment flow via MB WAY" class="image-modal__full-img" width="900"
+          height="1192" />
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Other Projects Web Component -->
+  <other-projects current="segsocial-domestic-employer"></other-projects>
+
+  <!-- Footer -->
+  <footer id="main-footer">
+    <portfolio-footer></portfolio-footer>
+  </footer>
+
+  <!-- Web Components Script -->
+  <script src="components.js"></script>
+
+</body>
+
+</html>
