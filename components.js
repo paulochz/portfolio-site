@@ -287,33 +287,37 @@ const ALL_PORTFOLIO_PROJECTS = [
     id: 'segsocial-domestic-employer',
     title: 'Domestic Employer Contributions Payment via MB WAY',
     url: 'project-segsocial-domestic-employer.html',
-    thumbnailDesktop: 'assets/thumbnail-ss-domestic-employer-desktop.png',
-    thumbnailTablet: 'assets/thumbnail-ss-domestic-employer-tablet.png',
-    thumbnailMobile: 'assets/thumbnail-ss-domestic-employer-mobile.png',
+    thumbnailDesktop: 'assets/thumbnail-ss-domestic-employer.png',
+    thumbnailDesktop2x: 'assets/thumbnail-ss-domestic-employer@2x.png',
+    thumbnailMobile: 'assets/thumbnail-ss-domestic-employer-1.png',
+    thumbnailMobile2x: 'assets/thumbnail-ss-domestic-employer@2x-1.png',
   },
   {
     id: 'segsocial-notifications',
     title: 'Portugal Social Security - Notifications of Late Payments',
     url: '#',
-    thumbnailDesktop: 'assets/thumbnail-ss-notifications-desktop.png',
-    thumbnailTablet: 'assets/thumbnail-ss-notifications-tablet.png',
-    thumbnailMobile: 'assets/thumbnail-ss-notifications-mobile.png',
+    thumbnailDesktop: 'assets/thumbnail-ss-notifications.png',
+    thumbnailDesktop2x: 'assets/thumbnail-ss-notifications@2x.png',
+    thumbnailMobile: 'assets/thumbnail-ss-notifications-1.png',
+    thumbnailMobile2x: 'assets/thumbnail-ss-notifications@2x-1.png',
   },
   {
     id: 'pagbank',
     title: 'PagBank',
     url: '#',
-    thumbnailDesktop: 'assets/thumbnail-pagbank-desktop.png',
-    thumbnailTablet: 'assets/thumbnail-pagbank-tablet.png',
-    thumbnailMobile: 'assets/thumbnail-pagbank-mobile.png',
+    thumbnailDesktop: 'assets/thumbnail-pagbank.png',
+    thumbnailDesktop2x: 'assets/thumbnail-pagbank@2x.png',
+    thumbnailMobile: 'assets/thumbnail-pagbank-1.png',
+    thumbnailMobile2x: 'assets/thumbnail-pagbank@2x-1.png',
   },
   {
     id: 'yamaha-liberacred',
     title: 'Yamaha Liberacred',
     url: '#',
-    thumbnailDesktop: 'assets/thumbnail-yamaha-liberacred-desktop.png',
-    thumbnailTablet: 'assets/thumbnail-yamaha-liberacred-tablet.png',
-    thumbnailMobile: 'assets/thumbnail-yamaha-liberacred-mobile.png',
+    thumbnailDesktop: 'assets/thumbnail-yamaha-liberacred.png',
+    thumbnailDesktop2x: 'assets/thumbnail-yamaha-liberacred@2x.png',
+    thumbnailMobile: 'assets/thumbnail-yamaha-liberacred-1.png',
+    thumbnailMobile2x: 'assets/thumbnail-yamaha-liberacred@2x-1.png',
   },
 ];
 
@@ -334,15 +338,15 @@ class OtherProjects extends HTMLElement {
       <article class="related-project-card">
         <a href="${project.url}" class="related-project-card__link" aria-label="Ver projeto: ${project.title}">
           <picture class="related-project-card__picture">
-            <source media="(min-width: 1024px)" srcset="${project.thumbnailDesktop}">
-            <source media="(min-width: 768px)" srcset="${project.thumbnailTablet}">
+            <source media="(min-width: 1024px)" srcset="${project.thumbnailDesktop} 1x, ${project.thumbnailDesktop2x} 2x">
             <img
               src="${project.thumbnailMobile}"
+              srcset="${project.thumbnailMobile} 1x, ${project.thumbnailMobile2x} 2x"
               alt="Thumbnail do projeto ${project.title}"
               class="related-project-card__img"
               loading="lazy"
               width="384"
-              height="229"
+              height="224"
             />
           </picture>
           <div class="related-project-card__overlay" aria-hidden="true"></div>
@@ -435,6 +439,9 @@ document.addEventListener('click', (e) => {
 document.addEventListener('click', (e) => {
   const trigger = e.target.closest('[data-modal-target]');
   if (trigger) {
+    // Modal de zoom só está ativo em resoluções de tablet para baixo (< 1024px)
+    if (window.innerWidth >= 1024) return;
+
     const modalId = trigger.getAttribute('data-modal-target');
     const modal = document.getElementById(modalId);
     if (modal) {

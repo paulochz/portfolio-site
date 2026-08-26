@@ -440,12 +440,12 @@ Used in project pages (`project-*.html`).
 | `.user-flow__legend` | Horizontal legend container (Process + Decision shapes) |
 | `.user-flow__shape--process` | Process indicator (18×14px, rounded rectangle with 1.2px stroke, no fill) |
 | `.user-flow__shape--decision` | Decision indicator (outline diamond with 1.2px stroke, no fill) |
-| `.user-flow__trigger` | Accessible button trigger for the lightbox modal |
-| `.user-flow__zoom-badge` | Pill badge ("Click to zoom") visible on mobile/tablet |
+| `.user-flow__trigger` | Button trigger for lightbox modal (active on tablet/mobile `<1024px>`, disabled on desktop) |
+| `.user-flow__zoom-badge` | Pill badge ("Click to zoom") visible only on tablet/mobile (`<1024px>`), hidden on desktop |
 | `.image-modal` | Accessible native `<dialog>` element with backdrop blur |
 | `.image-modal__scrollable` | Touch/scroll container for panning full-resolution desktop diagram |
 
-### Main Screens Showcase
+### Main Screens Showcase (3 SVG Groups)
 
 ```html
 <section class="case-section case-section--full" id="main-screens">
@@ -453,13 +453,31 @@ Used in project pages (`project-*.html`).
     <h2 class="case-section__heading">Main screens</h2>
   </div>
   <div class="main-screens-showcase">
+    <!-- Group 1: Start from menu -->
     <div class="main-screens-group">
-      <h3 class="main-screens-group__title">...</h3>
+      <h3 class="main-screens-group__title">Start from menu</h3>
       <div class="main-screens-group__media">
-        <picture>
-          <source media="(min-width: 1024px)" srcset="assets/...-desktop.png 1x, assets/...-desktop@2x.png 2x">
-          ...
-        </picture>
+        <button type="button" class="user-flow__trigger" data-modal-target="modal-start-menu">
+          <img src="assets/segsocial-contributions-payment-1-mockups.svg" alt="Start from menu" class="main-screens-group__img" loading="lazy" />
+        </button>
+      </div>
+    </div>
+    <!-- Group 2: 1. Contribution generation -->
+    <div class="main-screens-group">
+      <h3 class="main-screens-group__title">1. Contribution generation</h3>
+      <div class="main-screens-group__media">
+        <button type="button" class="user-flow__trigger" data-modal-target="modal-worker-data">
+          <img src="assets/segsocial-contributions-worker-2-mockups.svg" alt="Contribution generation" class="main-screens-group__img" loading="lazy" />
+        </button>
+      </div>
+    </div>
+    <!-- Group 3: 2. Payment via MB WAY -->
+    <div class="main-screens-group">
+      <h3 class="main-screens-group__title">2. Payment via MB WAY</h3>
+      <div class="main-screens-group__media">
+        <button type="button" class="user-flow__trigger" data-modal-target="modal-payment-flow">
+          <img src="assets/segsocial-contributions-payment-flow-mockups.svg" alt="Payment via MB WAY" class="main-screens-group__img" loading="lazy" />
+        </button>
       </div>
     </div>
   </div>
@@ -472,7 +490,7 @@ Used in project pages (`project-*.html`).
 | `.main-screens-group` | Vertical group centered (`gap: var(--spacing-xl)`) |
 | `.main-screens-group__title` | Group subtitle (SemiBold 600) |
 | `.main-screens-group__media` | Centered media container |
-| `.main-screens-group__img` | Responsive mockup image (`object-fit: contain`) |
+| `.main-screens-group__img` | Responsive SVG mockup image (`width: 100%`, `height: auto`, `object-fit: contain`) |
 
 ### Other Projects Web Component
 
@@ -517,6 +535,29 @@ assets/banner-ss-domestic-employer-desktop.png
 assets/segsocial-contributions-user-flow-desktop@2x.png
 ```
 
+### Related Projects Thumbnails (2 Sizes + Retina 2x)
+
+Para os cards de projetos relacionados (`<other-projects>`), são utilizados 2 tamanhos:
+- **Desktop (`≥1024px`)**: `384×224` (1x: `thumbnail-[project].png`, 2x: `thumbnail-[project]@2x.png`)
+- **Tablet & Mobile (`<1024px`)**: `224×131` (1x: `thumbnail-[project]-1.png`, 2x: `thumbnail-[project]@2x-1.png`)
+
+```html
+<picture class="related-project-card__picture">
+  <source
+    media="(min-width: 1024px)"
+    srcset="assets/thumbnail-[project].png 1x, assets/thumbnail-[project]@2x.png 2x"
+  >
+  <img
+    src="assets/thumbnail-[project]-1.png"
+    srcset="assets/thumbnail-[project]-1.png 1x, assets/thumbnail-[project]@2x-1.png 2x"
+    alt="…"
+    loading="lazy"
+    width="384"
+    height="224"
+  />
+</picture>
+```
+
 ### Vector Diagrams (SVG)
 
 Para diagramas e fluxogramas vetoriais (como User Flows), utiliza-se o SVG diretamente (`.svg`) com `width="100%"` e `height="auto"`. Isso garante nitidez infinita em todos os breakpoints e em zooms no modal sem necessidade de múltiplos arquivos PNG.
@@ -527,5 +568,5 @@ Para diagramas e fluxogramas vetoriais (como User Flows), utiliza-se o SVG diret
 
 ---
 
-*Last updated: 2026-08-25 · Synced with Figma Dev Mode MCP*
+*Last updated: 2026-08-26 · Synced with Figma Dev Mode MCP*
 

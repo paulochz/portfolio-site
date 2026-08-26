@@ -119,16 +119,11 @@
           <span>Jump straight to the solution here</span>
         </a>
 
-        <!-- App Mockup Picture -->
+        <!-- App Mockup Image (SVG) -->
         <div class="project-hero__mockup-wrapper">
-          <picture class="project-hero__mockup-picture">
-            <source media="(min-width: 1024px)"
-              srcset="assets/segsocial-contributions-app-mockup-desktop.png 1x, assets/segsocial-contributions-app-mockup-desktop@2x.png 2x">
-            <source media="(min-width: 768px)" srcset="assets/segsocial-contributions-app-mockup-tablet.png">
-            <img src="assets/segsocial-contributions-app-mockup-mobile.png"
-              alt="Mockup of the Social Security domestic employer contribution payment app"
-              class="project-hero__mockup-img" width="1004" height="499" loading="eager" fetchpriority="high" />
-          </picture>
+          <img src="assets/segsocial-contributions-app-mockup.svg"
+            alt="Mockup of the Social Security domestic employer contribution payment app"
+            class="project-hero__mockup-img" width="1004" height="499" loading="eager" fetchpriority="high" />
         </div>
 
       </div>
@@ -431,21 +426,15 @@
       <!-- Showcase Bordered Container -->
       <div class="main-screens-showcase">
 
-        <!-- Group 1: Contribution generation -->
+        <!-- Group 1: Start from menu -->
         <div class="main-screens-group">
-          <h3 class="main-screens-group__title">Contribution generation</h3>
+          <h3 class="main-screens-group__title">1.Start from menu</h3>
           <div class="main-screens-group__media">
-            <button type="button" class="user-flow__trigger"
-              aria-label="Open full resolution contribution generation mockup" data-modal-target="modal-worker-data">
-              <picture>
-                <source media="(min-width: 1024px)"
-                  srcset="assets/segsocial-contributions-worker-data-mockups-desktop.png 1x, assets/segsocial-contributions-worker-data-mockups-desktop@2x.png 2x">
-                <source media="(min-width: 768px)"
-                  srcset="assets/segsocial-contributions-worker-data-mockups-tablet.png">
-                <img src="assets/segsocial-contributions-worker-data-mockups-mobile.png"
-                  alt="Mobile screens showing domestic worker contribution generation flow"
-                  class="main-screens-group__img" loading="lazy" width="593" height="580" />
-              </picture>
+            <button type="button" class="user-flow__trigger" aria-label="Open full resolution Start from menu mockup"
+              data-modal-target="modal-start-menu">
+              <img src="assets/segsocial-contributions-payment-1-mockups.svg"
+                alt="Mobile screen showing Start from menu" class="main-screens-group__img" loading="lazy" width="286"
+                height="580" />
               <span class="user-flow__zoom-badge" aria-hidden="true">
                 <i class="ph ph-magnifying-glass-plus"></i>
                 <span>Click to zoom</span>
@@ -454,21 +443,32 @@
           </div>
         </div>
 
-        <!-- Group 2: Payment via MB WAY -->
+        <!-- Group 2: Contribution generation -->
         <div class="main-screens-group">
-          <h3 class="main-screens-group__title">Payment via MB WAY</h3>
+          <h3 class="main-screens-group__title">2. Contribution generation</h3>
+          <div class="main-screens-group__media">
+            <button type="button" class="user-flow__trigger"
+              aria-label="Open full resolution contribution generation mockup" data-modal-target="modal-worker-data">
+              <img src="assets/segsocial-contributions-worker-2-mockups.svg"
+                alt="Mobile screens showing domestic worker contribution generation flow"
+                class="main-screens-group__img" loading="lazy" width="930" height="580" />
+              <span class="user-flow__zoom-badge" aria-hidden="true">
+                <i class="ph ph-magnifying-glass-plus"></i>
+                <span>Click to zoom</span>
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Group 3: Payment via MB WAY -->
+        <div class="main-screens-group">
+          <h3 class="main-screens-group__title">3. Payment via MB WAY</h3>
           <div class="main-screens-group__media">
             <button type="button" class="user-flow__trigger" aria-label="Open full resolution payment via MB WAY mockup"
               data-modal-target="modal-payment-flow">
-              <picture>
-                <source media="(min-width: 1024px)"
-                  srcset="assets/segsocial-contributions-payment-flow-mockups-desktop.png 1x, assets/segsocial-contributions-payment-flow-mockups-desktop@2x.png 2x">
-                <source media="(min-width: 768px)"
-                  srcset="assets/segsocial-contributions-payment-flow-mockups-tablet.png">
-                <img src="assets/segsocial-contributions-payment-flow-mockups-mobile.png"
-                  alt="Mobile screens showing instant payment flow via MB WAY" class="main-screens-group__img"
-                  loading="lazy" width="900" height="1192" />
-              </picture>
+              <img src="assets/segsocial-contributions-payment-flow-mockups.svg"
+                alt="Mobile screens showing instant payment flow via MB WAY" class="main-screens-group__img"
+                loading="lazy" width="930" height="1227" />
               <span class="user-flow__zoom-badge" aria-hidden="true">
                 <i class="ph ph-magnifying-glass-plus"></i>
                 <span>Click to zoom</span>
@@ -564,21 +564,37 @@
     </div>
   </dialog>
 
-  <!-- Full-Resolution Lightbox Modal: Worker Data Mockup -->
-  <dialog id="modal-worker-data" class="image-modal" aria-label="Contribution generation full size mockup">
+  <!-- Full-Resolution Lightbox Modal: Start from menu -->
+  <dialog id="modal-start-menu" class="image-modal" aria-label="Start from menu full size mockup">
     <div class="image-modal__backdrop" data-modal-close></div>
     <div class="image-modal__container">
       <div class="image-modal__header">
-        <span class="image-modal__title">Contribution generation</span>
+        <span class="image-modal__title">Start from menu</span>
         <button type="button" class="image-modal__close-btn" aria-label="Close modal" data-modal-close>
           <i class="ph ph-x" aria-hidden="true"></i>
         </button>
       </div>
       <div class="image-modal__scrollable">
-        <img src="assets/segsocial-contributions-worker-data-mockups-desktop.png"
-          srcset="assets/segsocial-contributions-worker-data-mockups-desktop.png 1x, assets/segsocial-contributions-worker-data-mockups-desktop@2x.png 2x"
+        <img src="assets/segsocial-contributions-payment-1-mockups.svg" alt="Mobile screen showing Start from menu"
+          class="image-modal__full-img" width="286" height="580" />
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Full-Resolution Lightbox Modal: Worker Data Mockup -->
+  <dialog id="modal-worker-data" class="image-modal" aria-label="Contribution generation full size mockup">
+    <div class="image-modal__backdrop" data-modal-close></div>
+    <div class="image-modal__container">
+      <div class="image-modal__header">
+        <span class="image-modal__title">1. Contribution generation</span>
+        <button type="button" class="image-modal__close-btn" aria-label="Close modal" data-modal-close>
+          <i class="ph ph-x" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="image-modal__scrollable">
+        <img src="assets/segsocial-contributions-worker-2-mockups.svg"
           alt="Mobile screens showing domestic worker contribution generation flow" class="image-modal__full-img"
-          width="593" height="580" />
+          width="930" height="580" />
       </div>
     </div>
   </dialog>
@@ -588,16 +604,15 @@
     <div class="image-modal__backdrop" data-modal-close></div>
     <div class="image-modal__container">
       <div class="image-modal__header">
-        <span class="image-modal__title">Payment via MB WAY</span>
+        <span class="image-modal__title">2. Payment via MB WAY</span>
         <button type="button" class="image-modal__close-btn" aria-label="Close modal" data-modal-close>
           <i class="ph ph-x" aria-hidden="true"></i>
         </button>
       </div>
       <div class="image-modal__scrollable">
-        <img src="assets/segsocial-contributions-payment-flow-mockups-desktop.png"
-          srcset="assets/segsocial-contributions-payment-flow-mockups-desktop.png 1x, assets/segsocial-contributions-payment-flow-mockups-desktop@2x.png 2x"
-          alt="Mobile screens showing instant payment flow via MB WAY" class="image-modal__full-img" width="900"
-          height="1192" />
+        <img src="assets/segsocial-contributions-payment-flow-mockups.svg"
+          alt="Mobile screens showing instant payment flow via MB WAY" class="image-modal__full-img" width="930"
+          height="1227" />
       </div>
     </div>
   </dialog>

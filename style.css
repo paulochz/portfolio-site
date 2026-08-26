@@ -163,18 +163,21 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
-  scroll-padding-top: 64px; /* Mobile header offset */
+  scroll-padding-top: 64px;
+  /* Mobile header offset */
 }
 
 @media (min-width: 768px) {
   html {
-    scroll-padding-top: 72px; /* Tablet header offset */
+    scroll-padding-top: 72px;
+    /* Tablet header offset */
   }
 }
 
 @media (min-width: 1024px) {
   html {
-    scroll-padding-top: 80px; /* Desktop header offset */
+    scroll-padding-top: 80px;
+    /* Desktop header offset */
   }
 }
 
@@ -604,7 +607,8 @@ portfolio-header {
 }
 
 .navbar__links {
-  display: none; /* Oculto no mobile */
+  display: none;
+  /* Oculto no mobile */
   list-style: none;
   align-items: center;
   gap: var(--spacing-md);
@@ -985,7 +989,7 @@ portfolio-header {
 }
 
 .project-card--featured .project-card__banner {
-  height: 240px;
+  height: 200px;
 }
 
 .project-card--compact .project-card__banner {
@@ -1097,11 +1101,11 @@ portfolio-header {
   }
 
   .project-card--featured .project-card__banner {
-    height: 444px;
+    height: 300px;
   }
 
   .project-card--compact .project-card__banner {
-    height: 348px;
+    height: 220px;
   }
 
   .project-card__body {
@@ -1116,7 +1120,7 @@ portfolio-header {
   }
 
   .project-card--featured .project-card__banner {
-    height: 444.5px;
+    height: 444px;
   }
 
   .project-card--compact .project-card__banner {
@@ -2427,8 +2431,17 @@ portfolio-header {
 }
 
 @media (min-width: 1024px) {
+  .user-flow__trigger {
+    cursor: default;
+    pointer-events: none;
+  }
+
+  .user-flow__trigger:focus-visible {
+    outline: none;
+  }
+
   .user-flow__zoom-badge {
-    display: none;
+    display: none !important;
   }
 }
 
@@ -2662,7 +2675,7 @@ portfolio-header {
   border-radius: var(--radius-md);
   overflow: hidden;
   background-color: var(--bg-primary);
-  aspect-ratio: 384 / 229;
+  aspect-ratio: 224 / 131;
 }
 
 .related-project-card__link {
@@ -2720,7 +2733,7 @@ portfolio-header {
   }
 
   .related-project-card {
-    aspect-ratio: 224 / 150;
+    aspect-ratio: 224 / 131;
   }
 }
 
@@ -2736,10 +2749,6 @@ portfolio-header {
   }
 
   .related-project-card {
-    aspect-ratio: 384 / 229;
+    aspect-ratio: 384 / 224;
   }
 }
-
-
-
-
