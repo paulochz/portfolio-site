@@ -17,9 +17,11 @@
   <!-- Google Font: Inter -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 
-  <!-- Phosphor Icons (Regular & Duotone CDN) -->
-  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
-  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css">
+  <!-- Phosphor Icons (Regular & Duotone CDN) - Non-blocking -->
+  <link rel="preload" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"></noscript>
+  <link rel="preload" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css"></noscript>
 
   <!-- Global Unified Stylesheet -->
   <link rel="stylesheet" href="style.css">

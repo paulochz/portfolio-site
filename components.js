@@ -71,7 +71,7 @@ class PortfolioHeader extends HTMLElement {
             id="navbar-hamburger"
             aria-expanded="false"
             aria-controls="navbar-drawer"
-            aria-label="Abrir menu"
+            aria-label="Open navigation menu"
           >
             <i class="ph ph-list" aria-hidden="true"></i>
           </button>
@@ -84,7 +84,7 @@ class PortfolioHeader extends HTMLElement {
           aria-hidden="true"
           role="dialog"
           aria-modal="true"
-          aria-label="Menu de navegação"
+          aria-label="Navigation menu"
         >
           <ul class="navbar__drawer-links" role="list">
             ${this._navLinks.map(link => `
@@ -127,7 +127,7 @@ class PortfolioHeader extends HTMLElement {
     const icon = hamburger?.querySelector('i');
 
     hamburger?.setAttribute('aria-expanded', 'true');
-    hamburger?.setAttribute('aria-label', 'Fechar menu');
+    hamburger?.setAttribute('aria-label', 'Close navigation menu');
     drawer?.setAttribute('aria-hidden', 'false');
     drawer?.classList.add('navbar__drawer--open');
     icon?.classList.replace('ph-list', 'ph-x');
@@ -188,7 +188,7 @@ class PortfolioFooter extends HTMLElement {
             class="footer__card"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Enviar e-mail para paulo.chiozzini@gmail.com"
+            aria-label="Email paulo.chiozzini@gmail.com"
           >
             <div class="footer__card-icon-wrap">
               <i class="ph-duotone ph-envelope-open" aria-hidden="true"></i>
@@ -204,7 +204,7 @@ class PortfolioFooter extends HTMLElement {
             class="footer__card"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Visitar LinkedIn de Paulo Chiozzini"
+            aria-label="LinkedIn: Let's connect with Paulo Chiozzini"
           >
             <div class="footer__card-icon-wrap">
               <i class="ph-duotone ph-linkedin-logo" aria-hidden="true"></i>
@@ -220,7 +220,7 @@ class PortfolioFooter extends HTMLElement {
             class="footer__card"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Visitar Instagram @paulochz"
+            aria-label="Instagram: @paulochz"
           >
             <div class="footer__card-icon-wrap">
               <i class="ph-duotone ph-instagram-logo" aria-hidden="true"></i>
@@ -240,7 +240,7 @@ class PortfolioFooter extends HTMLElement {
           <div class="footer__author">
             <img
               src="assets/avatar.png"
-              alt="Foto de Paulo Chiozzini"
+              alt="Paulo Chiozzini"
               class="footer__author-avatar"
               width="21"
               height="21"
@@ -252,7 +252,7 @@ class PortfolioFooter extends HTMLElement {
           <button
             class="btn btn--subtle btn--sm footer__back-top"
             id="footer-back-top"
-            aria-label="Voltar ao topo da página"
+            aria-label="Back to top"
           >
             <i class="ph ph-arrow-line-up" aria-hidden="true"></i>
             Back to top

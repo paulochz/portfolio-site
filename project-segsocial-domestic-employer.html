@@ -17,9 +17,11 @@
   <!-- Google Font: Inter -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 
-  <!-- Phosphor Icons (Regular & Duotone CDN) -->
-  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
-  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css">
+  <!-- Phosphor Icons (Regular & Duotone CDN) - Non-blocking -->
+  <link rel="preload" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"></noscript>
+  <link rel="preload" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css"></noscript>
 
   <!-- Global Unified Stylesheet -->
   <link rel="stylesheet" href="style.css">
@@ -299,7 +301,7 @@
 
         <!-- Diagram with Interactive Lightbox Trigger -->
         <div class="user-flow__diagram-wrapper">
-          <button type="button" class="user-flow__trigger" aria-label="Open full resolution user flow diagram"
+          <button type="button" class="user-flow__trigger" aria-label="Click to zoom: User flow diagram"
             data-modal-target="flow-modal">
             <img src="assets/segsocial-contributions-user-flow.svg"
               alt="Complete user flow diagram for Domestic Employer Contributions, showing the process steps and decision points across contribution generation and MB WAY payment."
@@ -430,7 +432,7 @@
         <div class="main-screens-group">
           <h3 class="main-screens-group__title">1.Start from menu</h3>
           <div class="main-screens-group__media">
-            <button type="button" class="user-flow__trigger" aria-label="Open full resolution Start from menu mockup"
+            <button type="button" class="user-flow__trigger" aria-label="Click to zoom: 1. Start from menu mockup"
               data-modal-target="modal-start-menu">
               <img src="assets/segsocial-contributions-payment-1-mockups.svg"
                 alt="Mobile screen showing Start from menu" class="main-screens-group__img" loading="lazy" width="286"
@@ -448,7 +450,7 @@
           <h3 class="main-screens-group__title">2. Contribution generation</h3>
           <div class="main-screens-group__media">
             <button type="button" class="user-flow__trigger"
-              aria-label="Open full resolution contribution generation mockup" data-modal-target="modal-worker-data">
+              aria-label="Click to zoom: 2. Contribution generation mockup" data-modal-target="modal-worker-data">
               <img src="assets/segsocial-contributions-worker-2-mockups.svg"
                 alt="Mobile screens showing domestic worker contribution generation flow"
                 class="main-screens-group__img" loading="lazy" width="930" height="580" />
@@ -464,7 +466,7 @@
         <div class="main-screens-group">
           <h3 class="main-screens-group__title">3. Payment via MB WAY</h3>
           <div class="main-screens-group__media">
-            <button type="button" class="user-flow__trigger" aria-label="Open full resolution payment via MB WAY mockup"
+            <button type="button" class="user-flow__trigger" aria-label="Click to zoom: 3. Payment via MB WAY mockup"
               data-modal-target="modal-payment-flow">
               <img src="assets/segsocial-contributions-payment-flow-mockups.svg"
                 alt="Mobile screens showing instant payment flow via MB WAY" class="main-screens-group__img"
