@@ -445,7 +445,7 @@ Used in project pages (`project-*.html`).
 | `.image-modal` | Accessible native `<dialog>` element with backdrop blur |
 | `.image-modal__scrollable` | Touch/scroll container for panning full-resolution desktop diagram |
 
-### Main Screens Showcase (3 SVG Groups)
+### Main Screens Showcase (3 Responsive Groups with Retina Support)
 
 ```html
 <section class="case-section case-section--full" id="main-screens">
@@ -453,30 +453,42 @@ Used in project pages (`project-*.html`).
     <h2 class="case-section__heading">Main screens</h2>
   </div>
   <div class="main-screens-showcase">
-    <!-- Group 1: Start from menu -->
+    <!-- Group 1: 1. Start from menu -->
     <div class="main-screens-group">
-      <h3 class="main-screens-group__title">Start from menu</h3>
+      <h3 class="main-screens-group__title">1. Start from menu</h3>
       <div class="main-screens-group__media">
-        <button type="button" class="user-flow__trigger" data-modal-target="modal-start-menu">
-          <img src="assets/segsocial-contributions-payment-1-mockups.svg" alt="Start from menu" class="main-screens-group__img" loading="lazy" />
+        <button type="button" class="user-flow__trigger" aria-label="Click to zoom: 1. Start from menu mockup" data-modal-target="modal-start-menu">
+          <picture>
+            <source media="(min-width: 1024px)" srcset="assets/segsocial-contributions-payment-1-mockups-desktop.png 1x, assets/segsocial-contributions-payment-1-mockups-desktop@2x.png 2x">
+            <source media="(min-width: 768px)" srcset="assets/segsocial-contributions-payment-1-mockups-tablet.png 1x, assets/segsocial-contributions-payment-1-mockups-tablet@2x.png 2x">
+            <img src="assets/segsocial-contributions-payment-1-mockups-mobile.png" srcset="assets/segsocial-contributions-payment-1-mockups-mobile.png 1x, assets/segsocial-contributions-payment-1-mockups-mobile@2x.png 2x" alt="Start from menu" class="main-screens-group__img" loading="lazy" width="286" height="580" />
+          </picture>
         </button>
       </div>
     </div>
-    <!-- Group 2: 1. Contribution generation -->
+    <!-- Group 2: 2. Contribution generation -->
     <div class="main-screens-group">
-      <h3 class="main-screens-group__title">1. Contribution generation</h3>
+      <h3 class="main-screens-group__title">2. Contribution generation</h3>
       <div class="main-screens-group__media">
-        <button type="button" class="user-flow__trigger" data-modal-target="modal-worker-data">
-          <img src="assets/segsocial-contributions-worker-2-mockups.svg" alt="Contribution generation" class="main-screens-group__img" loading="lazy" />
+        <button type="button" class="user-flow__trigger" aria-label="Click to zoom: 2. Contribution generation mockup" data-modal-target="modal-worker-data">
+          <picture>
+            <source media="(min-width: 1024px)" srcset="assets/segsocial-contributions-worker-2-mockups-desktop.png 1x, assets/segsocial-contributions-worker-2-mockups-desktop@2x.png 2x">
+            <source media="(min-width: 768px)" srcset="assets/segsocial-contributions-worker-2-mockups-tablet.png 1x, assets/segsocial-contributions-worker-2-mockups-tablet@2x.png 2x">
+            <img src="assets/segsocial-contributions-worker-2-mockups-mobile.png" srcset="assets/segsocial-contributions-worker-2-mockups-mobile.png 1x, assets/segsocial-contributions-worker-2-mockups-mobile@2x.png 2x" alt="Contribution generation" class="main-screens-group__img" loading="lazy" width="930" height="580" />
+          </picture>
         </button>
       </div>
     </div>
-    <!-- Group 3: 2. Payment via MB WAY -->
+    <!-- Group 3: 3. Payment via MB WAY -->
     <div class="main-screens-group">
-      <h3 class="main-screens-group__title">2. Payment via MB WAY</h3>
+      <h3 class="main-screens-group__title">3. Payment via MB WAY</h3>
       <div class="main-screens-group__media">
-        <button type="button" class="user-flow__trigger" data-modal-target="modal-payment-flow">
-          <img src="assets/segsocial-contributions-payment-flow-mockups.svg" alt="Payment via MB WAY" class="main-screens-group__img" loading="lazy" />
+        <button type="button" class="user-flow__trigger" aria-label="Click to zoom: 3. Payment via MB WAY mockup" data-modal-target="modal-payment-flow">
+          <picture>
+            <source media="(min-width: 1024px)" srcset="assets/segsocial-contributions-payment-3-mockups-desktop.png 1x, assets/segsocial-contributions-payment-3-mockups-desktop@2x.png 2x">
+            <source media="(min-width: 768px)" srcset="assets/segsocial-contributions-payment-3-mockups-tablet.png 1x, assets/segsocial-contributions-payment-3-mockups-tablet@2x.png 2x">
+            <img src="assets/segsocial-contributions-payment-3-mockups-mobile.png" srcset="assets/segsocial-contributions-payment-3-mockups-mobile.png 1x, assets/segsocial-contributions-payment-3-mockups-mobile@2x.png 2x" alt="Payment via MB WAY" class="main-screens-group__img" loading="lazy" width="930" height="1227" />
+          </picture>
         </button>
       </div>
     </div>
@@ -490,7 +502,7 @@ Used in project pages (`project-*.html`).
 | `.main-screens-group` | Vertical group centered (`gap: var(--spacing-xl)`) |
 | `.main-screens-group__title` | Group subtitle (SemiBold 600) |
 | `.main-screens-group__media` | Centered media container |
-| `.main-screens-group__img` | Responsive SVG mockup image (`width: 100%`, `height: auto`, `object-fit: contain`) |
+| `.main-screens-group__img` | Responsive mockup image (`width: 100%`, `height: auto`, `object-fit: contain`) |
 
 ### Other Projects Web Component
 
