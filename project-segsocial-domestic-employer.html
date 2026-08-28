@@ -141,8 +141,11 @@
 
   </section>
 
-  <!-- Main Content -->
-  <main id="main-content" class="project-content">
+  <!-- Project Body Layout (Content + Floating Summary Index) -->
+  <div class="project-layout">
+
+    <!-- Main Content -->
+    <main id="main-content" class="project-content">
 
     <!-- Section: Overview -->
     <section class="case-section" id="overview" aria-labelledby="overview-heading">
@@ -256,7 +259,7 @@
 
     <!-- Section: My Role -->
     <section class="case-section" id="my-role" aria-labelledby="my-role-heading">
-      <h2 id="my-role-heading" class="case-section__heading">My Role</h2>
+      <h2 id="my-role-heading" class="case-section__heading">My role</h2>
       <p class="case-section__body">
         I was responsible for the end-to-end UX/UI design of the flow, from interface design and information
         architecture to usability research and content design. I worked within the app's existing design system (built
@@ -268,7 +271,7 @@
     <!-- Section: The Journey -->
     <section class="case-section" id="the-journey" aria-labelledby="the-journey-heading">
       <div class="case-section__intro">
-        <h2 id="the-journey-heading" class="case-section__heading">The Journey</h2>
+        <h2 id="the-journey-heading" class="case-section__heading">The journey</h2>
         <p class="case-section__body">The full journey covers two stages:</p>
       </div>
 
@@ -293,7 +296,7 @@
     <!-- Section: User Flow -->
     <section class="case-section case-section--full" id="user-flow" aria-labelledby="user-flow-heading">
       <div class="user-flow">
-        <h2 id="user-flow-heading" class="case-section__heading">User Flow - Domestic Employer Contributions</h2>
+        <h2 id="user-flow-heading" class="case-section__heading">User flow - Domestic employer contributions</h2>
 
         <!-- Legend (Process & Decision shapes) -->
         <div class="user-flow__legend" aria-label="Diagram legend">
@@ -328,7 +331,7 @@
 
       <!-- Intro -->
       <div class="case-section__intro">
-        <h2 id="research-process-heading" class="case-section__heading">Research and Design Process</h2>
+        <h2 id="research-process-heading" class="case-section__heading">Research and design process</h2>
         <p class="case-section__body">
           Research effort was not distributed evenly across the flow, and this was an intentional trade-off worth being
           transparent about.
@@ -514,7 +517,7 @@
     <!-- Section: Key Design Decisions -->
     <section class="case-section" id="key-design-decisions" aria-labelledby="key-decisions-heading">
       <div class="case-section__intro">
-        <h2 id="key-decisions-heading" class="case-section__heading">Key Design Decisions</h2>
+        <h2 id="key-decisions-heading" class="case-section__heading">Key design decisions</h2>
       </div>
 
       <div class="content-cards-grid">
@@ -575,7 +578,12 @@
       </p>
     </section>
 
-  </main>
+    </main>
+ 
+    <!-- Floating & Sticky Summary Index Panel -->
+    <summary-panel></summary-panel>
+
+  </div>
 
   <!-- Full-Resolution Lightbox Modal: User Flow -->
   <dialog id="flow-modal" class="image-modal" aria-label="Full size User Flow Diagram">

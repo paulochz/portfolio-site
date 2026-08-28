@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Segurança Social de Portugal — Notifications of Late Payments | Paulo Chiozzini</title>
+  <meta name="description"
+    content="Case study: Portugal Social Security - Notifications of Late Payments. Reaching 700k+ citizens and cutting internal task completion times from days to 5 minutes.">
+
+  <!-- Preconnect & Resource Hints for Performance Optimization -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <link rel="dns-prefetch" href="https://unpkg.com">
+
+  <!-- Google Font: Inter - Non-blocking -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+
+  <!-- Phosphor Icons (Regular & Duotone CDN) - Non-blocking -->
+  <link rel="preload" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"></noscript>
+  <link rel="preload" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css"></noscript>
+
+  <!-- Global Unified Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Header / Navigation -->
+  <header id="main-header">
+    <portfolio-header></portfolio-header>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="project-hero" aria-label="Project Hero">
+
+    <!-- Top Area: Div/HeroContent (Brand background #fbbd3d) -->
+    <div class="project-hero__banner">
+      <div class="project-hero__banner-inner">
+
+        <!-- Back button -->
+        <a href="index.html#projects" class="project-hero__back" aria-label="Back to home">
+          <i class="ph ph-arrow-left" aria-hidden="true"></i>
+          <span>Back to home</span>
+        </a>
+
+        <div class="project-hero__container">
+
+          <!-- Heading Block -->
+          <div class="project-hero__heading">
+            <div class="project-hero__title-sub">
+              <h1 class="project-hero__main-title">Segurança Social de Portugal</h1>
+              <p class="project-hero__subtitle-title">Notifications of Late Payments</p>
+            </div>
+            <p class="project-hero__tagline">700k+ citizens reached and task times cut from days to 5 minutes.</p>
+          </div>
+
+          <!-- Meta info row (Timeline, Team, Role) -->
+          <div class="project-hero__meta">
+
+            <div class="project-hero__meta-item">
+              <div class="project-hero__meta-icon" aria-hidden="true">
+                <i class="ph-duotone ph-calendar-blank"></i>
+              </div>
+              <div class="project-hero__meta-texts">
+                <span class="project-hero__meta-label">Timeline</span>
+                <span class="project-hero__meta-value">6 months</span>
+              </div>
+            </div>
+
+            <div class="project-hero__meta-item">
+              <div class="project-hero__meta-icon" aria-hidden="true">
+                <i class="ph-duotone ph-users"></i>
+              </div>
+              <div class="project-hero__meta-texts">
+                <span class="project-hero__meta-label">Team</span>
+                <span class="project-hero__meta-value">Cross-functional</span>
+              </div>
+            </div>
+
+            <div class="project-hero__meta-item">
+              <div class="project-hero__meta-icon" aria-hidden="true">
+                <i class="ph-duotone ph-user-circle"></i>
+              </div>
+              <div class="project-hero__meta-texts">
+                <span class="project-hero__meta-label">Role</span>
+                <span class="project-hero__meta-value">Lead UX/UI Designer</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Tags row -->
+          <div class="project-hero__tags">
+            <span class="project-tag">Public Sector</span>
+            <span class="project-tag">Revenue and Contributions (Financial)</span>
+            <span class="project-tag">UI Design</span>
+            <span class="project-tag">UX Research</span>
+            <span class="project-tag">Design System</span>
+            <span class="project-tag">Accessibility</span>
+            <span class="project-tag">Gov Tech</span>
+            <span class="project-tag">Web Portal</span>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bottom Area: Div/HeroBackground (Jump CTA & Platform Mockup) -->
+    <div class="project-hero__background">
+      <div class="project-hero__background-inner">
+
+        <!-- Jump to solution button -->
+        <a href="#main-screens" class="btn btn--jump project-hero__jump-btn">
+          <i class="ph ph-arrow-down" aria-hidden="true"></i>
+          <span>Jump straight to the solution here</span>
+        </a>
+
+        <!-- Platform Mockup Picture -->
+        <div class="project-hero__mockup-wrapper">
+          <img src="assets/segsocial-notifications-platform-mockup-Desktop.png"
+            alt="Mockup of the Portugal Social Security Notifications of Late Payments platform"
+            class="project-hero__mockup-img" width="1004" height="499" loading="eager" fetchpriority="high" />
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Project Body Layout (Content + Floating Summary Index) -->
+  <div class="project-layout">
+
+    <!-- Main Content -->
+    <main id="main-content" class="project-content">
+
+    <!-- Section: Overview -->
+    <section class="case-section" id="overview" aria-labelledby="overview-heading">
+      <h2 id="overview-heading" class="case-section__heading">Overview</h2>
+      <p class="case-section__body">
+        GPC is a system developed under the PRR (Recovery and Resilience Plan) to digitalize and automate the debt collection process at Social Security. The project replaced an entirely manual process, scattered across multiple subsystems and tools, with an integrated workflow within the Segurança Social Direta platform.
+      </p>
+
+      <h3 class="case-section__subheading">The problem</h3>
+      <div class="content-card content-card--gray">
+        <span class="content-card__title">The problem</span>
+        <p class="content-card__desc">
+          Before GPC, Social Security employees responsible for managing contribution debts worked entirely manually, relying on Excel files, paper, email, and various non-integrated subsystems. This resulted in a slow, error-prone process that was difficult to monitor.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section: Results and impact -->
+    <section class="case-section" id="results" aria-labelledby="results-heading">
+      <h2 id="results-heading" class="case-section__heading">Results and impact</h2>
+
+      <!-- Metrics Grid -->
+      <div class="metrics-grid">
+
+        <div class="metric-card">
+          <span class="metric-card__value">10+  &rarr;  1</span>
+          <span class="metric-card__label">Ecosystem Consolidation</span>
+          <p class="metric-card__desc">
+            Unification of 10+ legacy subsystems into a single, interoperable interface.
+          </p>
+        </div>
+
+        <div class="metric-card">
+          <span class="metric-card__value">&lt; 5 min</span>
+          <span class="metric-card__label">Resolution Time</span>
+          <p class="metric-card__desc">
+            Drastic reduction in employee task execution time (from several days to 5 minutes).
+          </p>
+        </div>
+
+        <div class="metric-card">
+          <span class="metric-card__value">+700k</span>
+          <span class="metric-card__label">Reach &amp; Adoption</span>
+          <p class="metric-card__desc">
+            Notifications read on the very first dispatch, proving the effectiveness of plain language.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Operational Efficiency & Back-office -->
+      <h3 class="case-section__subheading">Operational Efficiency &amp; Back-office</h3>
+      <div class="case-section__body">
+        <p><strong>From 10+ Subsystems to 1 Platform, from days to 5 Minutes</strong></p>
+        <p>Streamlining 10+ legacy subsystems into a single, interoperable interface was far more than an engineering milestone, it was driven by end-to-end Service Design and Employee Journey mapping.</p>
+        <p><strong>How Design drove the Impact:</strong></p>
+        <ul>
+          <li><strong>Uncovering Redundancies:</strong> In-depth mapping of the internal workflow exposed data fragmentation and repetitive manual inputs across legacy systems.</li>
+          <li><strong>Unified Architecture:</strong> Designed a seamless, single-entry workflow that eliminated cross-tool friction and contextual context-switching.</li>
+          <li><strong>Operational Impact:</strong> Drastically cut internal task completion time from several days down to just 5 minutes, multiplying team output and response speed.</li>
+        </ul>
+      </div>
+
+      <!-- Citizen Impact & Front-end -->
+      <h3 class="case-section__subheading">Citizen Impact &amp; Front-end</h3>
+      <div class="case-section__body">
+        <p><strong>700,000+ Notifications Read on 1st Dispatch, reduced support overhead</strong></p>
+        <p>Reaching over 700,000 citizens on their very first notification was more than a communication success, it was the direct outcome of turning bureaucratic jargon into an intuitive, action-driven user experience.</p>
+        <p><strong>How Design Drove the Impact:</strong></p>
+        <ul>
+          <li><strong>Plain Language Adoption:</strong> Replaced complex legal and administrative terminology with clear, empathetic messaging, actionable steps, and transparent deadline indicators.</li>
+          <li><strong>Frictionless Navigation:</strong> Restructured the Information Architecture to remove nested menu barriers, establishing a direct, 1-click pathway from the main dashboard straight to notifications and actions.</li>
+          <li><strong>Civic and Operational Impact:</strong> The high initial read rate reduced user anxiety, minimized follow-up inquiries, and significantly lightened the workload on support channels and helpdesks.</li>
+        </ul>
+      </div>
+
+    </section>
+
+    <!-- Section: The project -->
+    <section class="case-section" id="the-project" aria-labelledby="the-project-heading">
+      <h2 id="the-project-heading" class="case-section__heading">The project</h2>
+      <p class="case-section__body">
+        GPC was structured into two main modules, developed in parallel throughout the project:
+      </p>
+
+      <div class="content-cards-grid">
+
+        <div class="content-card content-card--white content-card--with-icon">
+          <i class="ph ph-warning-circle content-card__icon" aria-hidden="true"></i>
+          <div class="content-card__body">
+            <span class="content-card__title">Contribution Notifications</span>
+            <p class="content-card__desc">
+              Massive delivery of electronic notifications to Employers (EE) and Self-Employed Workers (TI).<br>
+              Made available directly on the Segurança Social Direta platform.<br>
+              Replacement of physical mail delivery.
+            </p>
+          </div>
+        </div>
+
+        <div class="content-card content-card--white content-card--with-icon">
+          <i class="ph ph-warning-circle content-card__icon" aria-hidden="true"></i>
+          <div class="content-card__body">
+            <span class="content-card__title">Claims Module</span>
+            <p class="content-card__desc">
+              Registration and consultation of claims by both taxpayers and internal employees.<br>
+              Management of claim requests by the institutional user.<br>
+              Full traceability of actions and owners.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section: My role -->
+    <section class="case-section" id="my-role" aria-labelledby="my-role-heading">
+      <h2 id="my-role-heading" class="case-section__heading">My role</h2>
+      <p class="case-section__body">
+        I led user research and interaction design throughout the full project lifecycle, working collaboratively with the Instituto de Informática da Segurança Social team, designers, and Segurança Social business stakeholders.
+      </p>
+
+      <div class="content-card content-card--white">
+        <span class="content-card__title">My responsibilities included:</span>
+        <p class="content-card__desc">
+          Planning and conducting exploratory interviews and usability tests (moderated and remote)<br>
+          Building a user journey map from the existing process<br>
+          Qualitative data analysis and synthesis<br>
+          Writing research reports and presenting findings to the team<br>
+          UX writing across messages, labels and buttons<br>
+          Designing the user interface through wireframes, mockups and navigable prototypes<br>
+          Collaborating on improvement prioritisation based on identified problems
+        </p>
+      </div>
+    </section>
+
+    <!-- Section: Research process -->
+    <section class="case-section" id="research-process" aria-labelledby="research-heading">
+      <h2 id="research-heading" class="case-section__heading">Research process</h2>
+      <p class="case-section__body">
+        I conducted five research cycles throughout the project, covering both internal users (Segurança Social staff) and external users (taxpayers). Each cycle directly informed the design of subsequent iterations.
+      </p>
+
+      <!-- Cycle 1 -->
+      <article class="case-article">
+        <h3 class="case-section__subheading">Cycle 1<br>Exploratory research</h3>
+
+        <table class="research-table" aria-label="Cycle 1 session details">
+          <thead>
+            <tr>
+              <th scope="col">Participants</th>
+              <th scope="col">Profile</th>
+              <th scope="col">Sessions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>5</td>
+              <td>Self-employed and employer reps</td>
+              <td>Moderated, remote</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="case-section__body">
+          Before any design decision was made, it was essential to understand how the process actually worked in practice. I conducted remote interviews with 8 staff members from 5 district centres (Setúbal, Aveiro, Viseu, Madeira and Açores), selected based on their volume of criminal proceedings over the previous 5 years. Sessions ran with 1 to 2 participants simultaneously, with 2 moderators each: one facilitator and one observer.
+        </p>
+
+        <!-- Key Findings -->
+        <div class="findings-container">
+          <span class="findings-container__title">Key findings</span>
+          <div class="findings-list">
+            <div class="finding-item finding-item--negative">
+              <i class="ph ph-warning-circle finding-item__icon" aria-hidden="true"></i>
+              <p class="finding-item__text">The most cited theme was dependency on tools and subsystems (21 mentions), followed by manual and time-consuming processes (10) and debt maps (8)</p>
+            </div>
+            <div class="finding-item finding-item--negative">
+              <i class="ph ph-warning-circle finding-item__icon" aria-hidden="true"></i>
+              <p class="finding-item__text">The full process spanned 10 manual stages, from selecting taxpayers to submitting to the internal system responsible for managing criminal infraction processes</p>
+            </div>
+            <div class="finding-item finding-item--negative">
+              <i class="ph ph-warning-circle finding-item__icon" aria-hidden="true"></i>
+              <p class="finding-item__text">Building the debt map was described as the hardest step, especially managing the different responsibility periods of each company director</p>
+            </div>
+            <div class="finding-item finding-item--negative">
+              <i class="ph ph-warning-circle finding-item__icon" aria-hidden="true"></i>
+              <p class="finding-item__text">Complete absence of traceability: no log of dates, actions, or responsible parties</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- User Journey Map -->
+        <div class="content-card content-card--gray">
+          <span class="content-card__title">User journey map</span>
+          <p class="content-card__desc">
+            To map the full picture of the existing process, I built a user journey covering all 10 stages, from taxpayer selection to criminal report submission. The map documents the tools used at each step, the actions performed, the emotions experienced, and the pain points identified across sessions.<br><br>
+            (Sensitive information has been redacted to comply with data security and confidentiality requirements.)
+          </p>
+          <div class="user-flow__diagram-wrapper">
+            <button type="button" class="user-flow__trigger" data-modal-target="modal-user-journey"
+              aria-haspopup="dialog" aria-label="Click to zoom: User journey map">
+              <img src="assets/segsocial-notifications-research-timeline-Desktop.png"
+                alt="User journey map of the existing debt collection process" class="user-flow__img"
+                loading="lazy" />
+              <span class="user-flow__zoom-badge" aria-hidden="true">
+                <i class="ph ph-magnifying-glass-plus"></i>
+                <span>Click to zoom</span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Cycle 2 -->
+      <article class="case-article">
+        <h3 class="case-section__subheading">Cycle 2<br>Usability tests with external users (taxpayers)</h3>
+
+        <table class="research-table" aria-label="Cycle 2 session details">
+          <thead>
+            <tr>
+              <th scope="col">Participants</th>
+              <th scope="col">Profile</th>
+              <th scope="col">Sessions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>5</td>
+              <td>Self-employed and employer reps</td>
+              <td>Moderated, remote</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="case-section__body">
+          Based on the findings from Cycle 1 and the project requirements defined with the business team, I designed the first version of the contributions notifications flow, which served as the basis for the next round of user testing.
+        </p>
+
+        <!-- Key Findings -->
+        <div class="findings-container">
+          <span class="findings-container__title">Key findings</span>
+          <div class="findings-list">
+            <div class="finding-item finding-item--info">
+              <i class="ph ph-info finding-item__icon" aria-hidden="true"></i>
+              <p class="finding-item__text">4 out of 5 participants did not access the notification via the message inbox; they preferred the account statement, as the entry point did not match their mental model</p>
+            </div>
+            <div class="finding-item finding-item--negative">
+              <i class="ph ph-warning-circle finding-item__icon" aria-hidden="true"></i>
+              <p class="finding-item__text">80% were unsure whether the value shown was the total amount owed</p>
+            </div>
+            <div class="finding-item finding-item--negative">
+              <i class="ph ph-warning-circle finding-item__icon" aria-hidden="true"></i>
+              <p class="finding-item__text">60% did not immediately understand the “read date” field</p>
+            </div>
+            <div class="finding-item finding-item--negative">
+              <i class="ph ph-warning-circle finding-item__icon" aria-hidden="true"></i>
+              <p class="finding-item__text">Absence of a notification status indicator (resolved or pending) caused confusion</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- User Quotes -->
+        <div class="quotes-container">
+          <span class="quotes-container__title">User quotes</span>
+          <div class="findings-list">
+            <div class="quote-item">
+              <i class="ph ph-quotes quote-item__icon" aria-hidden="true"></i>
+              <p class="quote-item__text">“Read date? I don’t know if it’s when they opened the message or when the debt was generated.”</p>
+            </div>
+            <div class="quote-item">
+              <i class="ph ph-quotes quote-item__icon" aria-hidden="true"></i>
+              <p class="quote-item__text">“I get the email from Social Security, but it doesn’t say whose it is. I have to investigate client by client.”</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Cycle 3 -->
+      <article class="case-article">
+        <h3 class="case-section__subheading">Cycle 3: Usability tests with ISS staff (contributions and complaints)</h3>
+
+        <table class="research-table" aria-label="Cycle 3 session details">
+          <thead>
+            <tr>
+              <th scope="col">Participants</th>
+              <th scope="col">Profile</th>
+              <th scope="col">Sessions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>15</td>
+              <td>Staff members</td>
+              <td>Moderated, remote</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="case-section__body">
+          The largest testing cycle in the project. I tested with 15 staff members across diverse profiles, including front desk, debt analysis, benefits, support, and 360 View, to evaluate the notifications flow and the new complaints functionality.
+        </p>
+
+        <!-- Key Findings -->
+        <div class="findings-container">
+          <span class="findings-container__title">Key findings</span>
+          <div class="findings-list">
+            <div class="finding-item finding-item--negative">
+              <i class="ph ph-warning-circle finding-item__icon" aria-hidden="true"></i>
+              <p class="finding-item__text">Reliance on multiple subsystems without effective integration (incluiding spreadsheets and paper).</p>
+            </div>
+            <div class="finding-item finding-item--negative">
+              <i class="ph ph-warning-circle finding-item__icon" aria-hidden="true"></i>
+              <p class="finding-item__text">Manual and error-prone processes: creating debt sheets, tracking deadlines, and sending notifications by mail.</p>
+            </div>
+            <div class="finding-item finding-item--negative">
+              <i class="ph ph-warning-circle finding-item__icon" aria-hidden="true"></i>
+              <p class="finding-item__text">Lack of traceability: no logs of dates, actions, or owners responsible for the process.</p>
+            </div>
+            <div class="finding-item finding-item--negative">
+              <i class="ph ph-warning-circle finding-item__icon" aria-hidden="true"></i>
+              <p class="finding-item__text">Ineffective communication with taxpayers: incorrect payments, lack of proof of payment, and no clear instructions.</p>
+            </div>
+            <div class="finding-item finding-item--negative">
+              <i class="ph ph-warning-circle finding-item__icon" aria-hidden="true"></i>
+              <p class="finding-item__text">Overburdened with limited human resources: regional centers manually prioritized higher-value cases.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- User Quotes -->
+        <div class="quotes-container">
+          <span class="quotes-container__title">User quotes</span>
+          <div class="findings-list">
+            <div class="quote-item">
+              <i class="ph ph-quotes quote-item__icon" aria-hidden="true"></i>
+              <p class="quote-item__text">“We need IT to work for us, not us working for IT.”</p>
+            </div>
+            <div class="quote-item">
+              <i class="ph ph-quotes quote-item__icon" aria-hidden="true"></i>
+              <p class="quote-item__text">“Administrative offenses are a lot of work because they are done manually.”</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Cycle 4 -->
+      <article class="case-article">
+        <h3 class="case-section__subheading">Cycle 4: Usability tests with staff (complaints, second iteration)</h3>
+
+        <table class="research-table" aria-label="Cycle 4 session details">
+          <thead>
+            <tr>
+              <th scope="col">Participants</th>
+              <th scope="col">Profile</th>
+              <th scope="col">Sessions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>5</td>
+              <td>Staff members</td>
+              <td>Moderated, remote</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="case-section__body">
+          Following improvements to the flow, I returned to test with staff who manage complaints, focusing on the menu's information architecture and the process of registering a complaint on behalf of a taxpayer.
+        </p>
+
+        <!-- Key Findings -->
+        <div class="findings-container">
+          <span class="findings-container__title">Key findings</span>
+          <div class="findings-list">
+            <div class="finding-item finding-item--negative">
+              <i class="ph ph-warning-circle finding-item__icon" aria-hidden="true"></i>
+              <p class="finding-item__text">Placing “Notifications” under “Payments and debt” caused immediate confusion</p>
+            </div>
+            <div class="finding-item finding-item--negative">
+              <i class="ph ph-warning-circle finding-item__icon" aria-hidden="true"></i>
+              <p class="finding-item__text">3 of 5 participants expected to be redirected to the complaints list after submitting a complaint</p>
+            </div>
+            <div class="finding-item finding-item--negative">
+              <i class="ph ph-warning-circle finding-item__icon" aria-hidden="true"></i>
+              <p class="finding-item__text">The statuses “Registered” and “Under review” were not sufficiently clear</p>
+            </div>
+            <div class="finding-item finding-item--negative">
+              <i class="ph ph-warning-circle finding-item__icon" aria-hidden="true"></i>
+              <p class="finding-item__text">Participants raised concerns about any staff member being able to cancel a complaint without supporting documentation</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- User Quotes -->
+        <div class="quotes-container">
+          <span class="quotes-container__title">User quotes</span>
+          <div class="findings-list">
+            <div class="quote-item">
+              <i class="ph ph-quotes quote-item__icon" aria-hidden="true"></i>
+              <p class="quote-item__text">“Payments means something I’ve already done, and debt is something I haven’t paid.”</p>
+            </div>
+            <div class="quote-item">
+              <i class="ph ph-quotes quote-item__icon" aria-hidden="true"></i>
+              <p class="quote-item__text">“I wouldn’t put notifications inside payments.”</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Cycle 5 -->
+      <article class="case-article">
+        <h3 class="case-section__subheading">Cycle 5: Usability tests with staff (contributions)</h3>
+
+        <table class="research-table" aria-label="Cycle 5 session details">
+          <thead>
+            <tr>
+              <th scope="col">Participants</th>
+              <th scope="col">Profile</th>
+              <th scope="col">Sessions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>5</td>
+              <td>Staff members</td>
+              <td>Moderated, remote</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="case-section__body">
+          The most recent cycle tested the new contribution debt notifications flow with 5 staff members specialised in criminal proceedings.
+        </p>
+
+        <!-- Key Findings -->
+        <div class="findings-container">
+          <span class="findings-container__title">Key findings</span>
+          <div class="findings-list">
+            <div class="finding-item finding-item--positive">
+              <i class="ph ph-check-circle finding-item__icon" aria-hidden="true"></i>
+              <p class="finding-item__text">Navigation and the tab separation (contributions / contributions) were well received: 4 out of 5 reached the screen without difficulty</p>
+            </div>
+            <div class="finding-item finding-item--negative">
+              <i class="ph ph-warning-circle finding-item__icon" aria-hidden="true"></i>
+              <p class="finding-item__text">Failures occurred at reading moments: error messages, button labels, and missing context</p>
+            </div>
+            <div class="finding-item finding-item--negative">
+              <i class="ph ph-warning-circle finding-item__icon" aria-hidden="true"></i>
+              <p class="finding-item__text">3 out of 5 participants independently flagged the absence of the employer’s NISS on the MOE notification detail screen as a critical gap</p>
+            </div>
+            <div class="finding-item finding-item--negative">
+              <i class="ph ph-warning-circle finding-item__icon" aria-hidden="true"></i>
+              <p class="finding-item__text">The buttons “Get notification” and “Get receipt” were not immediately distinguished by 2 out of 5 participants</p>
+            </div>
+            <div class="finding-item finding-item--negative">
+              <i class="ph ph-warning-circle finding-item__icon" aria-hidden="true"></i>
+              <p class="finding-item__text">Users with established habits in the previous system need support during the transition</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- User Quotes -->
+        <div class="quotes-container">
+          <span class="quotes-container__title">User quotes</span>
+          <div class="findings-list">
+            <div class="quote-item">
+              <i class="ph ph-quotes quote-item__icon" aria-hidden="true"></i>
+              <p class="quote-item__text">“I found the navigation between tabs intuitive.”</p>
+            </div>
+            <div class="quote-item">
+              <i class="ph ph-quotes quote-item__icon" aria-hidden="true"></i>
+              <p class="quote-item__text">“This new Documents tab is a real improvement.”</p>
+            </div>
+            <div class="quote-item">
+              <i class="ph ph-quotes quote-item__icon" aria-hidden="true"></i>
+              <p class="quote-item__text">“It’s more accessible than it was before. The notifications used to be hidden behind payments, now they’re more visible.”</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- Section: Key design decisions -->
+    <section class="case-section" id="key-design-decisions" aria-labelledby="decisions-heading">
+      <h2 id="decisions-heading" class="case-section__heading">Key design decisions</h2>
+
+      <h3 class="case-section__subheading">Language as the central problem</h3>
+      <p class="case-section__body">
+        Across all five testing cycles, the dominant failure pattern was not navigation. It was language. Technical terms, ambiguous labels, and messages with no guidance were responsible for most errors and user frustration.
+      </p>
+      <p class="case-section__body">
+        A three-part UX writing framework was applied across all interface copy: what happened, why it happened, and what to do next. Sentences averaged 15 to 20 words, in plain language with no technical jargon. All terminology was validated against legal and professional sources before being finalised. A clear distinction was maintained throughout between 'contributions' and 'contributions', two parallel categories with different audiences and legal implications.
+      </p>
+
+      <!-- Before / After Box -->
+      <div class="before-after-box">
+        <span class="before-after-box__title">Error message rewrite</span>
+        <div class="before-after-row">
+          <span class="before-after-badge before-after-badge--before">Before</span>
+          <p class="before-after-text">"No results found."</p>
+        </div>
+        <div class="before-after-row">
+          <span class="before-after-badge before-after-badge--after">After</span>
+          <p class="before-after-text">"The number entered belongs to the contributions scope. Go to the Contributions tab to find this notification."</p>
+        </div>
+      </div>
+
+      <h3 class="case-section__subheading">Information architecture: the menu as a barrier</h3>
+      <p class="case-section__body">
+        Across three separate cycles (January 2025, August 2025, April 2026), users familiar with the previous system failed to find the correct entry point because they followed memorised paths that no longer worked. Placing 'Notifications' inside 'Payments and debt' was challenged in multiple sessions. Users mentally distinguish between what they have already paid and what they still owe, and the menu hierarchy did not reflect this mental model.
+      </p>
+      <div class="content-card content-card--gray">
+        <span class="content-card__title">Proposed solution</span>
+        <p class="content-card__desc">
+          Create a top-level 'Notifications' menu item at the same level as 'Payments and debt', with a contextual signpost during the transition period for users of the previous system.
+        </p>
+      </div>
+
+      <h3 class="case-section__subheading">Context continuity across screens</h3>
+      <p class="case-section__body">
+        In the contribution flow, users searched using the employer's NISS to find MOE notifications, but once inside the detail screen, that reference disappeared. Users lost the thread of their own search.
+      </p>
+      <div class="content-card content-card--gray">
+        <span class="content-card__title">Proposed fix</span>
+        <p class="content-card__desc">
+          Display the employer's NISS and name in the header of the MOE notification detail screen, keeping the search context visible throughout the consultation.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section: User Flow -->
+    <section class="case-section case-section--full" id="user-flow" aria-labelledby="user-flow-heading">
+      <div class="user-flow">
+        <h2 id="user-flow-heading" class="case-section__heading">User flow<br>Notifications &amp; complaints</h2>
+
+        <!-- Legend -->
+        <div class="user-flow__legend" aria-label="Diagram legend">
+          <div class="user-flow__legend-item">
+            <span class="user-flow__shape user-flow__shape--process" aria-hidden="true"></span>
+            <span>Process</span>
+          </div>
+          <div class="user-flow__legend-item">
+            <span class="user-flow__shape user-flow__shape--decision" aria-hidden="true"></span>
+            <span>Decision</span>
+          </div>
+        </div>
+
+        <!-- Diagram with Modal Zoom -->
+        <div class="user-flow__diagram-wrapper">
+          <button type="button" class="user-flow__trigger" data-modal-target="flow-modal"
+            aria-haspopup="dialog" aria-label="Click to zoom: User Flow Notifications and Complaints">
+            <img src="assets/segsocial-notifications-user-flow-diagram-Desktop.png"
+              alt="Diagram of the full User Flow for Notifications and Complaints" class="user-flow__img"
+              loading="lazy" />
+            <span class="user-flow__zoom-badge" aria-hidden="true">
+              <i class="ph ph-magnifying-glass-plus"></i>
+              <span>Click to zoom</span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Main screens -->
+    <section class="case-section case-section--full" id="main-screens" aria-labelledby="main-screens-heading">
+      <h2 id="main-screens-heading" class="case-section__heading">Main screens</h2>
+
+      <!-- Group 1: Access from the menu -->
+      <div class="main-screens-showcase">
+        <div class="main-screens-group">
+          <h3 class="main-screens-group__title">Access from the menu</h3>
+          <p class="case-section__body">
+            After the users’ feedback, we improved the visibility of the access, by removing it from the payments menu and creating an entry point for it specifically.
+          </p>
+
+          <div class="main-screens-group__media">
+            <button type="button" class="user-flow__trigger" data-modal-target="modal-menu-access"
+              aria-haspopup="dialog" aria-label="Click to zoom: Access from the menu mockups">
+              <div class="showcase-grid-two">
+                <img src="assets/segsocial-notifications-screen-contributions-list-Desktop.png"
+                  alt="Contributions list screen mockup" class="main-screens-group__img" loading="lazy" />
+                <img src="assets/segsocial-notifications-screen-late-payments-Desktop.png"
+                  alt="Late payments screen mockup" class="main-screens-group__img" loading="lazy" />
+              </div>
+              <span class="user-flow__zoom-badge" aria-hidden="true">
+                <i class="ph ph-magnifying-glass-plus"></i>
+                <span>Click to zoom</span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Group 2: List of notifications and debt details -->
+      <div class="main-screens-showcase">
+        <div class="main-screens-group">
+          <h3 class="main-screens-group__title">List of notifications and debt details</h3>
+
+          <div class="main-screens-group__media">
+            <button type="button" class="user-flow__trigger" data-modal-target="modal-notifications-list"
+              aria-haspopup="dialog" aria-label="Click to zoom: Notifications and debt details mockups">
+              <div class="showcase-grid-two">
+                <img src="assets/segsocial-notifications-screen-notifications-table-Desktop.png"
+                  alt="Notifications table screen mockup" class="main-screens-group__img" loading="lazy" />
+                <img src="assets/segsocial-notifications-screen-notification-detail-Desktop.png"
+                  alt="Notification detail screen mockup" class="main-screens-group__img" loading="lazy" />
+              </div>
+              <span class="user-flow__zoom-badge" aria-hidden="true">
+                <i class="ph ph-magnifying-glass-plus"></i>
+                <span>Click to zoom</span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Group 3: Submission of complaints and details -->
+      <div class="main-screens-showcase">
+        <div class="main-screens-group">
+          <h3 class="main-screens-group__title">Submission of complaints and details</h3>
+
+          <div class="main-screens-group__media">
+            <button type="button" class="user-flow__trigger" data-modal-target="modal-complaints-submission"
+              aria-haspopup="dialog" aria-label="Click to zoom: Submission of complaints mockups">
+              <div class="showcase-grid-two">
+                <img src="assets/segsocial-notifications-screen-complaint-form-Desktop.png"
+                  alt="Complaint submission form screen mockup" class="main-screens-group__img" loading="lazy" />
+                <img src="assets/segsocial-notifications-screen-complaint-detail-Desktop.png"
+                  alt="Complaint detail screen mockup" class="main-screens-group__img" loading="lazy" />
+              </div>
+              <span class="user-flow__zoom-badge" aria-hidden="true">
+                <i class="ph ph-magnifying-glass-plus"></i>
+                <span>Click to zoom</span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Section: Learnings -->
+    <section class="case-section" id="learnings" aria-labelledby="learnings-heading">
+      <h2 id="learnings-heading" class="case-section__heading">Learnings</h2>
+
+      <!-- What worked well -->
+      <div class="learnings-card learnings-card--positive">
+        <h3 class="learnings-card__title">What worked well</h3>
+        <div class="learnings-list">
+          <div class="learnings-item">
+            <i class="ph ph-check-circle learnings-item__icon" aria-hidden="true"></i>
+            <p class="learnings-item__text">Starting with exploratory research before any design decision meant solutions were grounded in real user pain, not team assumptions</p>
+          </div>
+          <div class="learnings-item">
+            <i class="ph ph-check-circle learnings-item__icon" aria-hidden="true"></i>
+            <p class="learnings-item__text">Running testing cycles continuously throughout development allowed problems to be caught and addressed iteration by iteration</p>
+          </div>
+          <div class="learnings-item">
+            <i class="ph ph-check-circle learnings-item__icon" aria-hidden="true"></i>
+            <p class="learnings-item__text">The user journey map built in August 2024 became a shared reference artefact used by the team throughout the entire project</p>
+          </div>
+          <div class="learnings-item">
+            <i class="ph ph-check-circle learnings-item__icon" aria-hidden="true"></i>
+            <p class="learnings-item__text">The tab separation of contributions and contributions was validated as intuitive and effective by users from both profiles</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- What I would do differently -->
+      <div class="learnings-card learnings-card--warning">
+        <h3 class="learnings-card__title learnings-card__title--sm">What I would do differently</h3>
+        <div class="learnings-list">
+          <div class="learnings-item">
+            <i class="ph ph-warning-circle learnings-item__icon" aria-hidden="true"></i>
+            <p class="learnings-item__text">Invest earlier in terminology consistency: language problems appeared in every cycle and could have been anticipated with a shared glossary from the start</p>
+          </div>
+          <div class="learnings-item">
+            <i class="ph ph-warning-circle learnings-item__icon" aria-hidden="true"></i>
+            <p class="learnings-item__text">Involve external users (taxpayers) in more testing cycles, as the majority of sessions were conducted with internal users</p>
+          </div>
+          <div class="learnings-item">
+            <i class="ph ph-warning-circle learnings-item__icon" aria-hidden="true"></i>
+            <p class="learnings-item__text">Document design decisions more systematically, including why certain alternatives were discarded, to ease context handover to new team members</p>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Floating & Sticky Summary Index Panel -->
+    <summary-panel></summary-panel>
+
+  </div>
+
+  <!-- Dialog Modals / Lightbox Zoom -->
+
+  <!-- Modal: User Journey Map -->
+  <dialog class="image-modal" id="modal-user-journey" aria-labelledby="modal-journey-title" aria-modal="true">
+    <div class="image-modal__backdrop" data-modal-close></div>
+    <div class="image-modal__container">
+      <div class="image-modal__header">
+        <span class="image-modal__title" id="modal-journey-title">User journey map</span>
+        <button type="button" class="image-modal__close-btn" data-modal-close aria-label="Close modal">
+          <i class="ph ph-x" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="image-modal__scrollable">
+        <img src="assets/segsocial-notifications-research-timeline-Desktop.png"
+          alt="User journey map of the existing debt collection process" class="image-modal__full-img"
+          loading="lazy" />
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal: User Flow -->
+  <dialog class="image-modal" id="flow-modal" aria-labelledby="flow-modal-title" aria-modal="true">
+    <div class="image-modal__backdrop" data-modal-close></div>
+    <div class="image-modal__container">
+      <div class="image-modal__header">
+        <span class="image-modal__title" id="flow-modal-title">User Flow — Notifications &amp; Complaints</span>
+        <button type="button" class="image-modal__close-btn" data-modal-close aria-label="Close modal">
+          <i class="ph ph-x" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="image-modal__scrollable">
+        <img src="assets/segsocial-notifications-user-flow-diagram-Desktop.png"
+          alt="Full User Flow Diagram for Notifications and Complaints" class="image-modal__full-img"
+          loading="lazy" />
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal: Menu Access -->
+  <dialog class="image-modal" id="modal-menu-access" aria-labelledby="modal-menu-title" aria-modal="true">
+    <div class="image-modal__backdrop" data-modal-close></div>
+    <div class="image-modal__container">
+      <div class="image-modal__header">
+        <span class="image-modal__title" id="modal-menu-title">Access from the menu</span>
+        <button type="button" class="image-modal__close-btn" data-modal-close aria-label="Close modal">
+          <i class="ph ph-x" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="image-modal__scrollable">
+        <div class="showcase-grid-two" style="max-width: 1200px; width: 100%;">
+          <img src="assets/segsocial-notifications-screen-contributions-list-Desktop.png"
+            alt="Contributions list screen mockup" class="image-modal__full-img" loading="lazy" />
+          <img src="assets/segsocial-notifications-screen-late-payments-Desktop.png"
+            alt="Late payments screen mockup" class="image-modal__full-img" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal: Notifications List -->
+  <dialog class="image-modal" id="modal-notifications-list" aria-labelledby="modal-notif-title" aria-modal="true">
+    <div class="image-modal__backdrop" data-modal-close></div>
+    <div class="image-modal__container">
+      <div class="image-modal__header">
+        <span class="image-modal__title" id="modal-notif-title">List of notifications and debt details</span>
+        <button type="button" class="image-modal__close-btn" data-modal-close aria-label="Close modal">
+          <i class="ph ph-x" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="image-modal__scrollable">
+        <div class="showcase-grid-two" style="max-width: 1200px; width: 100%;">
+          <img src="assets/segsocial-notifications-screen-notifications-table-Desktop.png"
+            alt="Notifications table screen mockup" class="image-modal__full-img" loading="lazy" />
+          <img src="assets/segsocial-notifications-screen-notification-detail-Desktop.png"
+            alt="Notification detail screen mockup" class="image-modal__full-img" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal: Complaints Submission -->
+  <dialog class="image-modal" id="modal-complaints-submission" aria-labelledby="modal-comp-title" aria-modal="true">
+    <div class="image-modal__backdrop" data-modal-close></div>
+    <div class="image-modal__container">
+      <div class="image-modal__header">
+        <span class="image-modal__title" id="modal-comp-title">Submission of complaints and details</span>
+        <button type="button" class="image-modal__close-btn" data-modal-close aria-label="Close modal">
+          <i class="ph ph-x" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="image-modal__scrollable">
+        <div class="showcase-grid-two" style="max-width: 1200px; width: 100%;">
+          <img src="assets/segsocial-notifications-screen-complaint-form-Desktop.png"
+            alt="Complaint submission form screen mockup" class="image-modal__full-img" loading="lazy" />
+          <img src="assets/segsocial-notifications-screen-complaint-detail-Desktop.png"
+            alt="Complaint detail screen mockup" class="image-modal__full-img" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Check My Other Projects Section -->
+  <other-projects current="segsocial-notifications"></other-projects>
+
+  <!-- Footer -->
+  <portfolio-footer></portfolio-footer>
+
+  <!-- Vanilla Web Components Script -->
+  <script src="components.js"></script>
+
+</body>
+
+</html>

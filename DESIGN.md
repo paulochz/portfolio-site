@@ -97,6 +97,11 @@
 |---|---|---|
 | `--brand-segsocial` | `#006633` | Metric card values (Seg. Social pages) |
 | `--brand-segsocial-hero` | `#fbbd3d` | Hero banner background (Seg. Social) |
+| `--brand-pagbank` | `#4da73f` | Metric card values (PagBank page) |
+| `--brand-pagbank-hero` | `#5cbc4c` | Hero banner background (PagBank) |
+| `--brand-yamaha` | `#3f55a5` | Metric values & Hero banner (Yamaha) |
+| `--brand-yamaha-dark` | `#3b509b` | Hero bottom background (Yamaha) |
+| `--brand-yamaha-accent` | `#0069d9` | Decorative accent (Yamaha) |
 
 ### Accents
 
@@ -107,14 +112,18 @@
 | `--accent-red` | `#ec221f` | Error states |
 | `--accent-teal` | `#005172` | Info accents |
 
-### Overlays & Primitives
-
+### Alpha & Primitives
+ 
 | Token | Value | Usage |
 |---|---|---|
-| `--dark-50` | `rgba(0,0,0,0.05)` | Tag backgrounds, subtle hover |
-| `--dark-200` | `rgba(0,0,0,0.20)` | Overlay effects |
-| `--overlay-hover` | `rgba(0,0,0,0.12)` | Hover state overlays |
-| `--gray-150` | `#ebebeb` | Dividers, borders |
+| `--alpha-dark-5` | `rgba(0, 0, 0, 0.05)` | Subtle button hover, tag backgrounds |
+| `--alpha-dark-10` | `rgba(0, 0, 0, 0.10)` | Subtle button active / pressed |
+| `--alpha-light-5` | `rgba(255, 255, 255, 0.05)` | Subtle inverted button hover (dark bg) |
+| `--alpha-light-10` | `rgba(255, 255, 255, 0.10)` | Subtle inverted button active / pressed |
+| `--dark-50` | `rgba(0, 0, 0, 0.05)` | Tag backgrounds, subtle hover |
+| `--dark-200` | `rgba(0, 0, 0, 0.20)` | Overlay effects, dark hero pills |
+| `--overlay-hover` | `rgba(0, 0, 0, 0.12)` | Hover state overlays |
+| `--gray-150` | `#ebebeb` | Dividers, borders, neutral active |
 
 ### Highlight Badges
 
@@ -266,26 +275,28 @@
 
 All buttons combine `.btn` (base) + one **variant** + (optionally) one **size modifier**.
 
-### Variants
+### Variants & Interactive States
 
-| Class | Background | Border | Text color | Usage |
-|---|---|---|---|---|
-| `.btn--primary` | `--surface-dark` | `--border-strong` | `--text-on-dark` | Main CTA |
-| `.btn--neutral` | `--bg-primary` | `--border-default` | `--text-title` | Secondary action |
-| `.btn--subtle` | transparent | transparent | `--text-body` | Ghost / tertiary |
-| `.btn--subtle-inverted` | transparent | transparent | `--text-on-dark` | Ghost on dark bg |
-| `.btn--jump` | `--surface-dark` | transparent | `--text-on-dark` | "Jump to section" (project pages) |
-| `.btn--jump-inverted` | `--bg-primary` | transparent | `--text-body` | Inverted jump CTA |
+| Class | Default | Hover | Pressed / Active | Focused | Usage |
+|---|---|---|---|---|---|
+| `.btn--primary` | `--surface-dark` bg, `--border-strong` border, `--text-on-dark` | `opacity: 0.85` | `opacity: 0.70` | `2px` `--accent-yellow` ring | Main CTA |
+| `.btn--neutral` | `--bg-primary` bg, `--border-default` border, `--text-title` | `--bg-secondary` (`#f5f5f5`) | `--bg-tertiary` (`#ebebeb`) | `2px` `--accent-yellow` ring | Secondary action |
+| `.btn--subtle` | transparent bg & border, `--text-body` (`#303030`) | `--alpha-dark-5` (`rgba(0,0,0,0.05)`) | `--alpha-dark-10` (`rgba(0,0,0,0.10)`) | `2px` `--accent-yellow` ring | Ghost / tertiary |
+| `.btn--subtle-inverted` | transparent bg & border, `--text-on-dark` (`#f5f5f5`) | `--alpha-light-5` (`rgba(255,255,255,0.05)`) | `--alpha-light-10` (`rgba(255,255,255,0.10)`) | `2px` `--accent-yellow` ring | Ghost on dark bg |
+| `.btn--jump` | `--surface-dark` bg, `--text-on-dark` | `opacity: 0.85` | `opacity: 0.70` | `--accent-yellow` ring | Jump to section CTA |
+| `.btn--jump-inverted` | `--bg-primary` bg, `--text-body` | `--bg-secondary` | `--bg-tertiary` | `--accent-yellow` ring | Inverted jump CTA |
+
+> **Icon buttons**: Buttons containing an icon element (`<i class="ph ..."></i>`) automatically apply `gap: var(--spacing-xs)` (8px) and align icon and label smoothly.
 
 > **`.btn--jump`** has `border-radius: 0 0 var(--radius-md) var(--radius-md)` — it attaches visually to the hero banner bottom edge.
 
 ### Size Modifiers
 
-| Class | Padding | Font size |
-|---|---|---|
-| `.btn--md` | `--spacing-sm` | `--font-size-m` |
-| `.btn--sm` | `--spacing-xs --spacing-md` | `--font-size-s` |
-| `.btn--full` | `--spacing-sm` | `--font-size-m` (width: 100%, height: 48px) |
+| Class | Padding | Font size / Line height | Icon Size |
+|---|---|---|---|
+| `.btn--md` (default) | `--spacing-sm` (12px) | `--font-size-m` (16px / 24px) | `16px` |
+| `.btn--sm` | `--spacing-xs` `--spacing-md` (8px 16px) | `--font-size-s` (14px / 21px) | `16px` |
+| `.btn--full` | `--spacing-sm` (12px), width: 100%, height: 48px | `--font-size-m` (16px / 24px) | `16px` |
 
 ---
 
@@ -525,6 +536,15 @@ Used in project pages (`project-*.html`).
 |---|---|
 | `.content-cards-grid` | Vertical stack of `.content-card` elements, gap `--spacing-md` |
 | `.content-cards-grid--two-col` | 2-column grid on desktop/tablet (gap `--spacing-lg`), stacked 1-column on mobile |
+| `.content-card--with-icon` | Content card with leading icon (`gap: var(--spacing-md)`) |
+| `.research-table` | Pill-styled table for usability testing sessions (`Participants`, `Profile`, `Sessions`) |
+| `.findings-container` | White bordered box with key findings list |
+| `.finding-item` | Finding item with `--highlight-negative`, `--highlight-info`, or `--highlight-positive` |
+| `.quotes-container` | White bordered box with user quotes list |
+| `.quote-item` | Quote card with `--highlight-positive` background and icon |
+| `.before-after-box` | Gray box containing UX writing before/after comparative pills |
+| `.learnings-card` | Learnings card with `--highlight-positive` (What worked well) or `--highlight-confused` (What I would do differently) |
+| `.showcase-grid-two` | 2-column mockup grid for desktop screens side-by-side |
 
 ---
 
@@ -544,7 +564,7 @@ Used in project pages (`project-*.html`).
 assets/[descriptor]-[client]-[breakpoint].png
 assets/[descriptor]-[client]-[breakpoint]@2x.png
 assets/banner-ss-domestic-employer-desktop.png
-assets/segsocial-contributions-user-flow-desktop@2x.png
+assets/segsocial-notifications-platform-mockup-Desktop.png
 ```
 
 ### Related Projects Thumbnails (2 Sizes + Retina 2x)
@@ -570,15 +590,45 @@ Para os cards de projetos relacionados (`<other-projects>`), são utilizados 2 t
 </picture>
 ```
 
-### Vector Diagrams (SVG)
+---
 
-Para diagramas e fluxogramas vetoriais (como User Flows), utiliza-se o SVG diretamente (`.svg`) com `width="100%"` e `height="auto"`. Isso garante nitidez infinita em todos os breakpoints e em zooms no modal sem necessidade de múltiplos arquivos PNG.
+## 12. Summary Panel Component (Figma node: `614:10710`)
+
+O `<summary-panel>` é um Web Component dinâmico e flutuante que gera automaticamente um índice navegável da página com base nos títulos `<h2>` presentes em `<main id="main-content">`.
 
 ```html
-<img src="assets/diagram.svg" alt="…" class="user-flow__img" loading="lazy" />
+<div class="project-layout">
+  <main id="main-content" class="project-content">
+    <!-- Seções com <h2> -->
+  </main>
+  <summary-panel></summary-panel>
+</div>
 ```
+
+### Comportamento & Responsividade
+- **Desktop (`≥ 1200px`)**: Painel lateral fixo (`position: sticky; top: calc(80px + var(--spacing-lg))`), encerra o sticky antes do "Check my other projects" / rodapé.
+- **Tablet e Mobile (`< 1200px`)**: O painel lateral fica oculto e entra em ação o **FAB (Floating Action Button)** fixo no canto inferior direito (`bottom: 24px; right: 24px;`).
+  - **Ícone**: `<i class="ph ph-list-bullets"></i>`.
+  - **Expansão**: Ao ser clicado/tocado, o menu do sumário **expande para cima** com animação suave e backdrop blur.
+  - **Auto-Close**: Ao clicar em qualquer seção, a página rola suavemente até a âncora correspondente e o menu se fecha automaticamente.
+
+### Especificações Visuais
+| Elemento / Propriedade | Valor |
+|---|---|
+| Largura Desktop | `278px` (`var(--layout-col-3)`) |
+| Background Painel / Dropup | `--bg-dark-secondary` (`#1e1e1e`) |
+| Borda | `1px solid var(--border-strong)` (`#2c2c2c`) |
+| Border Radius | `--radius-lg` (`16px`) |
+| Padding Desktop | `--spacing-lg` (`24px`) |
+| Padding Dropdown Mobile | `--spacing-md` (`16px`) |
+| Sombra | Elevação L (`2px 2px 6px rgba(0,0,0,0.24), ...`) |
+| Botão FAB | Pílula flutuante (`48px`, raio `200px`, `--surface-dark`, ícone `ph-list-bullets`) |
+| Links | Estilo `Subtle Inverted` (`16px`/`24px`, `--text-on-dark`, hover `--alpha-light-5`, active `--alpha-light-10`) |
 
 ---
 
-*Last updated: 2026-08-26 · Synced with Figma Dev Mode MCP*
+*Last updated: 2026-08-28 · Synced with Figma Dev Mode MCP*
+
+
+
 

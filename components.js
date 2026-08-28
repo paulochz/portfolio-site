@@ -295,7 +295,7 @@ const ALL_PORTFOLIO_PROJECTS = [
   {
     id: 'segsocial-notifications',
     title: 'Portugal Social Security - Notifications of Late Payments',
-    url: '#',
+    url: 'project-segsocial-notifications.html',
     thumbnailDesktop: 'assets/thumbnail-ss-notifications.png',
     thumbnailDesktop2x: 'assets/thumbnail-ss-notifications@2x.png',
     thumbnailMobile: 'assets/thumbnail-ss-notifications-1.png',
@@ -304,7 +304,7 @@ const ALL_PORTFOLIO_PROJECTS = [
   {
     id: 'pagbank',
     title: 'PagBank',
-    url: '#',
+    url: 'project-pagbank.html',
     thumbnailDesktop: 'assets/thumbnail-pagbank.png',
     thumbnailDesktop2x: 'assets/thumbnail-pagbank@2x.png',
     thumbnailMobile: 'assets/thumbnail-pagbank-1.png',
@@ -313,7 +313,7 @@ const ALL_PORTFOLIO_PROJECTS = [
   {
     id: 'yamaha-liberacred',
     title: 'Yamaha Liberacred',
-    url: '#',
+    url: 'project-yamaha-liberacred.html',
     thumbnailDesktop: 'assets/thumbnail-yamaha-liberacred.png',
     thumbnailDesktop2x: 'assets/thumbnail-yamaha-liberacred@2x.png',
     thumbnailMobile: 'assets/thumbnail-yamaha-liberacred-1.png',
@@ -485,5 +485,257 @@ document.querySelectorAll('dialog').forEach(modal => {
     document.body.style.overflow = '';
   });
 });
+
+/**
+ * ============================================================================
+ * SummaryPanel Web Component (Figma node: 614:10710)
+ * Desktop Sticky Index + Mobile/Tablet FAB with ph-list-bullets icon expanding upwards
+ * ============================================================================
+ */
+class SummaryPanel extends HTMLElement {
+  connectedCallback() {
+    this._onScroll = this._onScroll.bind(this);
+    this._onKeydown = this._onKeydown.bind(this);
+    this._isOpen = false;
+    setTimeout(() => {
+      this.init();
+    }, 0);
+  }
+
+  disconnectedCallback() {
+    window.removeEventListener('scroll', this._onScroll);
+    window.removeEventListener('resize', this._onScroll);
+    window.removeEventListener('keydown', this._onKeydown);
+    if (this._tickingTimeout) {
+      cancelAnimationFrame(this._tickingTimeout);
+    }
+  }
+
+  init() {
+    const main = document.getElementById('main-content') || document.querySelector('main');
+    if (!main) return;
+
+    // Find all H2s in main
+    const headings = Array.from(main.querySelectorAll('h2'));
+    if (!headings.length) return;
+
+    this._navItems = headings.map((h2, index) => {
+      const text = h2.textContent.trim();
+      let section = h2.closest('section');
+      let id = (section && section.id) || h2.id;
+      if (!id) {
+        id = `section-h2-${index + 1}`;
+        if (section) section.id = id;
+        else h2.id = id;
+      }
+      return { id, text, element: section || h2 };
+    });
+
+    const linksHtml = this._navItems
+      .map(
+        (item, index) => `
+      <a href="#${item.id}" class="summary-panel__link ${index === 0 ? 'summary-panel__link--active' : ''}" data-target="${item.id}" ${index === 0 ? 'aria-current="true"' : ''}>
+        <span>${item.text}</span>
+      </a>
+    `
+      )
+      .join('');
+
+    this.innerHTML = `
+      <!-- Desktop Sticky Summary Panel -->
+      <nav class="summary-panel summary-panel--desktop" aria-label="Page summary index">
+        ${linksHtml}
+      </nav>
+
+      <!-- Mobile & Tablet FAB (Floating Action Button) -->
+      <div class="summary-panel__fab-container" aria-label="Page summary floating widget">
+        <div class="summary-panel__backdrop" data-summary-close></div>
+
+        <!-- Dropup Menu (Expands Upwards) -->
+        <div class="summary-panel__dropdown" aria-label="Page summary index">
+          <div class="summary-panel__dropdown-header">
+            <span class="summary-panel__dropdown-title">Summary</span>
+            <button type="button" class="summary-panel__dropdown-close" data-summary-close aria-label="Close summary">
+              <i class="ph ph-x" aria-hidden="true"></i>
+            </button>
+          </div>
+          <nav class="summary-panel__dropdown-nav">
+            ${linksHtml}
+          </nav>
+        </div>
+
+        <!-- Floating Button Trigger -->
+        <button type="button" class="summary-panel__fab-btn" aria-label="Open page summary index" aria-expanded="false">
+          <i class="ph ph-list-bullets summary-panel__fab-icon" aria-hidden="true"></i>
+          <span class="summary-panel__fab-label">Summary</span>
+        </button>
+      </div>
+    `;
+
+    this._links = Array.from(this.querySelectorAll('.summary-panel__link'));
+    this._fabContainer = this.querySelector('.summary-panel__fab-container');
+    this._fabBtn = this.querySelector('.summary-panel__fab-btn');
+    this._dropdown = this.querySelector('.summary-panel__dropdown');
+    this._backdrop = this.querySelector('.summary-panel__backdrop');
+
+    // Toggle Dropdown
+    if (this._fabBtn) {
+      this._fabBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this.toggleDropdown();
+      });
+    }
+
+    // Close Dropdown triggers
+    const closeTriggers = this.querySelectorAll('[data-summary-close]');
+    closeTriggers.forEach((trigger) => {
+      trigger.addEventListener('click', () => {
+        this.closeDropdown();
+      });
+    });
+
+    // Smooth scroll on link click
+    this._links.forEach((link) => {
+      link.addEventListener('click', (e) => {
+        const targetId = link.getAttribute('data-target');
+        const targetEl = document.getElementById(targetId);
+        if (targetEl) {
+          e.preventDefault();
+
+          this.closeDropdown();
+          this._isClickScrolling = true;
+          this.setActive(targetId);
+
+          const navHeight = 80;
+          const targetTop = targetEl.getBoundingClientRect().top + window.scrollY - navHeight - 20;
+
+          window.scrollTo({
+            top: targetTop,
+            behavior: 'smooth'
+          });
+
+          history.pushState(null, '', `#${targetId}`);
+
+          clearTimeout(this._clickScrollTimeout);
+          this._clickScrollTimeout = setTimeout(() => {
+            this._isClickScrolling = false;
+          }, 800);
+        }
+      });
+    });
+
+    // Listeners
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    window.addEventListener('resize', this._onScroll, { passive: true });
+    window.addEventListener('keydown', this._onKeydown);
+    this.updateActiveSection();
+  }
+
+  toggleDropdown() {
+    if (this._isOpen) {
+      this.closeDropdown();
+    } else {
+      this.openDropdown();
+    }
+  }
+
+  openDropdown() {
+    this._isOpen = true;
+    if (this._dropdown) this._dropdown.classList.add('summary-panel__dropdown--open');
+    if (this._backdrop) this._backdrop.classList.add('summary-panel__backdrop--open');
+    if (this._fabBtn) {
+      this._fabBtn.classList.add('summary-panel__fab-btn--active');
+      this._fabBtn.setAttribute('aria-expanded', 'true');
+    }
+  }
+
+  closeDropdown() {
+    this._isOpen = false;
+    if (this._dropdown) this._dropdown.classList.remove('summary-panel__dropdown--open');
+    if (this._backdrop) this._backdrop.classList.remove('summary-panel__backdrop--open');
+    if (this._fabBtn) {
+      this._fabBtn.classList.remove('summary-panel__fab-btn--active');
+      this._fabBtn.setAttribute('aria-expanded', 'false');
+    }
+  }
+
+  _onKeydown(e) {
+    if (e.key === 'Escape' && this._isOpen) {
+      this.closeDropdown();
+    }
+  }
+
+  _onScroll() {
+    if (this._isClickScrolling) return;
+    if (!this._ticking) {
+      this._tickingTimeout = requestAnimationFrame(() => {
+        this.updateActiveSection();
+        this._ticking = false;
+      });
+      this._ticking = true;
+    }
+  }
+
+  updateActiveSection() {
+    if (!this._navItems || !this._navItems.length) return;
+
+    const scrollY = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+
+    // Manage FAB visibility on mobile/tablet (show as soon as user starts scrolling past the top hero)
+    if (this._fabContainer) {
+      if (scrollY >= 50) {
+        this._fabContainer.classList.add('summary-panel__fab-container--visible');
+      } else {
+        this._fabContainer.classList.remove('summary-panel__fab-container--visible');
+        if (this._isOpen) {
+          this.closeDropdown();
+        }
+      }
+    }
+
+    // If reached very bottom of page, activate last item
+    if (scrollY + windowHeight >= documentHeight - 60) {
+      this.setActive(this._navItems[this._navItems.length - 1].id);
+      return;
+    }
+
+    const triggerPoint = 160; // 80px navbar + margin
+    let currentId = this._navItems[0].id;
+
+    for (let i = 0; i < this._navItems.length; i++) {
+      const el = this._navItems[i].element;
+      if (el) {
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= triggerPoint) {
+          currentId = this._navItems[i].id;
+        } else {
+          break;
+        }
+      }
+    }
+
+    this.setActive(currentId);
+  }
+
+  setActive(id) {
+    if (!this._links) return;
+    this._links.forEach((link) => {
+      if (link.getAttribute('data-target') === id) {
+        link.classList.add('summary-panel__link--active');
+        link.setAttribute('aria-current', 'true');
+      } else {
+        link.classList.remove('summary-panel__link--active');
+        link.removeAttribute('aria-current');
+      }
+    });
+  }
+}
+
+customElements.define('summary-panel', SummaryPanel);
+
+
+
 
 

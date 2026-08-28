@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PagBank Financial Products | Paulo Chiozzini</title>
+  <meta name="description"
+    content="Case study: PagBank Financial Products. Optimizing KYC onboarding by resolving 50+ operational friction points across the document journey.">
+
+  <!-- Preconnect & Resource Hints for Performance Optimization -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <link rel="dns-prefetch" href="https://unpkg.com">
+
+  <!-- Google Font: Inter - Non-blocking -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+
+  <!-- Phosphor Icons (Regular & Duotone CDN) - Non-blocking -->
+  <link rel="preload" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"></noscript>
+  <link rel="preload" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css"></noscript>
+
+  <!-- Global Unified Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Header / Navigation -->
+  <header id="main-header">
+    <portfolio-header></portfolio-header>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="project-hero" aria-label="Project Hero">
+
+    <!-- Top Area: Div/HeroContent (Brand background #5cbc4c) -->
+    <div class="project-hero__banner project-hero__banner--pagbank">
+      <div class="project-hero__banner-inner">
+
+        <!-- Back button -->
+        <a href="index.html#projects" class="project-hero__back" aria-label="Back to home">
+          <i class="ph ph-arrow-left" aria-hidden="true"></i>
+          <span>Back to home</span>
+        </a>
+
+        <div class="project-hero__container">
+
+          <!-- Heading Block -->
+          <div class="project-hero__heading">
+            <div class="project-hero__title-sub">
+              <h1 class="project-hero__main-title">PagBank Financial Products</h1>
+            </div>
+            <p class="project-hero__tagline">
+              Optimizing KYC onboarding by resolving 50+ operational friction points<br aria-hidden="true">
+              across the document journey.
+            </p>
+          </div>
+
+          <!-- Meta info row (Timeline, Team, Role) -->
+          <div class="project-hero__meta">
+
+            <div class="project-hero__meta-item">
+              <div class="project-hero__meta-icon" aria-hidden="true">
+                <i class="ph-duotone ph-calendar-blank"></i>
+              </div>
+              <div class="project-hero__meta-texts">
+                <span class="project-hero__meta-label">Timeline</span>
+                <span class="project-hero__meta-value">2021-2023</span>
+              </div>
+            </div>
+
+            <div class="project-hero__meta-item">
+              <div class="project-hero__meta-icon" aria-hidden="true">
+                <i class="ph-duotone ph-users"></i>
+              </div>
+              <div class="project-hero__meta-texts">
+                <span class="project-hero__meta-label">Team</span>
+                <span class="project-hero__meta-value">Cross-functional</span>
+              </div>
+            </div>
+
+            <div class="project-hero__meta-item">
+              <div class="project-hero__meta-icon" aria-hidden="true">
+                <i class="ph-duotone ph-user-circle"></i>
+              </div>
+              <div class="project-hero__meta-texts">
+                <span class="project-hero__meta-label">Role</span>
+                <span class="project-hero__meta-value">Product Designer</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Tags row -->
+          <div class="project-hero__tags">
+            <span class="project-tag">UX/UI Design</span>
+            <span class="project-tag">Design System</span>
+            <span class="project-tag">UX Research</span>
+            <span class="project-tag">B2C</span>
+            <span class="project-tag">Financial Services</span>
+            <span class="project-tag">Android/iOS Mobile App (Native)</span>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bottom Area: Div/HeroBackground (Jump CTA & Platform Mockup) -->
+    <div class="project-hero__background">
+      <div class="project-hero__background-inner">
+
+        <!-- Jump to solution button -->
+        <a href="#the-solution" class="btn btn--jump project-hero__jump-btn">
+          <i class="ph ph-arrow-down" aria-hidden="true"></i>
+          <span>Jump straight to the solution here</span>
+        </a>
+
+        <!-- Platform Mockup Picture -->
+        <div class="project-hero__mockup-wrapper">
+          <img src="assets/pagbank-document-upload-mockup-Desktop.png"
+            alt="Mockup of the PagBank Financial Products document upload interface"
+            class="project-hero__mockup-img" width="1000" height="419" loading="eager" fetchpriority="high" />
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Project Body Layout (Content + Floating Summary Index) -->
+  <div class="project-layout">
+
+    <!-- Main Content -->
+    <main id="main-content" class="project-content">
+
+    <!-- Section: Context and business challenge -->
+    <section class="case-section" id="context" aria-labelledby="context-heading">
+      <h2 id="context-heading" class="case-section__heading">Context and business challenge</h2>
+      <p class="case-section__body">
+        PagBank is a digital banking platform serving millions of customers in Brazil. One recurring operational issue was the balance unlock process. When accounts were temporarily blocked due to compliance or verification requirements, customers needed to submit documents for review.
+      </p>
+      <p class="case-section__body">
+        The existing experience was fragmented across channels, unclear in its instructions, and highly dependent on customer support. This created friction for users and increased operational costs for the business.
+      </p>
+      <p class="case-section__body">
+        The goal was to redesign the entire balance unlock journey, reducing support demand, improving first-time document submission rates, and increasing user confidence throughout the process.
+      </p>
+
+      <h3 class="case-section__subheading">The problem</h3>
+      <div class="content-card content-card--gray">
+        <span class="content-card__title">Customers faced significant friction at every stage of the balance unlock journey:</span>
+        <div class="content-card__desc">
+          <ul>
+            <li>Difficulty understanding why their balance was blocked</li>
+            <li>No clear indication of where to submit required documents</li>
+            <li>Conflicting information across help center, email, and platform</li>
+            <li>Frustration with image size limits and document formatting</li>
+            <li>No visibility into analysis status after submission</li>
+            <li>Inability to resume the process after interruption</li>
+            <li>From a business perspective, this resulted in a high volume of support tickets, repeated submissions due to errors, and longer processing times for both users and internal teams.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Results and impact -->
+    <section class="case-section" id="results" aria-labelledby="results-heading">
+      <h2 id="results-heading" class="case-section__heading">Results and impact</h2>
+
+      <!-- Metrics Grid -->
+      <div class="metrics-grid">
+
+        <div class="metric-card">
+          <span class="metric-card__value metric-card__value--pagbank">52+</span>
+          <span class="metric-card__label">Incidents Mapped &amp; Solved</span>
+          <p class="metric-card__desc">
+            Identified and redesigned friction points across pre-submission (41) and submission (11) stages.
+          </p>
+        </div>
+
+        <div class="metric-card">
+          <span class="metric-card__value metric-card__value--pagbank">3 ID Types</span>
+          <span class="metric-card__label">Unified Onboarding</span>
+          <p class="metric-card__desc">
+            Native document capture support for RG, CNH, and RNE/RNM.
+          </p>
+        </div>
+
+        <div class="metric-card">
+          <span class="metric-card__value metric-card__value--pagbank">End-to-End</span>
+          <span class="metric-card__label">Service &amp; Ops Alignment</span>
+          <p class="metric-card__desc">
+            Connected front-end user journey directly with back-office operations blueprints.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Friction & Support Incident Reduction -->
+      <h3 class="case-section__subheading">Friction &amp; Support Incident Reduction</h3>
+      <div class="case-section__body">
+        <p><strong>Proactive Problem Solving</strong><br>
+        Mapped the customer journey to uncover 52+ operational friction points across document submission phases.</p>
+        <p><strong>Pre-Submission Optimization</strong><br>
+        Targeted the critical pre-submission phase (41 incidents), creating clear context and expectations before users start uploading documents, drastically reducing drop-offs and support tickets.</p>
+      </div>
+
+      <!-- End-to-End Service Operations (Service Design) -->
+      <h3 class="case-section__subheading">End-to-End Service Operations (Service Design)</h3>
+      <div class="case-section__body">
+        <p><strong>Operations Blueprint Integration</strong><br>
+        Bridged front-end user flows with internal operational blueprints, aligning design requirements with back-office document verification capacity and validation rules.</p>
+      </div>
+
+    </section>
+
+    <!-- Section: Design approach -->
+    <section class="case-section case-section--full" id="design-approach" aria-labelledby="design-approach-heading">
+      <h2 id="design-approach-heading" class="case-section__heading">Design approach</h2>
+      <h3 class="case-section__subheading">Roadmap</h3>
+      <p class="case-section__body">
+        The project followed a structured approach from discovery to development, ensuring all stakeholders were aligned and user needs were prioritized throughout the process.
+      </p>
+
+      <div class="user-flow__diagram-wrapper">
+        <button type="button" class="user-flow__trigger" data-modal-target="modal-roadmap"
+          aria-haspopup="dialog" aria-label="Click to zoom: Design process roadmap">
+          <img src="assets/pagbank-design-process-roadmap-Desktop.png"
+            alt="PagBank Design Process Roadmap from discovery to delivery" class="user-flow__img"
+            loading="lazy" />
+          <span class="user-flow__zoom-badge" aria-hidden="true">
+            <i class="ph ph-magnifying-glass-plus"></i>
+            <span>Click to zoom</span>
+          </span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Section: Research and insights -->
+    <section class="case-section case-section--full" id="research-and-insights" aria-labelledby="research-heading">
+      <h2 id="research-heading" class="case-section__heading">Research and insights</h2>
+      <p class="case-section__body">
+        Due to budget and time constraints, traditional external research was limited. Instead, we leveraged internal qualitative and quantitative data sources, including:
+      </p>
+
+      <!-- Incident Analysis Diagram -->
+      <div class="user-flow__diagram-wrapper">
+        <button type="button" class="user-flow__trigger" data-modal-target="modal-incident-analysis"
+          aria-haspopup="dialog" aria-label="Click to zoom: Research incident analysis">
+          <img src="assets/pagbank-research-incident-analysis-Desktop.png"
+            alt="PagBank research and incident analysis across document submission phases" class="user-flow__img"
+            loading="lazy" />
+          <span class="user-flow__zoom-badge" aria-hidden="true">
+            <i class="ph ph-magnifying-glass-plus"></i>
+            <span>Click to zoom</span>
+          </span>
+        </button>
+      </div>
+
+      <!-- User Journey (simplified) -->
+      <h3 class="case-section__subheading">User Journey (simplified)</h3>
+      <p class="case-section__body">
+        We mapped the journey into three main stages:
+      </p>
+
+      <div class="user-flow__diagram-wrapper">
+        <button type="button" class="user-flow__trigger" data-modal-target="modal-pain-points"
+          aria-haspopup="dialog" aria-label="Click to zoom: Customer pain points matrix">
+          <img src="assets/pagbank-customer-pain-points-matrix-Desktop.png"
+            alt="PagBank customer pain points matrix across the user journey" class="user-flow__img"
+            loading="lazy" />
+          <span class="user-flow__zoom-badge" aria-hidden="true">
+            <i class="ph ph-magnifying-glass-plus"></i>
+            <span>Click to zoom</span>
+          </span>
+        </button>
+      </div>
+
+      <!-- Key insights -->
+      <h3 class="case-section__subheading" style="font-size: 24px; line-height: 29px; margin-top: var(--spacing-xl);">Key insights included:</h3>
+      <div class="content-cards-grid">
+        <div class="content-card content-card--white content-card--with-icon">
+          <i class="ph ph-warning-circle content-card__icon" aria-hidden="true"></i>
+          <p class="content-card__desc">Users needed proactive information before starting the process</p>
+        </div>
+        <div class="content-card content-card--white content-card--with-icon">
+          <i class="ph ph-warning-circle content-card__icon" aria-hidden="true"></i>
+          <p class="content-card__desc">Status visibility would reduce anxiety and unnecessary support contact</p>
+        </div>
+        <div class="content-card content-card--white content-card--with-icon">
+          <i class="ph ph-warning-circle content-card__icon" aria-hidden="true"></i>
+          <p class="content-card__desc">Technical barriers such as image compression created avoidable friction</p>
+        </div>
+        <div class="content-card content-card--white content-card--with-icon">
+          <i class="ph ph-warning-circle content-card__icon" aria-hidden="true"></i>
+          <p class="content-card__desc">A mobile-native flow was essential for accessibility</p>
+        </div>
+        <div class="content-card content-card--white content-card--with-icon">
+          <i class="ph ph-warning-circle content-card__icon" aria-hidden="true"></i>
+          <p class="content-card__desc">The ability to resume incomplete submissions was critical</p>
+        </div>
+      </div>
+
+      <!-- Operations Blueprint & User Flow -->
+      <h3 class="case-section__subheading" style="font-size: 24px; line-height: 29px; margin-top: var(--spacing-2xl);">Operations Blueprint &amp; User Flow</h3>
+      <p class="case-section__body">
+        To gain a holistic understanding of the flow, a blueprint was created connecting every interaction from the operator-managed analysis to the final user.
+      </p>
+
+      <div class="user-flow__diagram-wrapper">
+        <button type="button" class="user-flow__trigger" data-modal-target="modal-blueprint"
+          aria-haspopup="dialog" aria-label="Click to zoom: PagBank service blueprint">
+          <img src="assets/pagbank-service-blueprint.png"
+            alt="PagBank service blueprint diagram" class="user-flow__img"
+            loading="lazy" />
+          <span class="user-flow__zoom-badge" aria-hidden="true">
+            <i class="ph ph-magnifying-glass-plus"></i>
+            <span>Click to zoom</span>
+          </span>
+        </button>
+      </div>
+
+      <div class="user-flow__diagram-wrapper" style="margin-top: var(--spacing-xl);">
+        <button type="button" class="user-flow__trigger" data-modal-target="modal-flow"
+          aria-haspopup="dialog" aria-label="Click to zoom: PagBank user flow document upload">
+          <img src="assets/pagbank-user-flow-document-upload.png"
+            alt="PagBank user flow diagram for document upload" class="user-flow__img"
+            loading="lazy" style="max-width: 937px; margin: 0 auto;" />
+          <span class="user-flow__zoom-badge" aria-hidden="true">
+            <i class="ph ph-magnifying-glass-plus"></i>
+            <span>Click to zoom</span>
+          </span>
+        </button>
+      </div>
+
+    </section>
+
+    <!-- Section: Hypothesis -->
+    <section class="case-section" id="hypothesis" aria-labelledby="hypothesis-heading">
+      <h2 id="hypothesis-heading" class="case-section__heading" style="font-size: 24px; line-height: 29px;">Hypothesis</h2>
+      <p class="case-section__body">
+        Based on research findings, we defined a set of hypotheses to guide the redesign:
+      </p>
+
+      <div class="hypothesis-grid">
+        <div class="content-card content-card--gray">
+          <p class="content-card__desc">Increasing visibility and clarity of the submission entry point would reduce help center dependency</p>
+        </div>
+        <div class="content-card content-card--gray">
+          <p class="content-card__desc">Increasing visibility of the process status for the user through notifications, emails, and status tracking will reduce the user's anxiety, causing them to avoid contacting other channels, such as the help center.</p>
+        </div>
+        <div class="content-card content-card--gray">
+          <p class="content-card__desc">Implementing a way to compress the image after upload or increasing the maximum size allowed will take this responsibility off the user and reduce stress when submitting the document.</p>
+        </div>
+        <div class="content-card content-card--gray">
+          <p class="content-card__desc">Providing an in-app flow within the mobile application would assist those without a computer in submitting documents more easily.</p>
+        </div>
+        <div class="content-card content-card--gray">
+          <p class="content-card__desc">Displaying information about the deadline for completing the process directly in the flow will allow the user to be more informed about the progress and avoid seeking human assistance for visibility.</p>
+        </div>
+        <div class="content-card content-card--gray">
+          <p class="content-card__desc">When many documents are requested, the user may delay submission after starting the process. When returning to submit, the user may be frustrated by not being able to continue where they left off.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: The solution -->
+    <section class="case-section case-section--full" id="the-solution" aria-labelledby="the-solution-heading">
+      <h2 id="the-solution-heading" class="case-section__heading">The solution</h2>
+
+      <!-- Group 1: Flow start -->
+      <div class="main-screens-showcase">
+        <div class="main-screens-group">
+          <h3 class="main-screens-group__title">Flow start</h3>
+          <div class="main-screens-group__media">
+            <button type="button" class="user-flow__trigger" data-modal-target="modal-flow-start"
+              aria-haspopup="dialog" aria-label="Click to zoom: Flow start mockup">
+              <img src="assets/pagbank-home-and-sidebar-annotated.png"
+                alt="PagBank Home and Sidebar annotated mockup" class="main-screens-group__img" loading="lazy" />
+              <span class="user-flow__zoom-badge" aria-hidden="true">
+                <i class="ph ph-magnifying-glass-plus"></i>
+                <span>Click to zoom</span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Group 2: Onboarding -->
+      <div class="main-screens-showcase">
+        <div class="main-screens-group">
+          <h3 class="main-screens-group__title">Onboarding</h3>
+          <p class="case-section__body">
+            The onboarding flow was designed to guide users through the balance unlock process with clear instructions and visual feedback at each step.
+          </p>
+          <div class="main-screens-group__media">
+            <button type="button" class="user-flow__trigger" data-modal-target="modal-onboarding"
+              aria-haspopup="dialog" aria-label="Click to zoom: Onboarding mockups">
+              <img src="assets/pagbank-blocked-balance-screens.png"
+                alt="PagBank blocked balance onboarding screens mockup" class="main-screens-group__img" loading="lazy" />
+              <span class="user-flow__zoom-badge" aria-hidden="true">
+                <i class="ph ph-magnifying-glass-plus"></i>
+                <span>Click to zoom</span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Group 3: ID Capture -->
+      <div class="main-screens-showcase">
+        <div class="main-screens-group">
+          <h3 class="main-screens-group__title">ID Capture</h3>
+          <p class="case-section__body">
+            We designed a streamlined document capture experience supporting multiple Brazilian ID types (RG, CNH, RNE/RNM) with real-time validation and user guidance.
+          </p>
+          <div class="main-screens-group__media">
+            <button type="button" class="user-flow__trigger" data-modal-target="modal-id-capture"
+              aria-haspopup="dialog" aria-label="Click to zoom: ID Capture mockup">
+              <img src="assets/pagbank-home-and-sidebar-annotated.png"
+                alt="PagBank ID Capture screens mockup" class="main-screens-group__img" loading="lazy" />
+              <span class="user-flow__zoom-badge" aria-hidden="true">
+                <i class="ph ph-magnifying-glass-plus"></i>
+                <span>Click to zoom</span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Group 4: Document Attachment -->
+      <div class="main-screens-showcase">
+        <div class="main-screens-group">
+          <h3 class="main-screens-group__title">Document Attachment</h3>
+          <p class="case-section__body">
+            The document attachment flow allows users to easily upload proof of address documents with clear file format guidelines and size requirements.
+          </p>
+          <div class="main-screens-group__media">
+            <button type="button" class="user-flow__trigger" data-modal-target="modal-doc-attachment"
+              aria-haspopup="dialog" aria-label="Click to zoom: Document Attachment mockup">
+              <img src="assets/pagbank-document-upload-screens-Desktop.png"
+                alt="PagBank document upload screens mockup" class="main-screens-group__img" loading="lazy" />
+              <span class="user-flow__zoom-badge" aria-hidden="true">
+                <i class="ph ph-magnifying-glass-plus"></i>
+                <span>Click to zoom</span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Group 5: Status Tracking -->
+      <div class="main-screens-showcase">
+        <div class="main-screens-group">
+          <h3 class="main-screens-group__title">Status Tracking</h3>
+          <p class="case-section__body">
+            The status tracking feature provides real-time updates on the balance unlock process, helping users stay informed and reduce anxiety.
+          </p>
+          <div class="main-screens-group__media">
+            <button type="button" class="user-flow__trigger" data-modal-target="modal-status-tracking"
+              aria-haspopup="dialog" aria-label="Click to zoom: Status Tracking mockup">
+              <img src="assets/pagbank-request-tracking-screens.png"
+                alt="PagBank request tracking screens mockup" class="main-screens-group__img" loading="lazy" />
+              <span class="user-flow__zoom-badge" aria-hidden="true">
+                <i class="ph ph-magnifying-glass-plus"></i>
+                <span>Click to zoom</span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Group 6: Web Interface -->
+      <div class="main-screens-showcase">
+        <div class="main-screens-group">
+          <h3 class="main-screens-group__title">Web Interface</h3>
+          <p class="case-section__body">
+            The web interface is designed to be intuitive and user-friendly, ensuring a seamless experience for users accessing the balance unlock process through their web browser.
+          </p>
+          <div class="main-screens-group__media">
+            <button type="button" class="user-flow__trigger" data-modal-target="modal-web-interface"
+              aria-haspopup="dialog" aria-label="Click to zoom: Web Interface mockup">
+              <img src="assets/pagbank-responsive-document-upload.png"
+                alt="PagBank responsive document upload web interface mockup" class="main-screens-group__img" loading="lazy" />
+              <span class="user-flow__zoom-badge" aria-hidden="true">
+                <i class="ph ph-magnifying-glass-plus"></i>
+                <span>Click to zoom</span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Insights Subsection -->
+      <h3 class="case-section__subheading" style="margin-top: var(--spacing-2xl);">Insights</h3>
+      <div class="content-cards-grid">
+        <div class="content-card content-card--gray">
+          <span class="content-card__title">Improved User Experience</span>
+          <p class="content-card__desc">To improve our workflow, we need to take action before the submission. This means providing advance information to the user and educating them about the submission process. By making it clearer to users what is expected, we will be able to identify areas for improvement.</p>
+        </div>
+        <div class="content-card content-card--gray">
+          <span class="content-card__title">Better Understanding of Analysis</span>
+          <p class="content-card__desc">In a client-centric point of view: they will have a better understanding of the analysis and its implications. This will lead to more informed decisions and a clearer grasp of the next steps they need to take. As a result, users can feel more confident and prepared, knowing exactly what to expect from the analysis.</p>
+        </div>
+        <div class="content-card content-card--gray">
+          <span class="content-card__title">Reduced Operational Confusion</span>
+          <p class="content-card__desc">In an operational point of view: the team was able to map out the user experience by creating a logical and efficient structure. This will reduce confusion and improve system efficiency.</p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Section: Conclusion -->
+    <section class="case-section" id="conclusion" aria-labelledby="conclusion-heading">
+      <h2 id="conclusion-heading" class="case-section__heading">Conclusion</h2>
+      <p class="case-section__body">
+        The PagBank balance unlock process redesign was a significant improvement in user experience, reducing customer support tickets and increasing user satisfaction. By focusing on user needs and providing clear, intuitive steps, we were able to create a seamless and efficient process that benefits both users and the company.
+      </p>
+    </main>
+
+    <!-- Floating & Sticky Summary Index Panel -->
+    <summary-panel></summary-panel>
+
+  </div>
+
+  <!-- Dialog Modals / Lightbox Zoom -->
+
+  <!-- Modal: Roadmap -->
+  <dialog class="image-modal" id="modal-roadmap" aria-labelledby="modal-roadmap-title" aria-modal="true">
+    <div class="image-modal__backdrop" data-modal-close></div>
+    <div class="image-modal__container">
+      <div class="image-modal__header">
+        <span class="image-modal__title" id="modal-roadmap-title">Design process roadmap</span>
+        <button type="button" class="image-modal__close-btn" data-modal-close aria-label="Close modal">
+          <i class="ph ph-x" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="image-modal__scrollable">
+        <img src="assets/pagbank-design-process-roadmap-Desktop.png"
+          alt="PagBank Design Process Roadmap from discovery to delivery" class="image-modal__full-img"
+          loading="lazy" />
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal: Incident Analysis -->
+  <dialog class="image-modal" id="modal-incident-analysis" aria-labelledby="modal-incident-title" aria-modal="true">
+    <div class="image-modal__backdrop" data-modal-close></div>
+    <div class="image-modal__container">
+      <div class="image-modal__header">
+        <span class="image-modal__title" id="modal-incident-title">Research incident analysis</span>
+        <button type="button" class="image-modal__close-btn" data-modal-close aria-label="Close modal">
+          <i class="ph ph-x" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="image-modal__scrollable">
+        <img src="assets/pagbank-research-incident-analysis-Desktop.png"
+          alt="PagBank research and incident analysis across document submission phases" class="image-modal__full-img"
+          loading="lazy" />
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal: Pain Points Matrix -->
+  <dialog class="image-modal" id="modal-pain-points" aria-labelledby="modal-pain-title" aria-modal="true">
+    <div class="image-modal__backdrop" data-modal-close></div>
+    <div class="image-modal__container">
+      <div class="image-modal__header">
+        <span class="image-modal__title" id="modal-pain-title">Customer pain points matrix</span>
+        <button type="button" class="image-modal__close-btn" data-modal-close aria-label="Close modal">
+          <i class="ph ph-x" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="image-modal__scrollable">
+        <img src="assets/pagbank-customer-pain-points-matrix-Desktop.png"
+          alt="PagBank customer pain points matrix across the user journey" class="image-modal__full-img"
+          loading="lazy" />
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal: Blueprint -->
+  <dialog class="image-modal" id="modal-blueprint" aria-labelledby="modal-blueprint-title" aria-modal="true">
+    <div class="image-modal__backdrop" data-modal-close></div>
+    <div class="image-modal__container">
+      <div class="image-modal__header">
+        <span class="image-modal__title" id="modal-blueprint-title">Operations Blueprint</span>
+        <button type="button" class="image-modal__close-btn" data-modal-close aria-label="Close modal">
+          <i class="ph ph-x" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="image-modal__scrollable">
+        <img src="assets/pagbank-service-blueprint.png"
+          alt="PagBank service blueprint diagram" class="image-modal__full-img"
+          loading="lazy" />
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal: User Flow -->
+  <dialog class="image-modal" id="modal-flow" aria-labelledby="modal-flow-title" aria-modal="true">
+    <div class="image-modal__backdrop" data-modal-close></div>
+    <div class="image-modal__container">
+      <div class="image-modal__header">
+        <span class="image-modal__title" id="modal-flow-title">User Flow Document Upload</span>
+        <button type="button" class="image-modal__close-btn" data-modal-close aria-label="Close modal">
+          <i class="ph ph-x" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="image-modal__scrollable">
+        <img src="assets/pagbank-user-flow-document-upload.png"
+          alt="PagBank user flow diagram for document upload" class="image-modal__full-img"
+          loading="lazy" />
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal: Flow Start -->
+  <dialog class="image-modal" id="modal-flow-start" aria-labelledby="modal-fs-title" aria-modal="true">
+    <div class="image-modal__backdrop" data-modal-close></div>
+    <div class="image-modal__container">
+      <div class="image-modal__header">
+        <span class="image-modal__title" id="modal-fs-title">Flow start</span>
+        <button type="button" class="image-modal__close-btn" data-modal-close aria-label="Close modal">
+          <i class="ph ph-x" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="image-modal__scrollable">
+        <img src="assets/pagbank-home-and-sidebar-annotated.png"
+          alt="PagBank Home and Sidebar annotated mockup" class="image-modal__full-img" loading="lazy" />
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal: Onboarding -->
+  <dialog class="image-modal" id="modal-onboarding" aria-labelledby="modal-onb-title" aria-modal="true">
+    <div class="image-modal__backdrop" data-modal-close></div>
+    <div class="image-modal__container">
+      <div class="image-modal__header">
+        <span class="image-modal__title" id="modal-onb-title">Onboarding</span>
+        <button type="button" class="image-modal__close-btn" data-modal-close aria-label="Close modal">
+          <i class="ph ph-x" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="image-modal__scrollable">
+        <img src="assets/pagbank-blocked-balance-screens.png"
+          alt="PagBank blocked balance onboarding screens mockup" class="image-modal__full-img" loading="lazy" />
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal: ID Capture -->
+  <dialog class="image-modal" id="modal-id-capture" aria-labelledby="modal-idc-title" aria-modal="true">
+    <div class="image-modal__backdrop" data-modal-close></div>
+    <div class="image-modal__container">
+      <div class="image-modal__header">
+        <span class="image-modal__title" id="modal-idc-title">ID Capture</span>
+        <button type="button" class="image-modal__close-btn" data-modal-close aria-label="Close modal">
+          <i class="ph ph-x" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="image-modal__scrollable">
+        <img src="assets/pagbank-home-and-sidebar-annotated.png"
+          alt="PagBank ID Capture screens mockup" class="image-modal__full-img" loading="lazy" />
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal: Document Attachment -->
+  <dialog class="image-modal" id="modal-doc-attachment" aria-labelledby="modal-da-title" aria-modal="true">
+    <div class="image-modal__backdrop" data-modal-close></div>
+    <div class="image-modal__container">
+      <div class="image-modal__header">
+        <span class="image-modal__title" id="modal-da-title">Document Attachment</span>
+        <button type="button" class="image-modal__close-btn" data-modal-close aria-label="Close modal">
+          <i class="ph ph-x" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="image-modal__scrollable">
+        <img src="assets/pagbank-document-upload-screens-Desktop.png"
+          alt="PagBank document upload screens mockup" class="image-modal__full-img" loading="lazy" />
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal: Status Tracking -->
+  <dialog class="image-modal" id="modal-status-tracking" aria-labelledby="modal-st-title" aria-modal="true">
+    <div class="image-modal__backdrop" data-modal-close></div>
+    <div class="image-modal__container">
+      <div class="image-modal__header">
+        <span class="image-modal__title" id="modal-st-title">Status Tracking</span>
+        <button type="button" class="image-modal__close-btn" data-modal-close aria-label="Close modal">
+          <i class="ph ph-x" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="image-modal__scrollable">
+        <img src="assets/pagbank-request-tracking-screens.png"
+          alt="PagBank request tracking screens mockup" class="image-modal__full-img" loading="lazy" />
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal: Web Interface -->
+  <dialog class="image-modal" id="modal-web-interface" aria-labelledby="modal-wi-title" aria-modal="true">
+    <div class="image-modal__backdrop" data-modal-close></div>
+    <div class="image-modal__container">
+      <div class="image-modal__header">
+        <span class="image-modal__title" id="modal-wi-title">Web Interface</span>
+        <button type="button" class="image-modal__close-btn" data-modal-close aria-label="Close modal">
+          <i class="ph ph-x" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="image-modal__scrollable">
+        <img src="assets/pagbank-responsive-document-upload.png"
+          alt="PagBank responsive document upload web interface mockup" class="image-modal__full-img" loading="lazy" />
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Check My Other Projects Section -->
+  <other-projects current="pagbank"></other-projects>
+
+  <!-- Footer -->
+  <portfolio-footer></portfolio-footer>
+
+  <!-- Vanilla Web Components Script -->
+  <script src="components.js"></script>
+
+</body>
+
+</html>

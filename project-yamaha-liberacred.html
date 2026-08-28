@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yamaha Liberacred | Paulo Chiozzini</title>
+  <meta name="description"
+    content="Case study: Yamaha Liberacred. Modernizing Yamaha Liberacred: A responsive, component-driven UI redesign focused on accessibility.">
+
+  <!-- Preconnect & Resource Hints for Performance Optimization -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <link rel="dns-prefetch" href="https://unpkg.com">
+
+  <!-- Google Font: Inter - Non-blocking -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+
+  <!-- Phosphor Icons (Regular & Duotone CDN) - Non-blocking -->
+  <link rel="preload" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"></noscript>
+  <link rel="preload" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css"></noscript>
+
+  <!-- Global Unified Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Header / Navigation -->
+  <header id="main-header">
+    <portfolio-header></portfolio-header>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="project-hero" aria-label="Project Hero">
+
+    <!-- Top Area: Div/HeroContent (Brand background #3f55a5) -->
+    <div class="project-hero__banner project-hero__banner--yamaha">
+      <div class="project-hero__banner-inner">
+
+        <!-- Back button -->
+        <a href="index.html#projects" class="project-hero__back" aria-label="Back to home">
+          <i class="ph ph-arrow-left" aria-hidden="true"></i>
+          <span>Back to home</span>
+        </a>
+
+        <div class="project-hero__container">
+
+          <!-- Heading Block -->
+          <div class="project-hero__heading">
+            <div class="project-hero__title-sub">
+              <h1 class="project-hero__main-title">Yamaha Liberacred</h1>
+            </div>
+            <p class="project-hero__tagline">
+              Modernizing Yamaha Liberacred: A responsive, component-driven UI redesign focused on accessibility.
+            </p>
+          </div>
+
+          <!-- Meta info row (Timeline, Team, Role) -->
+          <div class="project-hero__meta">
+
+            <div class="project-hero__meta-item">
+              <div class="project-hero__meta-icon" aria-hidden="true">
+                <i class="ph-duotone ph-calendar-blank"></i>
+              </div>
+              <div class="project-hero__meta-texts">
+                <span class="project-hero__meta-label">Timeline</span>
+                <span class="project-hero__meta-value">6 months</span>
+              </div>
+            </div>
+
+            <div class="project-hero__meta-item">
+              <div class="project-hero__meta-icon" aria-hidden="true">
+                <i class="ph-duotone ph-users"></i>
+              </div>
+              <div class="project-hero__meta-texts">
+                <span class="project-hero__meta-label">Team</span>
+                <span class="project-hero__meta-value">Cross-functional</span>
+              </div>
+            </div>
+
+            <div class="project-hero__meta-item">
+              <div class="project-hero__meta-icon" aria-hidden="true">
+                <i class="ph-duotone ph-user-circle"></i>
+              </div>
+              <div class="project-hero__meta-texts">
+                <span class="project-hero__meta-label">Role</span>
+                <span class="project-hero__meta-value">Product Designer</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Tags row -->
+          <div class="project-hero__tags">
+            <span class="project-tag">Financial Services</span>
+            <span class="project-tag">UI Design</span>
+            <span class="project-tag">Design System</span>
+            <span class="project-tag">B2B</span>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bottom Area: Div/HeroBackground (Jump CTA & Platform Mockup) -->
+    <div class="project-hero__background project-hero__background--yamaha">
+      <div class="project-hero__background-inner">
+
+        <!-- Jump to solution button -->
+        <a href="#solution-highlights" class="btn btn--jump project-hero__jump-btn">
+          <i class="ph ph-arrow-down" aria-hidden="true"></i>
+          <span>Jump straight to the solution here</span>
+        </a>
+
+        <!-- Platform Mockup Picture -->
+        <div class="project-hero__mockup-wrapper">
+          <img src="assets/mockup_yamaha.png"
+            alt="Mockup of the Yamaha Liberacred platform"
+            class="project-hero__mockup-img" width="1200" height="504" loading="eager" fetchpriority="high" />
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Project Body Layout (Content + Floating Summary Index) -->
+  <div class="project-layout">
+
+    <!-- Main Content -->
+    <main id="main-content" class="project-content">
+
+    <!-- Section: Context and business challenge -->
+    <section class="case-section" id="context" aria-labelledby="context-heading">
+      <h2 id="context-heading" class="case-section__heading">Context and business challenge</h2>
+      <p class="case-section__body">
+        Yamaha Financial Services was launching a new financial vertical focused on enabling customers to finance Yamaha vehicles, including motorbikes and boats. The initiative required building trust as a financial services provider while simplifying a credit application process that was previously complex and inefficient.
+      </p>
+      <p class="case-section__body">
+        The product needed to serve two audiences simultaneously. Customers required a clear and accessible way to apply for credit, including individuals without traditional income documentation. Internal teams required operational efficiency to review, process, and manage applications.
+      </p>
+      <p class="case-section__body">
+        I led the UX and UI design from early discovery through delivery, collaborating closely with product, engineering, and stakeholders to define a scalable and accessible digital experience.
+      </p>
+
+      <!-- Project context -->
+      <h3 class="case-section__subheading">Project context</h3>
+      <h4 class="case-section__subheading" style="font-size: 24px; line-height: 29px; margin-top: 0;">Project scope predefined, no direct user data</h4>
+      <div class="content-card content-card--gray">
+        <p class="content-card__desc">
+          The project scope was predefined before our involvement. Delivery timelines were fixed and access to end users was limited. Because of this, decisions relied on competitive analysis, domain expertise in financial services, stakeholder workshops, and established usability principles.
+        </p>
+        <p class="content-card__desc" style="margin-top: var(--spacing-sm);">
+          The challenge was to design a product that balanced regulatory clarity, operational efficiency, and brand alignment without direct user interviews or usability testing with end customers.
+        </p>
+      </div>
+
+      <!-- The problem -->
+      <h3 class="case-section__subheading" style="margin-top: var(--spacing-2xl);">The problem</h3>
+      <p class="case-section__body">
+        Yamaha needed a dedicated website for its sub-brand, Yamaha Financial Services. The existing product was not intuitive, visually cohesive, or user-friendly enough to attract and retain its target audience.
+      </p>
+      <p class="case-section__body">
+        The objective was to transform the experience into a more intuitive, recognizable, and visually consistent platform that simplified access to loan information while also supporting efficient internal operations for Yamaha employees.
+      </p>
+    </section>
+
+    <!-- Section: Results and impact -->
+    <section class="case-section" id="results" aria-labelledby="results-heading">
+      <h2 id="results-heading" class="case-section__heading">Results and impact</h2>
+
+      <!-- Metrics Grid -->
+      <div class="metrics-grid">
+
+        <div class="metric-card">
+          <span class="metric-card__value metric-card__value--yamaha">Standalone</span>
+          <span class="metric-card__label">Brand Identity</span>
+          <p class="metric-card__desc">
+            Successfully launched Yamaha Financial Services as a standalone digital brand.
+          </p>
+        </div>
+
+        <div class="metric-card">
+          <span class="metric-card__value metric-card__value--yamaha">WCAG 2.1 AA</span>
+          <span class="metric-card__label">Inclusive Access</span>
+          <p class="metric-card__desc">
+            Improved digital accessibility and responsiveness for underserved customer segments.
+          </p>
+        </div>
+
+        <div class="metric-card">
+          <span class="metric-card__value metric-card__value--yamaha">Scalable DS</span>
+          <span class="metric-card__label">Operational Efficiency</span>
+          <p class="metric-card__desc">
+            Built a modular design system to streamline internal workflows and future product development.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Brand Elevation & Inclusive UX -->
+      <h3 class="case-section__subheading">Brand Elevation &amp; Inclusive UX</h3>
+      <div class="content-card content-card--gray">
+        <span class="content-card__title">Standalone Brand Launch</span>
+        <p class="content-card__desc">
+          Successfully designed and launched Yamaha Financial Services as an independent, standalone digital brand entity.
+        </p>
+        <span class="content-card__title" style="margin-top: var(--spacing-md);">Inclusive Accessibility</span>
+        <p class="content-card__desc">
+          Improved digital accessibility and responsiveness across devices, ensuring a seamless financial experience for previously underserved customer segments.
+        </p>
+      </div>
+
+      <!-- Scalability & Operational Efficiency -->
+      <h3 class="case-section__subheading" style="margin-top: var(--spacing-2xl);">Scalability &amp; Operational Efficiency</h3>
+      <div class="content-card content-card--gray">
+        <span class="content-card__title">Scalable Design System</span>
+        <p class="content-card__desc">
+          Architected a comprehensive, component-driven design system that sets the foundation for all future product development across the brand.
+        </p>
+        <span class="content-card__title" style="margin-top: var(--spacing-md);">Internal Team Efficiency</span>
+        <p class="content-card__desc">
+          Enhanced operational efficiency for design and engineering teams by standardizing UI patterns, reducing handoff friction, and accelerating production cycles.
+        </p>
+      </div>
+
+    </section>
+
+    <!-- Section: Existing solution -->
+    <section class="case-section case-section--full" id="existing-solution" aria-labelledby="existing-solution-heading">
+      <h2 id="existing-solution-heading" class="case-section__heading">Existing solution</h2>
+
+      <!-- Screenshots Showcase -->
+      <div class="user-flow__diagram-wrapper">
+        <button type="button" class="user-flow__trigger" data-modal-target="modal-existing-solution"
+          aria-haspopup="dialog" aria-label="Click to zoom: Existing solution screenshots">
+          <div style="display: flex; flex-direction: column; gap: var(--spacing-md); width: 100%;">
+            <img src="assets/yamaha-existing-solution-screenshot-1.png"
+              alt="Yamaha existing solution legacy website screenshot 1" class="user-flow__img"
+              loading="lazy" />
+            <img src="assets/yamaha-existing-solution-screenshot-2.png"
+              alt="Yamaha existing solution legacy website screenshot 2" class="user-flow__img"
+              loading="lazy" />
+          </div>
+          <span class="user-flow__zoom-badge" aria-hidden="true">
+            <i class="ph ph-magnifying-glass-plus"></i>
+            <span>Click to zoom</span>
+          </span>
+        </button>
+      </div>
+
+      <!-- Issues Diagnosis Card -->
+      <div class="content-card content-card--gray" style="margin-top: var(--spacing-xl);">
+        <span class="content-card__title">The existing platform presented several issues that limited adoption and efficiency:</span>
+        <div class="content-card__desc">
+          <ul>
+            <li>Navigation was fragmented and difficult to understand</li>
+            <li>Visual inconsistencies weakened brand perception</li>
+            <li>The mobile experience did not reflect the volume of mobile traffic</li>
+            <li>Information hierarchy lacked clarity in multi-step forms</li>
+            <li>Accessibility standards were not consistently applied</li>
+            <li>Internal workflows required unnecessary manual steps</li>
+          </ul>
+          <p style="margin-top: var(--spacing-sm);">These issues affected both application completion rates and internal processing efficiency.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Goals -->
+    <section class="case-section" id="goals" aria-labelledby="goals-heading">
+      <h2 id="goals-heading" class="case-section__heading">Goals</h2>
+      <h3 class="case-section__subheading" style="font-size: 24px; line-height: 29px; margin-top: 0;">The redesign focused on five primary objectives:</h3>
+
+      <div class="case-section__body" style="display: flex; flex-direction: column; gap: var(--spacing-lg);">
+        <div>
+          <h4 style="font-size: 20px; line-height: 24px; font-weight: 600; color: var(--text-title); margin-bottom: 4px;">Simplify the credit application journey</h4>
+          <p>Reduce friction across multi-step forms and improve completion rates.</p>
+        </div>
+
+        <div>
+          <h4 style="font-size: 20px; line-height: 24px; font-weight: 600; color: var(--text-title); margin-bottom: 4px;">Support alternative income verification</h4>
+          <p>Enable customers without traditional documentation to submit contextual proof and continue their application process.</p>
+        </div>
+
+        <div>
+          <h4 style="font-size: 20px; line-height: 24px; font-weight: 600; color: var(--text-title); margin-bottom: 4px;">Improve operational efficiency</h4>
+          <p>Design tools that reduce manual review effort and accelerate processing time for internal teams.</p>
+        </div>
+
+        <div>
+          <h4 style="font-size: 20px; line-height: 24px; font-weight: 600; color: var(--text-title); margin-bottom: 4px;">Strengthen brand perception</h4>
+          <p>Align the interface with Yamaha's premium positioning while maintaining clarity and trustworthiness in financial contexts.</p>
+        </div>
+
+        <div>
+          <h4 style="font-size: 20px; line-height: 24px; font-weight: 600; color: var(--text-title); margin-bottom: 4px;">Ensure accessibility and responsiveness</h4>
+          <p>Apply accessibility best practices and responsive design standards across devices.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Content audit and structural redesign -->
+    <section class="case-section" id="content-audit" aria-labelledby="content-audit-heading">
+      <h2 id="content-audit-heading" class="case-section__heading">Content audit and structural redesign</h2>
+      <h3 class="case-section__subheading" style="font-size: 16px; line-height: 24px; font-weight: 600; color: var(--text-body); margin-top: 0;">Auditing the system and uncovering opportunities</h3>
+      <p class="case-section__body">
+        Before initiating the visual redesign, we conducted a structured content inventory of the existing platform. This allowed us to identify gaps, redundancies, and opportunities for reorganization before committing to new design patterns.
+      </p>
+    </section>
+
+    <!-- Section: Design approach -->
+    <section class="case-section" id="design-approach" aria-labelledby="design-approach-heading">
+      <h2 id="design-approach-heading" class="case-section__heading">Design approach</h2>
+      <p class="case-section__body">
+        Given the limited access to end users, design decisions were guided by competitive benchmarking, established usability heuristics, and iterative stakeholder feedback.
+      </p>
+
+      <div class="case-section__body" style="display: flex; flex-direction: column; gap: var(--spacing-xl); margin-top: var(--spacing-lg);">
+        <div>
+          <h3 class="case-section__subheading" style="margin-top: 0;">1. Understanding the business and regulatory context</h3>
+          <p>We analyzed Yamaha's brand guidelines, financial product requirements, and compliance constraints. Financial services require a careful balance between clarity, transparency, and trust.</p>
+        </div>
+
+        <div>
+          <h4 style="font-size: 24px; line-height: 29px; font-weight: 600; color: var(--text-title); margin-bottom: 8px;">2. Competitive benchmarking</h4>
+          <p>I conducted a thorough analysis of competitors and industry trends, involving a detailed review of UX/UI designs from similar financial services platforms to identify patterns and opportunities.</p>
+        </div>
+
+        <div>
+          <h4 style="font-size: 24px; line-height: 29px; font-weight: 600; color: var(--text-title); margin-bottom: 8px;">3. Establishing a scalable design system</h4>
+          <p>Angular Material served as a structural foundation, but we customized components to reflect Yamaha's visual identity and accessibility requirements.</p>
+        </div>
+
+        <div>
+          <h4 style="font-size: 24px; line-height: 29px; font-weight: 600; color: var(--text-title); margin-bottom: 8px;">4. Interaction and interface design</h4>
+          <p>The application journey was redesigned using progressive disclosure principles to reduce cognitive load. Clear progress indicators and contextual assistance were introduced at each stage.</p>
+        </div>
+
+        <div>
+          <h4 style="font-size: 24px; line-height: 29px; font-weight: 600; color: var(--text-title); margin-bottom: 8px;">5. Stakeholder validation</h4>
+          <p>Although direct end-user testing was not available, we conducted structured walkthrough sessions with stakeholders and operational teams to validate design decisions and refine interactions.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Visual language and accessibility -->
+    <section class="case-section case-section--full" id="visual-language" aria-labelledby="visual-language-heading">
+      <h2 id="visual-language-heading" class="case-section__heading">Visual language and accessibility</h2>
+
+      <!-- Color Palette -->
+      <div style="margin-bottom: var(--spacing-3xl);">
+        <p class="case-section__body">
+          A new color palette was developed to balance brand alignment with accessibility requirements. Every combination was tested for WCAG 2.1 AA contrast compliance.
+        </p>
+
+        <h3 class="case-section__subheading" style="font-size: 24px; line-height: 29px;">Primary</h3>
+        <div class="user-flow__diagram-wrapper">
+          <button type="button" class="user-flow__trigger" data-modal-target="modal-palette-primary"
+            aria-haspopup="dialog" aria-label="Click to zoom: Primary color palette">
+            <img src="assets/Primary.png" alt="Primary color palette" class="user-flow__img" loading="lazy" />
+            <span class="user-flow__zoom-badge" aria-hidden="true">
+              <i class="ph ph-magnifying-glass-plus"></i>
+              <span>Click to zoom</span>
+            </span>
+          </button>
+        </div>
+
+        <h3 class="case-section__subheading" style="font-size: 24px; line-height: 29px; margin-top: var(--spacing-2xl);">Functional</h3>
+        <div class="user-flow__diagram-wrapper">
+          <button type="button" class="user-flow__trigger" data-modal-target="modal-palette-functional"
+            aria-haspopup="dialog" aria-label="Click to zoom: Functional color palette">
+            <img src="assets/Functional.png" alt="Functional color palette" class="user-flow__img" loading="lazy" />
+            <span class="user-flow__zoom-badge" aria-hidden="true">
+              <i class="ph ph-magnifying-glass-plus"></i>
+              <span>Click to zoom</span>
+            </span>
+          </button>
+        </div>
+
+        <h3 class="case-section__subheading" style="font-size: 24px; line-height: 29px; margin-top: var(--spacing-2xl);">Neutral</h3>
+        <div class="user-flow__diagram-wrapper">
+          <button type="button" class="user-flow__trigger" data-modal-target="modal-palette-neutral"
+            aria-haspopup="dialog" aria-label="Click to zoom: Neutral color palette">
+            <img src="assets/Neutral.png" alt="Neutral color palette" class="user-flow__img" loading="lazy" />
+            <span class="user-flow__zoom-badge" aria-hidden="true">
+              <i class="ph ph-magnifying-glass-plus"></i>
+              <span>Click to zoom</span>
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <div>
+        <p class="case-section__body">
+          Button systems were designed with clear hierarchy and interaction feedback. Each variant follows consistent sizing, spacing, and state patterns.
+        </p>
+
+        <h3 class="case-section__subheading" style="font-size: 24px; line-height: 29px;">Primary</h3>
+        <div class="user-flow__diagram-wrapper">
+          <button type="button" class="user-flow__trigger" data-modal-target="modal-btn-primary"
+            aria-haspopup="dialog" aria-label="Click to zoom: Primary buttons">
+            <img src="assets/Primary-1.png" alt="Primary button system specifications" class="user-flow__img" loading="lazy" />
+            <span class="user-flow__zoom-badge" aria-hidden="true">
+              <i class="ph ph-magnifying-glass-plus"></i>
+              <span>Click to zoom</span>
+            </span>
+          </button>
+        </div>
+
+        <h3 class="case-section__subheading" style="font-size: 24px; line-height: 29px; margin-top: var(--spacing-2xl);">Secondary</h3>
+        <div class="user-flow__diagram-wrapper">
+          <button type="button" class="user-flow__trigger" data-modal-target="modal-btn-secondary"
+            aria-haspopup="dialog" aria-label="Click to zoom: Secondary buttons">
+            <img src="assets/Secondary.png" alt="Secondary button system specifications" class="user-flow__img" loading="lazy" />
+            <span class="user-flow__zoom-badge" aria-hidden="true">
+              <i class="ph ph-magnifying-glass-plus"></i>
+              <span>Click to zoom</span>
+            </span>
+          </button>
+        </div>
+
+        <h3 class="case-section__subheading" style="font-size: 24px; line-height: 29px; margin-top: var(--spacing-2xl);">Tertiary</h3>
+        <div class="user-flow__diagram-wrapper">
+          <button type="button" class="user-flow__trigger" data-modal-target="modal-btn-tertiary"
+            aria-haspopup="dialog" aria-label="Click to zoom: Tertiary buttons">
+            <img src="assets/Tertiary.png" alt="Tertiary button system specifications" class="user-flow__img" loading="lazy" />
+            <span class="user-flow__zoom-badge" aria-hidden="true">
+              <i class="ph ph-magnifying-glass-plus"></i>
+              <span>Click to zoom</span>
+            </span>
+          </button>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Section: Solution highlights -->
+    <section class="case-section" id="solution-highlights" aria-labelledby="solution-highlights-heading">
+      <h2 id="solution-highlights-heading" class="case-section__heading">Solution highlights</h2>
+
+      <div class="case-section__body" style="display: flex; flex-direction: column; gap: var(--spacing-lg);">
+        <div>
+          <h3 style="font-size: 24px; line-height: 29px; font-weight: 600; color: var(--text-title); margin-bottom: 4px;">Streamlined application process</h3>
+          <p>Reorganized multi-step forms into a guided sequence with clear progression and contextual assistance.</p>
+        </div>
+
+        <div>
+          <h3 style="font-size: 24px; line-height: 29px; font-weight: 600; color: var(--text-title); margin-bottom: 4px;">Flexible income verification</h3>
+          <p>Introduced alternative documentation pathways that expanded access for customers without traditional proof of income.</p>
+        </div>
+
+        <div>
+          <h3 style="font-size: 24px; line-height: 29px; font-weight: 600; color: var(--text-title); margin-bottom: 4px;">Operational dashboard</h3>
+          <p>Centralized application management, reduced manual review steps, and improved task prioritization for internal teams.</p>
+        </div>
+
+        <div>
+          <h3 style="font-size: 24px; line-height: 29px; font-weight: 600; color: var(--text-title); margin-bottom: 4px;">Brand-Aligned visual design</h3>
+          <p>Established reusable components and documentation to support future product expansion.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Main screens -->
+    <section class="case-section case-section--full" id="main-screens" aria-labelledby="main-screens-heading">
+      <h2 id="main-screens-heading" class="case-section__heading">Main screens</h2>
+
+      <div class="user-flow__diagram-wrapper">
+        <button type="button" class="user-flow__trigger" data-modal-target="modal-main-screens"
+          aria-haspopup="dialog" aria-label="Click to zoom: Yamaha main screens showcase">
+          <img src="assets/yamaha-main-screens-showcase-Desktop.png"
+            alt="Yamaha Liberacred main screens showcase" class="user-flow__img"
+            loading="lazy" />
+          <span class="user-flow__zoom-badge" aria-hidden="true">
+            <i class="ph ph-magnifying-glass-plus"></i>
+            <span>Click to zoom</span>
+          </span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Section: Key Learnings -->
+    <section class="case-section" id="key-learnings" aria-labelledby="key-learnings-heading">
+      <h2 id="key-learnings-heading" class="case-section__heading">Key learnings</h2>
+
+      <div class="case-section__body" style="display: flex; flex-direction: column; gap: var(--spacing-lg);">
+        <div>
+          <h3 style="font-size: 24px; line-height: 29px; font-weight: 600; color: var(--text-title); margin-bottom: 4px;">Design under constraints</h3>
+          <p>Working within a predefined scope reinforced the importance of leveraging heuristics, competitive benchmarking, and stakeholder workshops as substitutes for direct user research.</p>
+        </div>
+
+        <div>
+          <h3 style="font-size: 24px; line-height: 29px; font-weight: 600; color: var(--text-title); margin-bottom: 4px;">Design systems as strategic assets</h3>
+          <p>Investing in a structured design system early reduced rework, accelerated development cycles, and improved cross-team collaboration.</p>
+        </div>
+
+        <div>
+          <h3 style="font-size: 24px; line-height: 29px; font-weight: 600; color: var(--text-title); margin-bottom: 4px;">Balancing brand and clarity</h3>
+          <p>Financial interfaces must communicate stability and transparency. Aligning premium brand elements with usability principles required ongoing iteration.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Deliverables -->
+    <section class="case-section" id="deliverables" aria-labelledby="deliverables-heading">
+      <h2 id="deliverables-heading" class="case-section__heading">Deliverables</h2>
+
+      <div class="hypothesis-grid">
+        <div class="content-card content-card--white" style="border: 1px solid var(--border-default);">
+          <span class="content-card__title">Design Artifacts</span>
+          <div class="content-card__desc" style="margin-top: var(--spacing-xs);">
+            <p>• Comprehensive style guide</p>
+            <p>• Component-based design system</p>
+            <p>• High-fidelity interface designs</p>
+            <p>• Interactive prototypes</p>
+          </div>
+        </div>
+
+        <div class="content-card content-card--white" style="border: 1px solid var(--border-default);">
+          <span class="content-card__title">Documentation</span>
+          <div class="content-card__desc" style="margin-top: var(--spacing-xs);">
+            <p>• User flow diagrams</p>
+            <p>• Component usage guidelines</p>
+            <p>• Accessibility documentation</p>
+            <p>• Developer handoff specifications</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Floating & Sticky Summary Index Panel -->
+    <summary-panel></summary-panel>
+
+  </div>
+
+  <!-- Dialog Modals / Lightbox Zoom -->
+
+  <!-- Modal: Existing Solution -->
+  <dialog class="image-modal" id="modal-existing-solution" aria-labelledby="modal-ex-title" aria-modal="true">
+    <div class="image-modal__backdrop" data-modal-close></div>
+    <div class="image-modal__container">
+      <div class="image-modal__header">
+        <span class="image-modal__title" id="modal-ex-title">Existing solution</span>
+        <button type="button" class="image-modal__close-btn" data-modal-close aria-label="Close modal">
+          <i class="ph ph-x" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="image-modal__scrollable">
+        <div style="display: flex; flex-direction: column; gap: 24px; max-width: 1200px; width: 100%;">
+          <img src="assets/yamaha-existing-solution-screenshot-1.png"
+            alt="Yamaha existing solution legacy screenshot 1" class="image-modal__full-img" loading="lazy" />
+          <img src="assets/yamaha-existing-solution-screenshot-2.png"
+            alt="Yamaha existing solution legacy screenshot 2" class="image-modal__full-img" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal: Palette Primary -->
+  <dialog class="image-modal" id="modal-palette-primary" aria-labelledby="modal-pp-title" aria-modal="true">
+    <div class="image-modal__backdrop" data-modal-close></div>
+    <div class="image-modal__container">
+      <div class="image-modal__header">
+        <span class="image-modal__title" id="modal-pp-title">Primary Color Palette</span>
+        <button type="button" class="image-modal__close-btn" data-modal-close aria-label="Close modal">
+          <i class="ph ph-x" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="image-modal__scrollable">
+        <img src="assets/Primary.png" alt="Primary color palette specifications" class="image-modal__full-img" loading="lazy" />
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal: Palette Functional -->
+  <dialog class="image-modal" id="modal-palette-functional" aria-labelledby="modal-pf-title" aria-modal="true">
+    <div class="image-modal__backdrop" data-modal-close></div>
+    <div class="image-modal__container">
+      <div class="image-modal__header">
+        <span class="image-modal__title" id="modal-pf-title">Functional Color Palette</span>
+        <button type="button" class="image-modal__close-btn" data-modal-close aria-label="Close modal">
+          <i class="ph ph-x" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="image-modal__scrollable">
+        <img src="assets/Functional.png" alt="Functional color palette specifications" class="image-modal__full-img" loading="lazy" />
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal: Palette Neutral -->
+  <dialog class="image-modal" id="modal-palette-neutral" aria-labelledby="modal-pn-title" aria-modal="true">
+    <div class="image-modal__backdrop" data-modal-close></div>
+    <div class="image-modal__container">
+      <div class="image-modal__header">
+        <span class="image-modal__title" id="modal-pn-title">Neutral Color Palette</span>
+        <button type="button" class="image-modal__close-btn" data-modal-close aria-label="Close modal">
+          <i class="ph ph-x" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="image-modal__scrollable">
+        <img src="assets/Neutral.png" alt="Neutral color palette specifications" class="image-modal__full-img" loading="lazy" />
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal: Buttons Primary -->
+  <dialog class="image-modal" id="modal-btn-primary" aria-labelledby="modal-bp-title" aria-modal="true">
+    <div class="image-modal__backdrop" data-modal-close></div>
+    <div class="image-modal__container">
+      <div class="image-modal__header">
+        <span class="image-modal__title" id="modal-bp-title">Primary Buttons</span>
+        <button type="button" class="image-modal__close-btn" data-modal-close aria-label="Close modal">
+          <i class="ph ph-x" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="image-modal__scrollable">
+        <img src="assets/Primary-1.png" alt="Primary buttons system" class="image-modal__full-img" loading="lazy" />
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal: Buttons Secondary -->
+  <dialog class="image-modal" id="modal-btn-secondary" aria-labelledby="modal-bs-title" aria-modal="true">
+    <div class="image-modal__backdrop" data-modal-close></div>
+    <div class="image-modal__container">
+      <div class="image-modal__header">
+        <span class="image-modal__title" id="modal-bs-title">Secondary Buttons</span>
+        <button type="button" class="image-modal__close-btn" data-modal-close aria-label="Close modal">
+          <i class="ph ph-x" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="image-modal__scrollable">
+        <img src="assets/Secondary.png" alt="Secondary buttons system" class="image-modal__full-img" loading="lazy" />
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal: Buttons Tertiary -->
+  <dialog class="image-modal" id="modal-btn-tertiary" aria-labelledby="modal-bt-title" aria-modal="true">
+    <div class="image-modal__backdrop" data-modal-close></div>
+    <div class="image-modal__container">
+      <div class="image-modal__header">
+        <span class="image-modal__title" id="modal-bt-title">Tertiary Buttons</span>
+        <button type="button" class="image-modal__close-btn" data-modal-close aria-label="Close modal">
+          <i class="ph ph-x" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="image-modal__scrollable">
+        <img src="assets/Tertiary.png" alt="Tertiary buttons system" class="image-modal__full-img" loading="lazy" />
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal: Main Screens -->
+  <dialog class="image-modal" id="modal-main-screens" aria-labelledby="modal-ms-title" aria-modal="true">
+    <div class="image-modal__backdrop" data-modal-close></div>
+    <div class="image-modal__container">
+      <div class="image-modal__header">
+        <span class="image-modal__title" id="modal-ms-title">Main screens</span>
+        <button type="button" class="image-modal__close-btn" data-modal-close aria-label="Close modal">
+          <i class="ph ph-x" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="image-modal__scrollable">
+        <img src="assets/yamaha-main-screens-showcase-Desktop.png"
+          alt="Yamaha Liberacred main screens full size showcase" class="image-modal__full-img" loading="lazy" />
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Check My Other Projects Section -->
+  <other-projects current="yamaha-liberacred"></other-projects>
+
+  <!-- Footer -->
+  <portfolio-footer></portfolio-footer>
+
+  <!-- Vanilla Web Components Script -->
+  <script src="components.js"></script>
+
+</body>
+
+</html>
