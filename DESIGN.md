@@ -350,8 +350,8 @@ Used in project pages (`project-*.html`).
 
 | Class | Max-width | Gap | Padding |
 |---|---|---|---|
-| `.project-content` | `1440px` | `--spacing-6xl` | `0 16px/24px/120px` (mobile/tablet/desktop) |
-| `.case-section` | `893px` | `--spacing-xl` | — |
+| `.project-content` | `1440px` (8 col: `792px` in desktop layout) | `--spacing-6xl` | `0 16px/24px/120px` (mobile/tablet/desktop) |
+| `.case-section` | `792px` (8 col) | `--spacing-xl` | — |
 
 ### Section Typography
 
@@ -598,15 +598,15 @@ O `<summary-panel>` é um Web Component dinâmico e flutuante que gera automatic
 
 ```html
 <div class="project-layout">
-  <main id="main-content" class="project-content">
-    <!-- Seções com <h2> -->
-  </main>
   <summary-panel></summary-panel>
+  <main id="main-content" class="project-content">
+    <!-- Seções com <h2> (8 colunas: 792px) -->
+  </main>
 </div>
 ```
 
 ### Comportamento & Responsividade
-- **Desktop (`≥ 1200px`)**: Painel lateral fixo (`position: sticky; top: calc(80px + var(--spacing-lg))`), encerra o sticky antes do "Check my other projects" / rodapé.
+- **Desktop (`≥ 1200px`)**: Painel lateral fixo à **esquerda** (`278px`, 3 colunas, `position: sticky; top: calc(80px + var(--spacing-lg))`) e conteúdo principal à **direita** (`792px`, 8 colunas), encerrando o sticky antes do "Check my other projects" / rodapé.
 - **Tablet e Mobile (`< 1200px`)**: O painel lateral fica oculto e entra em ação o **FAB (Floating Action Button)** fixo no canto inferior direito (`bottom: 24px; right: 24px;`).
   - **Ícone**: `<i class="ph ph-list-bullets"></i>`.
   - **Expansão**: Ao ser clicado/tocado, o menu do sumário **expande para cima** com animação suave e backdrop blur.
