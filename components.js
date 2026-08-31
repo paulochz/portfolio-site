@@ -594,7 +594,7 @@ class SummaryPanel extends HTMLElement {
       });
     });
 
-    // Smooth scroll on link click
+    // Smooth scroll on link click with ease-out cubic animation
     this._links.forEach((link) => {
       link.addEventListener('click', (e) => {
         const targetId = link.getAttribute('data-target');
@@ -606,20 +606,20 @@ class SummaryPanel extends HTMLElement {
           this._isClickScrolling = true;
           this.setActive(targetId);
 
-          const navHeight = 80;
-          const targetTop = targetEl.getBoundingClientRect().top + window.scrollY - navHeight - 20;
+          const navbar = document.querySelector('.navbar');
+          const navHeight = navbar ? navbar.offsetHeight : 80;
+          const targetTop = Math.max(0, targetEl.getBoundingClientRect().top + window.scrollY - navHeight - 20);
 
-          window.scrollTo({
-            top: targetTop,
-            behavior: 'smooth'
-          });
+          smoothScrollTo(targetTop, 350);
 
-          history.pushState(null, '', `#${targetId}`);
+          if (history.pushState) {
+            history.pushState(null, '', `#${targetId}`);
+          }
 
           clearTimeout(this._clickScrollTimeout);
           this._clickScrollTimeout = setTimeout(() => {
             this._isClickScrolling = false;
-          }, 800);
+          }, 450);
         }
       });
     });

@@ -618,17 +618,41 @@ O `<summary-panel>` é um Web Component dinâmico e flutuante que gera automatic
 | Largura Desktop | `278px` (`var(--layout-col-3)`) |
 | Background Painel / Dropup | `--bg-dark-secondary` (`#1e1e1e`) |
 | Borda | `1px solid var(--border-strong)` (`#2c2c2c`) |
-| Border Radius | `--radius-lg` (`16px`) |
-| Padding Desktop | `--spacing-lg` (`24px`) |
-| Padding Dropdown Mobile | `--spacing-md` (`16px`) |
-| Sombra | Elevação L (`2px 2px 6px rgba(0,0,0,0.24), ...`) |
-| Botão FAB | Pílula flutuante (`48px`, raio `200px`, `--surface-dark`, ícone `ph-list-bullets`) |
-| Links | Estilo `Subtle Inverted` (`16px`/`24px`, `--text-on-dark`, hover `--alpha-light-5`, active `--alpha-light-10`) |
+| Border Radius | `var(--radius-lg)` (`16px`) |
+| Padding Dropup Mobile | `var(--spacing-md)` (`16px`) |
+| Shadow FAB | `Elevation / L` |
+| Itens de Menu | `14px`, peso 500 (`Label/SM`), cor `#757575` (ativo: `#ffffff` + bold) |
+
+---
+
+## 13. Main Screens Showcase Structure
+
+Apresentação dos mockups finais de solução em cartões agrupados e destacados:
+
+```html
+<section class="case-section case-section--full" id="main-screens">
+  <h2 class="case-section__heading">Main screens</h2>
+
+  <div class="main-screens-stack">
+    <div class="main-screens-showcase">
+      <div class="main-screens-group">
+        <h3 class="main-screens-group__title">Group Title</h3>
+        <p class="main-screens-group__desc">Contextual description...</p>
+        <div class="main-screens-group__media">
+          <button type="button" class="user-flow__trigger" data-modal-target="modal-id">
+            <!-- Full-width mockups stacked vertically with @2x Retina srcset -->
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+```
+
+- **Layout**: Cartão delimitado com `border: 1px solid var(--border-default)`, `border-radius: var(--radius-lg)`, `padding: var(--spacing-3xl)`.
+- **Media Stack**: Imagens dispostas verticalmente a 100% da largura útil interna para legibilidade máxima dos mockups.
+- **Tipografia & Acessibilidade**: Os títulos dos grupos mantêm a tag semântica `<h3>` (para preservar a hierarquia do documento sob `<h2>Main screens</h2>`), utilizando a classe `.main-screens-group__title` ou `.h3--size-h4` que aplica os tokens visuais de **H4** (`font-size: var(--font-size-h4); line-height: var(--line-height-h4); font-weight: var(--font-weight-bold);`).
 
 ---
 
 *Last updated: 2026-08-28 · Synced with Figma Dev Mode MCP*
-
-
-
-

@@ -123,9 +123,16 @@
 
         <!-- Platform Mockup Picture -->
         <div class="project-hero__mockup-wrapper">
-          <img src="assets/segsocial-notifications-platform-mockup-Desktop.png"
-            alt="Mockup of the Portugal Social Security Notifications of Late Payments platform"
-            class="project-hero__mockup-img" width="1004" height="499" loading="eager" fetchpriority="high" />
+          <picture class="project-hero__mockup-picture">
+            <source media="(min-width: 1024px)"
+              srcset="assets/segsocial-notifications-platform-mockup-Desktop.png 1x, assets/segsocial-notifications-platform-mockup-Desktop@2x.png 2x">
+            <source media="(min-width: 768px)"
+              srcset="assets/segsocial-notifications-platform-mockup-tablet.png 1x, assets/segsocial-notifications-platform-mockup-tablet@2x.png 2x">
+            <img src="assets/segsocial-notifications-platform-mockup-mobile.png"
+              srcset="assets/segsocial-notifications-platform-mockup-mobile.png 1x, assets/segsocial-notifications-platform-mockup-mobile@2x.png 2x"
+              alt="Mockup of the Portugal Social Security Notifications of Late Payments platform"
+              class="project-hero__mockup-img" width="1004" height="499" loading="eager" fetchpriority="high" />
+          </picture>
         </div>
 
       </div>
@@ -341,9 +348,14 @@
           <div class="user-flow__diagram-wrapper">
             <button type="button" class="user-flow__trigger" data-modal-target="modal-user-journey"
               aria-haspopup="dialog" aria-label="Click to zoom: User journey map">
-              <img src="assets/segsocial-notifications-research-timeline-Desktop.png"
-                alt="User journey map of the existing debt collection process" class="user-flow__img"
-                loading="lazy" />
+              <picture>
+                <source media="(min-width: 768px)"
+                  srcset="assets/segsocial-notifications-research-timeline-desktop.png 1x, assets/segsocial-notifications-research-timeline-desktop@2x.png 2x">
+                <img src="assets/segsocial-notifications-research-timeline-desktop.png"
+                  srcset="assets/segsocial-notifications-research-timeline-desktop.png 1x, assets/segsocial-notifications-research-timeline-desktop@2x.png 2x"
+                  alt="User journey map of the existing debt collection process" class="user-flow__img"
+                  loading="lazy" />
+              </picture>
               <span class="user-flow__zoom-badge" aria-hidden="true">
                 <i class="ph ph-magnifying-glass-plus"></i>
                 <span>Click to zoom</span>
@@ -692,9 +704,9 @@
         <div class="user-flow__diagram-wrapper">
           <button type="button" class="user-flow__trigger" data-modal-target="flow-modal"
             aria-haspopup="dialog" aria-label="Click to zoom: User Flow Notifications and Complaints">
-            <img src="assets/segsocial-notifications-user-flow-diagram-Desktop.png"
+            <img src="assets/segsocial-notifications-user-flow-diagram.svg"
               alt="Diagram of the full User Flow for Notifications and Complaints" class="user-flow__img"
-              loading="lazy" />
+              loading="lazy" width="1200" height="800" />
             <span class="user-flow__zoom-badge" aria-hidden="true">
               <i class="ph ph-magnifying-glass-plus"></i>
               <span>Click to zoom</span>
@@ -708,78 +720,114 @@
     <section class="case-section case-section--full" id="main-screens" aria-labelledby="main-screens-heading">
       <h2 id="main-screens-heading" class="case-section__heading">Main screens</h2>
 
-      <!-- Group 1: Access from the menu -->
+      <!-- Main Showcase Single Card Container -->
       <div class="main-screens-showcase">
-        <div class="main-screens-group">
-          <h3 class="main-screens-group__title">Access from the menu</h3>
-          <p class="case-section__body">
-            After the users’ feedback, we improved the visibility of the access, by removing it from the payments menu and creating an entry point for it specifically.
-          </p>
+        <div class="main-screens-stack">
 
-          <div class="main-screens-group__media">
-            <button type="button" class="user-flow__trigger" data-modal-target="modal-menu-access"
-              aria-haspopup="dialog" aria-label="Click to zoom: Access from the menu mockups">
-              <div class="showcase-grid-two">
-                <img src="assets/segsocial-notifications-screen-contributions-list-Desktop.png"
-                  alt="Contributions list screen mockup" class="main-screens-group__img" loading="lazy" />
-                <img src="assets/segsocial-notifications-screen-late-payments-Desktop.png"
-                  alt="Late payments screen mockup" class="main-screens-group__img" loading="lazy" />
-              </div>
-              <span class="user-flow__zoom-badge" aria-hidden="true">
-                <i class="ph ph-magnifying-glass-plus"></i>
-                <span>Click to zoom</span>
-              </span>
-            </button>
+          <!-- Group 1: Access from the menu -->
+          <div class="main-screens-group">
+            <h3 class="main-screens-group__title">Access from the menu</h3>
+            <p class="main-screens-group__desc">
+              After the users’ feedback, we improved the visibility of the access, by removing it from the payments menu and creating an entry point for it specifically.
+            </p>
+
+            <div class="main-screens-group__media">
+              <button type="button" class="user-flow__trigger" data-modal-target="modal-menu-access"
+                aria-haspopup="dialog" aria-label="Click to zoom: Access from the menu mockups">
+                <picture>
+                  <source media="(min-width: 1024px)"
+                    srcset="assets/segsocial-notifications-screen-contributions-list-desktop.png 1x, assets/segsocial-notifications-screen-contributions-list-desktop@2x.png 2x">
+                  <source media="(min-width: 768px)"
+                    srcset="assets/segsocial-notifications-screen-contributions-list-tablet.png 1x, assets/segsocial-notifications-screen-contributions-list-tablet@2x.png 2x">
+                  <img src="assets/segsocial-notifications-screen-contributions-list-mobile.png"
+                    srcset="assets/segsocial-notifications-screen-contributions-list-mobile.png 1x, assets/segsocial-notifications-screen-contributions-list-mobile@2x.png 2x"
+                    alt="Contributions list screen mockup" class="main-screens-group__img" loading="lazy" />
+                </picture>
+                <picture>
+                  <source media="(min-width: 1024px)"
+                    srcset="assets/segsocial-notifications-screen-late-payments-desktop.png 1x, assets/segsocial-notifications-screen-late-payments-desktop@2x.png 2x">
+                  <source media="(min-width: 768px)"
+                    srcset="assets/segsocial-notifications-screen-late-payments-tablet.png 1x, assets/segsocial-notifications-screen-late-payments-tablet@2x.png 2x">
+                  <img src="assets/segsocial-notifications-screen-late-payments-mobile.png"
+                    srcset="assets/segsocial-notifications-screen-late-payments-mobile.png 1x, assets/segsocial-notifications-screen-late-payments-mobile@2x.png 2x"
+                    alt="Late payments screen mockup" class="main-screens-group__img" loading="lazy" />
+                </picture>
+                <span class="user-flow__zoom-badge" aria-hidden="true">
+                  <i class="ph ph-magnifying-glass-plus"></i>
+                  <span>Click to zoom</span>
+                </span>
+              </button>
+            </div>
           </div>
+
+          <!-- Group 2: List of notifications and debt details -->
+          <div class="main-screens-group">
+            <h3 class="main-screens-group__title">List of notifications and debt details</h3>
+
+            <div class="main-screens-group__media">
+              <button type="button" class="user-flow__trigger" data-modal-target="modal-notifications-list"
+                aria-haspopup="dialog" aria-label="Click to zoom: Notifications and debt details mockups">
+                <picture>
+                  <source media="(min-width: 1024px)"
+                    srcset="assets/segsocial-notifications-screen-notifications-table-desktop.png 1x, assets/segsocial-notifications-screen-notifications-table-desktop@2x.png 2x">
+                  <source media="(min-width: 768px)"
+                    srcset="assets/segsocial-notifications-screen-notifications-table-tablet.png 1x, assets/segsocial-notifications-screen-notifications-table-tablet@2x.png 2x">
+                  <img src="assets/segsocial-notifications-screen-notifications-table-mobile.png"
+                    srcset="assets/segsocial-notifications-screen-notifications-table-mobile.png 1x, assets/segsocial-notifications-screen-notifications-table-mobile@2x.png 2x"
+                    alt="Notifications table screen mockup" class="main-screens-group__img" loading="lazy" />
+                </picture>
+                <picture>
+                  <source media="(min-width: 1024px)"
+                    srcset="assets/segsocial-notifications-screen-notification-detail-desktop.png 1x, assets/segsocial-notifications-screen-notification-detail-desktop@2x.png 2x">
+                  <source media="(min-width: 768px)"
+                    srcset="assets/segsocial-notifications-screen-notification-detail-tablet.png 1x, assets/segsocial-notifications-screen-notification-detail-tablet@2x.png 2x">
+                  <img src="assets/segsocial-notifications-screen-notification-detail-mobile.png"
+                    srcset="assets/segsocial-notifications-screen-notification-detail-mobile.png 1x, assets/segsocial-notifications-screen-notification-detail-mobile@2x.png 2x"
+                    alt="Notification detail screen mockup" class="main-screens-group__img" loading="lazy" />
+                </picture>
+                <span class="user-flow__zoom-badge" aria-hidden="true">
+                  <i class="ph ph-magnifying-glass-plus"></i>
+                  <span>Click to zoom</span>
+                </span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Group 3: Submission of complaints and details -->
+          <div class="main-screens-group">
+            <h3 class="main-screens-group__title">Submission of complaints and details</h3>
+
+            <div class="main-screens-group__media">
+              <button type="button" class="user-flow__trigger" data-modal-target="modal-complaints-submission"
+                aria-haspopup="dialog" aria-label="Click to zoom: Submission of complaints mockups">
+                <picture>
+                  <source media="(min-width: 1024px)"
+                    srcset="assets/segsocial-notifications-screen-complaint-form-desktop.png 1x, assets/segsocial-notifications-screen-complaint-form-desktop@2x.png 2x">
+                  <source media="(min-width: 768px)"
+                    srcset="assets/segsocial-notifications-screen-complaint-form-tablet.png 1x, assets/segsocial-notifications-screen-complaint-form-tablet@2x.png 2x">
+                  <img src="assets/segsocial-notifications-screen-complaint-form-mobile.png"
+                    srcset="assets/segsocial-notifications-screen-complaint-form-mobile.png 1x, assets/segsocial-notifications-screen-complaint-form-mobile@2x.png 2x"
+                    alt="Complaint submission form screen mockup" class="main-screens-group__img" loading="lazy" />
+                </picture>
+                <picture>
+                  <source media="(min-width: 1024px)"
+                    srcset="assets/segsocial-notifications-screen-complaint-detail-desktop.png 1x, assets/segsocial-notifications-screen-complaint-detail-desktop@2x.png 2x">
+                  <source media="(min-width: 768px)"
+                    srcset="assets/segsocial-notifications-screen-complaint-detail-tablet.png 1x, assets/segsocial-notifications-screen-complaint-detail-tablet@2x.png 2x">
+                  <img src="assets/segsocial-notifications-screen-complaint-detail-mobile.png"
+                    srcset="assets/segsocial-notifications-screen-complaint-detail-mobile.png 1x, assets/segsocial-notifications-screen-complaint-detail-mobile@2x.png 2x"
+                    alt="Complaint detail screen mockup" class="main-screens-group__img" loading="lazy" />
+                </picture>
+                <span class="user-flow__zoom-badge" aria-hidden="true">
+                  <i class="ph ph-magnifying-glass-plus"></i>
+                  <span>Click to zoom</span>
+                </span>
+              </button>
+            </div>
+          </div>
+
         </div>
       </div>
-
-      <!-- Group 2: List of notifications and debt details -->
-      <div class="main-screens-showcase">
-        <div class="main-screens-group">
-          <h3 class="main-screens-group__title">List of notifications and debt details</h3>
-
-          <div class="main-screens-group__media">
-            <button type="button" class="user-flow__trigger" data-modal-target="modal-notifications-list"
-              aria-haspopup="dialog" aria-label="Click to zoom: Notifications and debt details mockups">
-              <div class="showcase-grid-two">
-                <img src="assets/segsocial-notifications-screen-notifications-table-Desktop.png"
-                  alt="Notifications table screen mockup" class="main-screens-group__img" loading="lazy" />
-                <img src="assets/segsocial-notifications-screen-notification-detail-Desktop.png"
-                  alt="Notification detail screen mockup" class="main-screens-group__img" loading="lazy" />
-              </div>
-              <span class="user-flow__zoom-badge" aria-hidden="true">
-                <i class="ph ph-magnifying-glass-plus"></i>
-                <span>Click to zoom</span>
-              </span>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Group 3: Submission of complaints and details -->
-      <div class="main-screens-showcase">
-        <div class="main-screens-group">
-          <h3 class="main-screens-group__title">Submission of complaints and details</h3>
-
-          <div class="main-screens-group__media">
-            <button type="button" class="user-flow__trigger" data-modal-target="modal-complaints-submission"
-              aria-haspopup="dialog" aria-label="Click to zoom: Submission of complaints mockups">
-              <div class="showcase-grid-two">
-                <img src="assets/segsocial-notifications-screen-complaint-form-Desktop.png"
-                  alt="Complaint submission form screen mockup" class="main-screens-group__img" loading="lazy" />
-                <img src="assets/segsocial-notifications-screen-complaint-detail-Desktop.png"
-                  alt="Complaint detail screen mockup" class="main-screens-group__img" loading="lazy" />
-              </div>
-              <span class="user-flow__zoom-badge" aria-hidden="true">
-                <i class="ph ph-magnifying-glass-plus"></i>
-                <span>Click to zoom</span>
-              </span>
-            </button>
-          </div>
-        </div>
-      </div>
-
     </section>
 
     <!-- Section: Learnings -->
@@ -845,9 +893,13 @@
         </button>
       </div>
       <div class="image-modal__scrollable">
-        <img src="assets/segsocial-notifications-research-timeline-Desktop.png"
-          alt="User journey map of the existing debt collection process" class="image-modal__full-img"
-          loading="lazy" />
+        <picture>
+          <source srcset="assets/segsocial-notifications-research-timeline-desktop.png 1x, assets/segsocial-notifications-research-timeline-desktop@2x.png 2x">
+          <img src="assets/segsocial-notifications-research-timeline-desktop.png"
+            srcset="assets/segsocial-notifications-research-timeline-desktop.png 1x, assets/segsocial-notifications-research-timeline-desktop@2x.png 2x"
+            alt="User journey map of the existing debt collection process" class="image-modal__full-img"
+            loading="lazy" />
+        </picture>
       </div>
     </div>
   </dialog>
@@ -863,7 +915,7 @@
         </button>
       </div>
       <div class="image-modal__scrollable">
-        <img src="assets/segsocial-notifications-user-flow-diagram-Desktop.png"
+        <img src="assets/segsocial-notifications-user-flow-diagram.svg"
           alt="Full User Flow Diagram for Notifications and Complaints" class="image-modal__full-img"
           loading="lazy" />
       </div>
@@ -882,10 +934,18 @@
       </div>
       <div class="image-modal__scrollable">
         <div class="showcase-grid-two" style="max-width: 1200px; width: 100%;">
-          <img src="assets/segsocial-notifications-screen-contributions-list-Desktop.png"
-            alt="Contributions list screen mockup" class="image-modal__full-img" loading="lazy" />
-          <img src="assets/segsocial-notifications-screen-late-payments-Desktop.png"
-            alt="Late payments screen mockup" class="image-modal__full-img" loading="lazy" />
+          <picture>
+            <source srcset="assets/segsocial-notifications-screen-contributions-list-desktop.png 1x, assets/segsocial-notifications-screen-contributions-list-desktop@2x.png 2x">
+            <img src="assets/segsocial-notifications-screen-contributions-list-desktop.png"
+              srcset="assets/segsocial-notifications-screen-contributions-list-desktop.png 1x, assets/segsocial-notifications-screen-contributions-list-desktop@2x.png 2x"
+              alt="Contributions list screen mockup" class="image-modal__full-img" loading="lazy" />
+          </picture>
+          <picture>
+            <source srcset="assets/segsocial-notifications-screen-late-payments-desktop.png 1x, assets/segsocial-notifications-screen-late-payments-desktop@2x.png 2x">
+            <img src="assets/segsocial-notifications-screen-late-payments-desktop.png"
+              srcset="assets/segsocial-notifications-screen-late-payments-desktop.png 1x, assets/segsocial-notifications-screen-late-payments-desktop@2x.png 2x"
+              alt="Late payments screen mockup" class="image-modal__full-img" loading="lazy" />
+          </picture>
         </div>
       </div>
     </div>
@@ -903,10 +963,18 @@
       </div>
       <div class="image-modal__scrollable">
         <div class="showcase-grid-two" style="max-width: 1200px; width: 100%;">
-          <img src="assets/segsocial-notifications-screen-notifications-table-Desktop.png"
-            alt="Notifications table screen mockup" class="image-modal__full-img" loading="lazy" />
-          <img src="assets/segsocial-notifications-screen-notification-detail-Desktop.png"
-            alt="Notification detail screen mockup" class="image-modal__full-img" loading="lazy" />
+          <picture>
+            <source srcset="assets/segsocial-notifications-screen-notifications-table-desktop.png 1x, assets/segsocial-notifications-screen-notifications-table-desktop@2x.png 2x">
+            <img src="assets/segsocial-notifications-screen-notifications-table-desktop.png"
+              srcset="assets/segsocial-notifications-screen-notifications-table-desktop.png 1x, assets/segsocial-notifications-screen-notifications-table-desktop@2x.png 2x"
+              alt="Notifications table screen mockup" class="image-modal__full-img" loading="lazy" />
+          </picture>
+          <picture>
+            <source srcset="assets/segsocial-notifications-screen-notification-detail-desktop.png 1x, assets/segsocial-notifications-screen-notification-detail-desktop@2x.png 2x">
+            <img src="assets/segsocial-notifications-screen-notification-detail-desktop.png"
+              srcset="assets/segsocial-notifications-screen-notification-detail-desktop.png 1x, assets/segsocial-notifications-screen-notification-detail-desktop@2x.png 2x"
+              alt="Notification detail screen mockup" class="image-modal__full-img" loading="lazy" />
+          </picture>
         </div>
       </div>
     </div>
@@ -924,10 +992,18 @@
       </div>
       <div class="image-modal__scrollable">
         <div class="showcase-grid-two" style="max-width: 1200px; width: 100%;">
-          <img src="assets/segsocial-notifications-screen-complaint-form-Desktop.png"
-            alt="Complaint submission form screen mockup" class="image-modal__full-img" loading="lazy" />
-          <img src="assets/segsocial-notifications-screen-complaint-detail-Desktop.png"
-            alt="Complaint detail screen mockup" class="image-modal__full-img" loading="lazy" />
+          <picture>
+            <source srcset="assets/segsocial-notifications-screen-complaint-form-desktop.png 1x, assets/segsocial-notifications-screen-complaint-form-desktop@2x.png 2x">
+            <img src="assets/segsocial-notifications-screen-complaint-form-desktop.png"
+              srcset="assets/segsocial-notifications-screen-complaint-form-desktop.png 1x, assets/segsocial-notifications-screen-complaint-form-desktop@2x.png 2x"
+              alt="Complaint submission form screen mockup" class="image-modal__full-img" loading="lazy" />
+          </picture>
+          <picture>
+            <source srcset="assets/segsocial-notifications-screen-complaint-detail-desktop.png 1x, assets/segsocial-notifications-screen-complaint-detail-desktop@2x.png 2x">
+            <img src="assets/segsocial-notifications-screen-complaint-detail-desktop.png"
+              srcset="assets/segsocial-notifications-screen-complaint-detail-desktop.png 1x, assets/segsocial-notifications-screen-complaint-detail-desktop@2x.png 2x"
+              alt="Complaint detail screen mockup" class="image-modal__full-img" loading="lazy" />
+          </picture>
         </div>
       </div>
     </div>
