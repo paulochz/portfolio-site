@@ -439,8 +439,9 @@ document.addEventListener('click', (e) => {
 document.addEventListener('click', (e) => {
   const trigger = e.target.closest('[data-modal-target]');
   if (trigger) {
-    // Modal de zoom só está ativo em resoluções de tablet para baixo (< 1024px)
-    if (window.innerWidth >= 1024) return;
+    const isDesktopZoom = trigger.classList.contains('user-flow__trigger--desktop-zoom') || trigger.hasAttribute('data-modal-desktop');
+    // Por padrão modal de zoom só está ativo em < 1024px, exceto para diagramas com desktop zoom habilitado
+    if (window.innerWidth >= 1024 && !isDesktopZoom) return;
 
     const modalId = trigger.getAttribute('data-modal-target');
     const modal = document.getElementById(modalId);

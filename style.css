@@ -1816,9 +1816,7 @@ portfolio-header {
   color: var(--text-on-dark);
 }
 
-.project-hero__background--yamaha {
-  background-color: var(--brand-yamaha-dark);
-}
+
 
 .project-hero__banner-inner {
   width: 100%;
@@ -2006,6 +2004,88 @@ portfolio-header {
   display: block;
   object-fit: cover;
   border-radius: var(--radius-base);
+}
+
+/* ── Yamaha Hero Custom Background ── */
+.project-hero__background.project-hero__background--yamaha {
+  background-color: var(--brand-yamaha-dark);
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.project-hero__background.project-hero__background--yamaha::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 53px;
+  background-color: var(--brand-yamaha-accent);
+  z-index: 0;
+  pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .project-hero__background.project-hero__background--yamaha::after {
+    height: 113px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .project-hero__background.project-hero__background--yamaha::after {
+    height: 189px;
+  }
+}
+
+.project-hero__background.project-hero__background--yamaha .project-hero__background-inner {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 0 !important;
+  gap: var(--spacing-6xl);
+}
+
+.project-hero__background.project-hero__background--yamaha .project-hero__jump-btn {
+  width: auto;
+  align-self: flex-start;
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--bg-primary);
+  color: var(--text-body);
+}
+
+.project-hero__background.project-hero__background--yamaha .project-hero__mockup-wrapper {
+  width: 100%;
+  max-width: var(--layout-container-width);
+  margin: 0 auto;
+  line-height: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.project-hero__background.project-hero__background--yamaha .project-hero__mockup-picture,
+.project-hero__background.project-hero__background--yamaha picture {
+  line-height: 0;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+.project-hero__background.project-hero__background--yamaha .project-hero__mockup-img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  border-radius: 0;
+  display: block;
+  object-fit: contain;
+  vertical-align: bottom;
+  margin-bottom: 0;
+}
+
+body:has(.project-hero__background--yamaha) .project-layout {
+  padding-top: var(--spacing-6xl);
 }
 
 /* ── Responsive: Tablet (min-width: 768px) ── */
@@ -2783,6 +2863,22 @@ summary-panel {
   .user-flow__zoom-badge {
     display: none !important;
   }
+
+  /* Triggers with explicit desktop zoom enabled */
+  .user-flow__trigger--desktop-zoom {
+    cursor: pointer !important;
+    pointer-events: auto !important;
+  }
+
+  .user-flow__trigger--desktop-zoom:focus-visible {
+    outline: 2px solid var(--accent-yellow);
+    outline-offset: 4px;
+    border-radius: var(--radius-base);
+  }
+
+  .user-flow__trigger--desktop-zoom .user-flow__zoom-badge {
+    display: inline-flex !important;
+  }
 }
 
 /* ── Lightbox Dialog Modal ── */
@@ -2882,6 +2978,7 @@ summary-panel {
   -webkit-overflow-scrolling: touch;
   display: flex;
   justify-content: center;
+  align-items: flex-start;
 }
 
 .image-modal__full-img {
@@ -2891,6 +2988,16 @@ summary-panel {
   display: block;
   border-radius: var(--radius-sm);
   align-self: flex-start;
+}
+
+/* Wide / Panoramic diagrams (e.g. Service Blueprint) */
+.image-modal__full-img--blueprint,
+.image-modal__full-img--pan {
+  width: auto;
+  max-width: none;
+  min-width: 1600px;
+  height: auto;
+  margin: auto;
 }
 
 /* ==========================================================================
@@ -2973,7 +3080,6 @@ summary-panel {
   display: block;
   object-fit: contain;
   border-radius: var(--radius-md);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
 }
 
 .main-screens-group__img--single-phone {
