@@ -419,13 +419,25 @@ document.addEventListener('click', (e) => {
 
   e.preventDefault();
 
-  // Desconta a altura da navbar fixa
+  // Desconta a altura da navbar fixa (ou 40px de respiro quando não há navbar)
   const navbar = document.querySelector('.navbar');
-  const headerOffset = navbar ? navbar.offsetHeight : 80;
+  const headerOffset = navbar ? navbar.offsetHeight : 40;
   const elementPosition = targetEl.getBoundingClientRect().top + window.pageYOffset;
   const offsetPosition = Math.max(0, elementPosition - headerOffset);
 
-  smoothScrollTo(offsetPosition, 300);
+  smoothScrollTo(offsetPosition, 350);
+
+  const targetId = href.replace('#', '');
+  const summaryPanel = document.querySelector('summary-panel');
+  if (summaryPanel && typeof summaryPanel.setActive === 'function') {
+    summaryPanel._isClickScrolling = true;
+    summaryPanel.setActive(targetId);
+    clearTimeout(summaryPanel._clickScrollTimeout);
+    summaryPanel._clickScrollTimeout = setTimeout(() => {
+      summaryPanel._isClickScrolling = false;
+      summaryPanel.updateActiveSection();
+    }, 450);
+  }
 
   // Atualiza o hash da URL
   if (history.pushState) {
